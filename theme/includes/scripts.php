@@ -22,7 +22,7 @@ add_action( 'admin_init', 'tracyappsdesign_add_editor_styles' );
 function tracyappsdesign_add_editor_styles() {
 	// Set up editor styles
 	$editor_styles = array(
-		'//fonts.googleapis.com/css?family=Raleway:400,600|Lato:400,400italic,700',
+		'//fonts.googleapis.com/css?family=Playfair+Display:700,900|Hind:400,700',
 		'css/genericons.css',
 		'css/editor-style.css',
 	);
@@ -66,7 +66,7 @@ function tracyappsdesign_enqueue_styles() {
 
 	wp_register_style(
 		'google-fonts',
-		'//fonts.googleapis.com/css?family=Raleway:400,600|Lato:400,400italic,700',
+		'//fonts.googleapis.com/css?family=Playfair+Display:700,900|Hind:400,700',
 		array(),
 		null
 	);

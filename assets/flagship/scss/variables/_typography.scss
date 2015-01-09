@@ -6,16 +6,16 @@
 
 // Global Font Families
 //------------------------------------------------------------------------------
-$sans-serif:      Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$sans-serif-alt:  Raleway, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$serif:           Georgia, Times, 'Times New Roman', serif;
+$sans-serif:      'Hind', Helvetica, Arial, sans-serif;
+$sans-serif-alt:  'Helvetica Neue', Helvetica, Arial, sans-serif;
+$serif:           'Playfair Display', Georgia, Times, 'Times New Roman', serif;
 $monospace:       Consolas, Monaco, 'Andale Mono', 'DejaVu Sans Mono', monospace;
 
 // Base Font Families
 //------------------------------------------------------------------------------
 $base-font-family:        $sans-serif;
-$header-font-family:      $sans-serif-alt;
-$blockquote-font-family:  $serif;
+$header-font-family:      $serif;
+$blockquote-font-family:  $sans-serif-alt;
 
 // Base Font Sizes
 //------------------------------------------------------------------------------
