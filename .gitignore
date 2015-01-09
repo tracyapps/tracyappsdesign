@@ -1,0 +1,33 @@
+.DS_Store
+
+# Sass cache
+/.sass-cache
+
+# Development files
+/node_modules
+/bower_components
+
+# Development directories
+/dist/
+/docs/
+/logs/
+/reports/
+/tmp/
+/grunt/
+
+# Third-party dependencies
+assets/bower/
+assets/composer/
+
+# Other dev stuff
+phpmd.xml
+gruntfile.js
+package.json
+composer.lock
+composer.json
+bower.json
+.scss-lint.yml
+.jshintrc
+.jscsrc
+.gruntjshintrc
+.gitattributes

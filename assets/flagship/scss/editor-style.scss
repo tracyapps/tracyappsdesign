@@ -1,0 +1,119 @@
+// Load Bourbon
+@import "../../bower/bourbon/bourbon";
+
+// Load Neat Grid
+@import "variables/neat-grid";
+@import "../../bower/neat/neat";
+
+// Load Global Variables
+@import "variables/colors";
+@import "variables/layout";
+@import "variables/misc";
+@import "variables/typography";
+@import "variables/z-index";
+
+/*
+Defaults
+----------------------------------------------------------------------------- */
+@import "partials/defaults/base";
+
+
+/*
+Common Classes
+----------------------------------------------------------------------------- */
+@import "partials/common-classes";
+
+
+/*
+Genericons
+----------------------------------------------------------------------------- */
+@import "partials/genericons";
+
+
+body {
+	@include span-columns(8);
+	background: $entry-background-color;
+}
+
+/*
+Content Area
+----------------------------------------------------------------------------- */
+p,
+ol,
+ul,
+dl {
+	margin-bottom: 26px;
+}
+
+ol,
+ul {
+	margin-left: 40px;
+}
+
+li {
+	margin-bottom: 2%;
+}
+
+ol > li {
+	list-style-type: decimal;
+}
+
+ul > li {
+	list-style-type: disc;
+}
+
+li ol,
+li ul {
+	margin-top: 2%;
+}
+
+blockquote {
+	border-left: 7px solid $blockquote-border-color;
+	margin: 30px 0;
+	padding: 0 5%;
+}
+
+.mce-item-table,
+table {
+	border-collapse: separate;
+	border: 1px solid $table-border-color;
+	border-left: 0;
+	margin: 20px 0;
+	width: 100%;
+}
+
+.mce-item-table td,
+.mce-item-table th,
+.mce-item-table caption,
+table th,
+table td {
+	border: 0;
+	border-left: 1px solid $table-border-color;
+	border-top: 1px solid $table-border-color;
+	font-size: $base-font-size;
+	line-height: 1.2;
+	padding: 10px;
+	text-align: left;
+	vertical-align: top;
+}
+
+table thead:first-child tr:first-child th,
+table tbody:first-child tr:first-child th,
+table tbody:first-child tr:first-child td {
+	border-top: 0 none;
+}
+
+code {
+	background: $code-background-color;
+	border: 1px solid $code-border-color;
+	color: $code-font-color;
+	padding: 2px 4px;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 10px 0;
+	font-size: $wp-caption-font-size;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	line-height: 1.2;
+}
