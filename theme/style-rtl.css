@@ -445,7 +445,7 @@ textarea:focus,
 
 /* line 31, ../assets/flagship/scss/partials/defaults/_typography.scss */
 a {
-	color: #00a66c;
+	color: #98d900;
 	text-decoration: none;
 	-webkit-transition: color 0.1s linear;
 	transition: color 0.1s linear;
@@ -472,7 +472,7 @@ p {
 /* line 52, ../assets/flagship/scss/partials/defaults/_typography.scss */
 b,
 strong {
-	font-weight: 600;
+	font-weight: 700;
 }
 
 /* line 57, ../assets/flagship/scss/partials/defaults/_typography.scss */
@@ -555,7 +555,7 @@ small {
 
 /* line 123, ../assets/flagship/scss/partials/defaults/_typography.scss */
 big {
-	font-size: 125%;
+	font-size: 155%;
 }
 
 /* line 127, ../assets/flagship/scss/partials/defaults/_typography.scss */
@@ -606,39 +606,55 @@ h5,
 h6 {
 	color: #1c1e1f;
 	font-family: "Playfair Display", Georgia, Times, "Times New Roman", serif;
-	font-weight: 400;
+	font-weight: 700;
 	line-height: 1.25;
 	margin: 0 0 10px;
 
 	text-rendering: optimizeLegibility;
 }
 
-/* line 174, ../assets/flagship/scss/partials/defaults/_typography.scss */
+/* line 173, ../assets/flagship/scss/partials/defaults/_typography.scss */
+h1 strong,
+h1 b,
+h2 strong,
+h2 b,
+h3 strong,
+h3 b,
+h4 strong,
+h4 b,
+h5 strong,
+h5 b,
+h6 strong,
+h6 b {
+	font-weight: 900;
+}
+
+/* line 179, ../assets/flagship/scss/partials/defaults/_typography.scss */
 h1 {
+	font-size: 46px;
+}
+
+/* line 183, ../assets/flagship/scss/partials/defaults/_typography.scss */
+h2 {
 	font-size: 36px;
 }
 
-/* line 178, ../assets/flagship/scss/partials/defaults/_typography.scss */
-h2 {
+/* line 187, ../assets/flagship/scss/partials/defaults/_typography.scss */
+h3 {
 	font-size: 32px;
 }
 
-/* line 182, ../assets/flagship/scss/partials/defaults/_typography.scss */
-h3 {
-	font-size: 28px;
-}
-
-/* line 186, ../assets/flagship/scss/partials/defaults/_typography.scss */
+/* line 191, ../assets/flagship/scss/partials/defaults/_typography.scss */
 h4 {
 	font-size: 25px;
 }
 
-/* line 190, ../assets/flagship/scss/partials/defaults/_typography.scss */
+/* line 195, ../assets/flagship/scss/partials/defaults/_typography.scss */
 h5 {
 	font-size: 22px;
 }
 
-/* line 194, ../assets/flagship/scss/partials/defaults/_typography.scss */
+/* line 199, ../assets/flagship/scss/partials/defaults/_typography.scss */
 h6 {
 	font-size: 20px;
 }
@@ -1255,6 +1271,16 @@ Structure and Layout
 	}
 }
 
+/* line 36, ../assets/flagship/scss/partials/_base-layout.scss */
+.full-height {
+	height: 100%;
+}
+
+/* line 38, ../assets/flagship/scss/partials/_base-layout.scss */
+.full-height::before {
+	height: 100%;
+}
+
 
 /* Column Widths and Positions
 --------------------------------------------- */
@@ -1263,18 +1289,18 @@ Structure and Layout
 /* Content
 -------------------- */
 
-/* line 43, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 49, ../assets/flagship/scss/partials/_base-layout.scss */
 .layout-1c-narrow .content {
 	padding: 0;
 }
 
 @media screen and (min-width: 1023px) {
-	/* line 49, ../assets/flagship/scss/partials/_base-layout.scss */
+	/* line 55, ../assets/flagship/scss/partials/_base-layout.scss */
 	.layout-1c-narrow .content {
 		padding: 0 15%;
 	}
 
-/* line 53, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 59, ../assets/flagship/scss/partials/_base-layout.scss */
 	.layout-2c-l .content,
 	.layout-2c-r .content {
 		display: block;
@@ -1289,7 +1315,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 58, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 64, ../assets/flagship/scss/partials/_base-layout.scss */
 	.layout-2c-r .content {
 		float: left;
 		margin-left: 0;
@@ -1299,7 +1325,7 @@ Structure and Layout
 /* Primary Sidebar
   -------------------- */
 
-/* line 65, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 71, ../assets/flagship/scss/partials/_base-layout.scss */
 	.sidebar {
 		display: block;
 		float: right;
@@ -1312,7 +1338,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 69, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 75, ../assets/flagship/scss/partials/_base-layout.scss */
 	.layout-2c-l .sidebar {
 		float: left;
 		margin-left: 0;
@@ -1322,7 +1348,7 @@ Structure and Layout
 /* Secondary Sidebar
   -------------------- */
 
-/* line 76, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 82, ../assets/flagship/scss/partials/_base-layout.scss */
 	.sidebar-secondary {
 		display: block;
 		float: right;
@@ -1335,14 +1361,14 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 80, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 86, ../assets/flagship/scss/partials/_base-layout.scss */
 	.content-sidebar-sidebar .sidebar-secondary {
 		float: left;
 		margin-left: 0;
 	}
 }
 
-/* line 86, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 92, ../assets/flagship/scss/partials/_base-layout.scss */
 .layout-1c .sidebar,
 .layout-1c-narrow .sidebar {
 	display: none;
@@ -1353,7 +1379,7 @@ Structure and Layout
 --------------------------------------------- */
 
 @media screen and (min-width: 810px) {
-	/* line 96, ../assets/flagship/scss/partials/_base-layout.scss */
+	/* line 102, ../assets/flagship/scss/partials/_base-layout.scss */
 	.one-half,
 	.three-sixths,
 	.two-fourths {
@@ -1370,7 +1396,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 102, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 108, ../assets/flagship/scss/partials/_base-layout.scss */
 	.one-third,
 	.two-sixths {
 		display: block;
@@ -1385,7 +1411,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 107, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 113, ../assets/flagship/scss/partials/_base-layout.scss */
 	.four-sixths,
 	.two-thirds {
 		display: block;
@@ -1400,7 +1426,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 112, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 118, ../assets/flagship/scss/partials/_base-layout.scss */
 	.one-fourth {
 		display: block;
 		float: right;
@@ -1413,7 +1439,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 116, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 122, ../assets/flagship/scss/partials/_base-layout.scss */
 	.three-fourths {
 		display: block;
 		float: right;
@@ -1426,7 +1452,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 120, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 126, ../assets/flagship/scss/partials/_base-layout.scss */
 	.one-sixth {
 		display: block;
 		float: right;
@@ -1439,7 +1465,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 124, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 130, ../assets/flagship/scss/partials/_base-layout.scss */
 	.five-sixths {
 		display: block;
 		float: right;
@@ -1452,7 +1478,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 128, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 134, ../assets/flagship/scss/partials/_base-layout.scss */
 	.last {
 		clear: left;
 		margin-left: 0;
@@ -1524,7 +1550,7 @@ Common Classes
 
 /* line 48, ../assets/flagship/scss/partials/_common-classes.scss */
 .loop-title {
-	font-size: 36px;
+	font-size: 46px;
 	font-weight: 600;
 }
 
@@ -2264,7 +2290,7 @@ Site Navigation
 .nav-menu .current-menu-parent > a,
 .nav-menu .sub-menu .current-menu-item > a:hover,
 .nav-menu .sub-menu .current-menu-item > a:focus {
-	color: #00a66c;
+	color: #98d900;
 }
 
 /* line 34, ../assets/flagship/scss/partials/_navigation.scss */
@@ -2432,7 +2458,7 @@ Site Navigation
 .menu-after-header .current-menu-item > a,
 .menu-after-header .sub-menu .current-menu-item > a:hover,
 .menu-after-header .sub-menu .current-menu-item > a:focus {
-	color: #00a66c;
+	color: #98d900;
 }
 
 
@@ -2516,7 +2542,7 @@ Site Navigation
 .sidr .nav-menu li a:hover,
 .sidr .nav-menu li a:focus {
 	background: #2b2e2f;
-	color: #00a66c;
+	color: #98d900;
 }
 
 /* line 241, ../assets/flagship/scss/partials/_navigation.scss */
@@ -2552,7 +2578,7 @@ Site Navigation
 .sidr .sub-menu .sub-menu li a:hover,
 .sidr .sub-menu .sub-menu li a:focus {
 	background: #2b2e2f;
-	color: #00a66c;
+	color: #98d900;
 }
 
 /* line 270, ../assets/flagship/scss/partials/_navigation.scss */
@@ -2754,7 +2780,7 @@ Content Area
 /* line 27, ../assets/flagship/scss/partials/_content-area.scss */
 .entry-title a:hover,
 .entry-title a:focus {
-	color: #00a66c;
+	color: #98d900;
 }
 
 /* line 32, ../assets/flagship/scss/partials/_content-area.scss */
@@ -2916,7 +2942,7 @@ Content Area
 /* line 160, ../assets/flagship/scss/partials/_content-area.scss */
 .entry-meta a:hover,
 .entry-meta a:focus {
-	color: #00a66c;
+	color: #98d900;
 }
 
 /* line 167, ../assets/flagship/scss/partials/_content-area.scss */
@@ -3051,7 +3077,7 @@ Content Area
 /* line 49, ../assets/flagship/scss/partials/_comments.scss */
 .comment-meta a:hover,
 .comment-meta a:focus {
-	color: #00a66c;
+	color: #98d900;
 }
 
 /* line 56, ../assets/flagship/scss/partials/_comments.scss */
@@ -3305,7 +3331,7 @@ Sidebars
 /* line 7, ../assets/flagship/scss/partials/_sidebars.scss */
 .sidebar a:hover,
 .sidebar a:focus {
-	color: #00a66c;
+	color: #98d900;
 }
 
 /* line 13, ../assets/flagship/scss/partials/_sidebars.scss */
@@ -3389,7 +3415,7 @@ Footer Widgets
 
 /* line 23, ../assets/flagship/scss/partials/_footer-widgets.scss */
 .footer-widgets a:hover {
-	color: #00a66c;
+	color: #98d900;
 }
 
 /* line 28, ../assets/flagship/scss/partials/_footer-widgets.scss */
@@ -3498,7 +3524,7 @@ Site Footer
 
 /* line 12, ../assets/flagship/scss/partials/_footer.scss */
 .footer a {
-	color: #00a66c;
+	color: #98d900;
 }
 
 /* line 15, ../assets/flagship/scss/partials/_footer.scss */

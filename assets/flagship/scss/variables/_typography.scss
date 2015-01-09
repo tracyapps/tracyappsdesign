@@ -27,9 +27,9 @@ $site-title-font-size: floor(modular-scale(5, $base-font-size, $major-second));
 
 // Heading Font Sizes
 //------------------------------------------------------------------------------
-$h1-font-size: floor(modular-scale(6, $base-font-size, $major-second));
-$h2-font-size: floor(modular-scale(5, $base-font-size, $major-second));
-$h3-font-size: floor(modular-scale(4, $base-font-size, $major-second));
+$h1-font-size: floor(modular-scale(8, $base-font-size, $major-second));
+$h2-font-size: floor(modular-scale(6, $base-font-size, $major-second));
+$h3-font-size: floor(modular-scale(5, $base-font-size, $major-second));
 $h4-font-size: floor(modular-scale(3, $base-font-size, $major-second));
 $h5-font-size: floor(modular-scale(2, $base-font-size, $major-second));
 $h6-font-size: floor(modular-scale(1, $base-font-size, $major-second));

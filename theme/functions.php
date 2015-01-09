@@ -35,7 +35,7 @@ function tracyappsdesign_setup() {
 			'2c-l'      => __( '2 Columns: Content / Sidebar', 'tracyappsdesign' ),
 			'2c-r'      => __( '2 Columns: Sidebar / Content', 'tracyappsdesign' )
 		),
-		array( 'default' => is_rtl() ? '2c-r' :'2c-l' )
+		array( 'default' => is_rtl() ? '1c' :'1c' )
 	);
 
 	// http://themehybrid.com/docs/hybrid_set_content_width
@@ -109,6 +109,7 @@ function tracyappsdesign_includes() {
 
 	// Load all PHP files in the includes directory.
 	require_once $includes_dir . 'compatibility.php';
+	require_once $includes_dir . 'fields.php';
 	require_once $includes_dir . 'general.php';
 	require_once $includes_dir . 'scripts.php';
 	require_once $includes_dir . 'widgetize.php';

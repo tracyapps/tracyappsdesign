@@ -45,7 +45,7 @@ a {
   -webkit-transition: color 0.1s linear;
   -moz-transition: color 0.1s linear;
   transition: color 0.1s linear;
-  color: #00a66c;
+  color: #98d900;
   text-decoration: none;
 }
 a:hover {
@@ -63,7 +63,7 @@ p {
 
 b,
 strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 hr {
@@ -133,7 +133,7 @@ small {
 }
 
 big {
-  font-size: 125%;
+  font-size: 155%;
 }
 
 figure {
@@ -174,22 +174,36 @@ h5,
 h6 {
   color: #1c1e1f;
   font-family: "Playfair Display", Georgia, Times, "Times New Roman", serif;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.25;
   margin: 0 0 10px;
   text-rendering: optimizeLegibility;
 }
+h1 strong,
+h1 b,
+h2 strong,
+h2 b,
+h3 strong,
+h3 b,
+h4 strong,
+h4 b,
+h5 strong,
+h5 b,
+h6 strong,
+h6 b {
+  font-weight: 900;
+}
 
 h1 {
-  font-size: 36px;
+  font-size: 46px;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 36px;
 }
 
 h3 {
-  font-size: 28px;
+  font-size: 32px;
 }
 
 h4 {
@@ -614,7 +628,7 @@ Common Classes
 }
 
 .loop-title {
-  font-size: 36px;
+  font-size: 46px;
   font-weight: 600;
 }
 

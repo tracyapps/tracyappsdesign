@@ -39,6 +39,34 @@ function tracyappsdesign_excerpt_length( $length ) {
 	return 60;
 }
 
+/**
+ * get meta fields
+ *
+ * @param array $meta_key
+ * @return array
+ */
+function tracyappsdesign_get_meta( $meta_key ) {
+	return get_post_meta( get_the_ID(), $meta_key, true );
+}
+
+/**
+ * function to loop through homepage section content.
+ * @param $section_key
+ * @return mixed
+ */
+
+function tracyappsdesign_loop_home_section( $section_key ) {
+	$section_id = $section_key[ 'the_section_page' ];
+	$section_data = get_post( $section_id );
+	$section_color = get_post_meta( $section_id, 'page_bg_color', true );
+	?>
+	<section id='<?php esc_html_e( $section_data->post_name ); ?>' class='full-height <?php esc_html_e( $section_color ); ?>'>
+		<h3><?php esc_html_e( $section_key[ 'the_section_title' ] ); ?></h3>
+		<p><?php echo wp_kses_post( $section_data->post_content ); ?></p>
+	</section>
+	<?php
+}
+
 add_action( 'tha_entry_top', 'tracyappsdesign_do_sticky_banner' );
 /**
  * Add markup for a sticky ribbon on sticky posts in archive views.

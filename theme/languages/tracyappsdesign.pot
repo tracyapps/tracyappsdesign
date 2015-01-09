@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tracyappsdesign 3.1.0\n"
 "Report-Msgid-Bugs-To: Robert Neu <translations@flagshipwp.com>\n"
-"POT-Creation-Date: 2015-01-09 10:13:38+00:00\n"
+"POT-Creation-Date: 2015-01-09 18:22:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -336,8 +336,160 @@ msgstr ""
 msgid "(Untitled)"
 msgstr ""
 
-#: includes/general.php:55
+#: includes/fields.php:28
+msgid "Work"
+msgstr ""
+
+#: includes/fields.php:28
+msgid "Example work"
+msgstr ""
+
+#: includes/general.php:83
 msgid "Sticky"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:77 includes/vendor/CPT_Core.php:81
+#: includes/vendor/CPT_Core.php:85
+msgid "It is required to pass a single, plural and slug string to CPT_Core"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:134 includes/vendor/CPT_Core.php:135
+#: includes/vendor/Taxonomy_Core.php:124
+msgid "Add New %s"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:136 includes/vendor/Taxonomy_Core.php:122
+msgid "Edit %s"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:137
+msgid "New %s"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:138 includes/vendor/Taxonomy_Core.php:119
+msgid "All %s"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:139
+msgid "View %s"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:140 includes/vendor/Taxonomy_Core.php:118
+msgid "Search %s"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:141
+msgid "No %s"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:142
+msgid "No %s found in Trash"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:143 includes/vendor/Taxonomy_Core.php:121
+msgid "Parent %s:"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:192
+msgid "Custom field updated."
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:193
+msgid "Custom field deleted."
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:194 includes/vendor/CPT_Core.php:211
+msgid "%1$s updated."
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:196
+#. translators: %s: date and time of the revision
+msgid "%1$s restored to revision from %2$s"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:197
+msgid "%1$s saved."
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:202
+msgid "%1$s updated. <a href=\"%2$s\">View %1$s</a>"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:203
+msgid "%1$s published. <a href=\"%2$s\">View %1$s</a>"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:204
+msgid "%1$s submitted. <a target=\"_blank\" href=\"%2$s\">Preview %1$s</a>"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:206
+#. translators: Publish box date format, see http:php.net/date
+msgid ""
+"%1$s scheduled for: <strong>%2$s</strong>. <a target=\"_blank\" "
+"href=\"%3$s\">Preview %1$s</a>"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:206 includes/vendor/CPT_Core.php:215
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:207
+msgid "%1$s draft updated. <a target=\"_blank\" href=\"%2$s\">Preview %1$s</a>"
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:212
+msgid "%1$s published."
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:213
+msgid "%1$s submitted."
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:215
+#. translators: Publish box date format, see http:php.net/date
+msgid "%1$s scheduled for: <strong>%2$s</strong>."
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:216
+msgid "%1$s draft updated."
+msgstr ""
+
+#: includes/vendor/CPT_Core.php:265
+msgid "%s Title"
+msgstr ""
+
+#: includes/vendor/Taxonomy_Core.php:84 includes/vendor/Taxonomy_Core.php:88
+#: includes/vendor/Taxonomy_Core.php:92
+msgid "It is required to pass a single, plural and slug string to Taxonomy_Core"
+msgstr ""
+
+#: includes/vendor/Taxonomy_Core.php:120
+msgid "Parent %s"
+msgstr ""
+
+#: includes/vendor/Taxonomy_Core.php:123
+msgid "Update %s"
+msgstr ""
+
+#: includes/vendor/Taxonomy_Core.php:125
+msgid "New %s Name"
+msgstr ""
+
+#: includes/vendor/Taxonomy_Core.php:131
+msgid "Popular %s"
+msgstr ""
+
+#: includes/vendor/Taxonomy_Core.php:132
+msgid "Separate %s with commas"
+msgstr ""
+
+#: includes/vendor/Taxonomy_Core.php:133
+msgid "Add or remove %s"
+msgstr ""
+
+#: includes/vendor/Taxonomy_Core.php:134
+msgid "Choose from the most used %s"
 msgstr ""
 
 #: includes/vendor/flagship-library/classes/class-customizer-base.php:78

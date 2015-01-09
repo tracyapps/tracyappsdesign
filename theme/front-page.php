@@ -27,7 +27,16 @@
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php hybrid_get_content_template(); ?>
+				<section id="home" class="full-height">
+					<?php hybrid_get_content_template(); ?>
+				</section>
+
+				<?php
+				$homepage_sections_array = tracyappsdesign_get_meta( 'homepage_onepage_content' );
+				foreach ( $homepage_sections_array as $homepage_section ) :
+					echo tracyappsdesign_loop_home_section( $homepage_section );
+				endforeach;
+				?>
 
 			<?php endwhile; ?>
 
@@ -45,7 +54,6 @@
 
 	<?php tha_content_after(); ?>
 
-	<?php hybrid_get_sidebar( 'primary' ); ?>
 
 </div><!-- #site-inner -->
 

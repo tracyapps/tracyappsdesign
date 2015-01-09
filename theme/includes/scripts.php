@@ -98,3 +98,15 @@ function tracyappsdesign_enqueue_scripts() {
 		true
 	);
 }
+
+/**
+ * quick and dirty, adding "data-skrollr-stylesheet" to the <link> tag for the main stylesheet
+ *
+ * @param $tag
+ * @return mixed
+ */
+
+function tracyappsdesign_style_loader_tag( $tag ) {
+	return preg_replace( "/id='style-css'/", "id='style-css' data-skrollr-stylesheet ", $tag );
+}
+add_filter( 'style_loader_tag', 'tracyappsdesign_style_loader_tag' );
