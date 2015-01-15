@@ -4,6 +4,7 @@
 	line-height: 1;
 	padding: 40px 0;
 	text-align: center;
+	@include letterpress-light-bg;
 
 	p {
 		margin-bottom: 0;

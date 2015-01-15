@@ -94,6 +94,14 @@ if ( class_exists( 'Fieldmanager_Field' ) ) :
 
 				$fm->add_meta_box( 'Background color', 'page' );
 
+				$fm = new Fieldmanager_Textfield( false, array(
+						'name'			=> 'page_tagline',
+						'attributes'    => array( 'style' => 'width:100%' )
+					)
+				);
+
+				$fm->add_meta_box( 'Page Tagline', 'page' );
+
 			}
 		}
 	}

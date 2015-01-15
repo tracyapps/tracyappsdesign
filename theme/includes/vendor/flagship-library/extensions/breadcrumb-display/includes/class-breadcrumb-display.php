@@ -32,8 +32,8 @@ class Flagship_Breadcrumb_Display extends Flagship_Customizer_Base {
 		$wp_customize->add_section(
 			$this->section,
 			array(
-				'title'       => __( 'Breadcrumbs', 'tracyappsdesign' ),
-				'description' => __( 'Choose where you would like breadcrumbs to display.', 'tracyappsdesign' ),
+				'title'       => __( 'Breadcrumbs', 'flagship-library' ),
+				'description' => __( 'Choose where you would like breadcrumbs to display.', 'flagship-library' ),
 				'priority'    => 110,
 				'capability'  => $this->capability,
 			)
@@ -74,27 +74,27 @@ class Flagship_Breadcrumb_Display extends Flagship_Customizer_Base {
 		$breadcrumbs = array(
 			'flagship_breadcrumb_single' => array(
 				'default'  => 0,
-				'label'    => __( 'Single Entries', 'tracyappsdesign' ),
+				'label'    => __( 'Single Entries', 'flagship-library' ),
 			),
 			'flagship_breadcrumb_pages' => array(
 				'default'  => 0,
-				'label'    => __( 'Pages', 'tracyappsdesign' ),
+				'label'    => __( 'Pages', 'flagship-library' ),
 			),
 			'flagship_breadcrumb_blog_page' => array(
 				'default'  => 0,
-				'label'    => __( 'Blog Page', 'tracyappsdesign' ),
+				'label'    => __( 'Blog Page', 'flagship-library' ),
 			),
 			'flagship_breadcrumb_archive' => array(
 				'default'  => 0,
-				'label'    => __( 'Archives', 'tracyappsdesign' ),
+				'label'    => __( 'Archives', 'flagship-library' ),
 			),
 			'flagship_breadcrumb_404' => array(
 				'default'  => 0,
-				'label'    => __( '404 Page', 'tracyappsdesign' ),
+				'label'    => __( '404 Page', 'flagship-library' ),
 			),
 			'flagship_breadcrumb_attachment' => array(
 				'default'  => 0,
-				'label'    => __( 'Attachment/Media Pages', 'tracyappsdesign' ),
+				'label'    => __( 'Attachment/Media Pages', 'flagship-library' ),
 			),
 		);
 		return apply_filters( 'flagship_get_breadcrumb_options', $breadcrumbs );

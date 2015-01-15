@@ -122,11 +122,12 @@ window.tracyappsdesign = window.tracyappsdesign || {};
 
 			//* Close sidr menu if open on larger screens
 			$( window ).resize(function() {
-				if( window.innerWidth > 1023 ) {
+				if( window.innerWidth > 810 ) {
 					$.sidr('close', 'sidr-main');
 					responsiveMenuButton.attr( 'aria-expanded', false );
 				}
 			});
+
 		},
 
 		//* FitVids Init
@@ -138,50 +139,82 @@ window.tracyappsdesign = window.tracyappsdesign || {};
 
 	});
 
-	//* skrollr
-	skrollr.init({
-		constants: {
-			//fill the box for a "duration" of 150% of the viewport (pause for 150%)
-			//adjust for shorter/longer pause
-			box: '150p'
+	//  sticky nav
+	$(function() {
+
+		// grab the initial top offset of the navigation
+		var sticky_navigation_offset_top = $('#menu-after-header').offset().top;
+
+		// our function that decides weather the navigation bar should have "fixed" css position or not.
+		var sticky_navigation = function(){
+			var scroll_top = $(window).scrollTop(); // our current vertical position from the top
+
+			// if we've scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
+			if (scroll_top > sticky_navigation_offset_top) {
+				$('#menu-after-header').css({ 'position': 'fixed', 'top':0, 'left':0, 'width': '100%', 'display': 'block', 'z-index':350 });
+			} else {
+				$('#menu-after-header').css({ 'position': 'relative' });
+			}
+		};
+
+		// run our function on load
+		sticky_navigation();
+
+		// and run it again every time you scroll
+		$(window).scroll(function() {
+			sticky_navigation();
+		});
+	});
+
+
+	// animate anchors
+	$('ul.nav-menu.after-header a').bind('click',function(event){
+		var $anchor = $(this);
+
+		$('html, body').stop().animate({
+			scrollTop: $($anchor.attr('href')).offset().top
+		}, 1500,'easeInOutExpo');
+		/*
+		 if you don't want to use the easing effects:
+		 $('html, body').stop().animate({
+		 scrollTop: $($anchor.attr('href')).offset().top
+		 }, 1000);
+		 */
+		event.preventDefault();
+	});
+
+	// video BG
+	$( '#video-frame' ).vide({
+		mp4: the_base_theme_directory.theme_directory + '/video/background-video-reel.mp4',
+		ogv: the_base_theme_directory.theme_directory + '/video/background-video-reel-large.ogv',
+		webm: the_base_theme_directory.theme_directory + '/video/background-video-reel-large.webm'
+
+	}, {
+		posterType: 'none',
+		autoplay: true,
+		loop: true,
+		position: '50% 50%'
+	});
+
+	var vph = $(window).height();
+	$( '.full-height' ).height(vph);
+
+	$(document).ready(function() {
+
+		function reset_demensions() {
+			var doc_height = $(window).height();
+			$( '.full-height' ).css( 'min-height', doc_height + 'px' );
 		}
+
+		reset_demensions();
+		$( window ).resize(function() {
+			reset_demensions();
+		});
+
 	});
 
-	//* skrollr-menu
-	var s = skrollr.init(/*other stuff*/);
-	skrollr.menu.init(s, {
-		//skrollr will smoothly animate to the new position using `animateTo`.
-		animate: true,
-
-		//The easing function to use.
-		easing: 'sqrt',
-
-		//Multiply your data-[offset] values so they match those set in skrollr.init
-		scale: 2,
-
-		//How long the animation should take in ms.
-		duration: function(currentTop, targetTop) {
-			//By default, the duration is hardcoded at 500ms.
-			return 500;
-
-			//But you could calculate a value based on the current scroll position (`currentTop`) and the target scroll position (`targetTop`).
-			//return Math.abs(currentTop - targetTop) * 10;
-		},
-
-		//If you pass a handleLink function you'll disable `data-menu-top` and `data-menu-offset`.
-		//You are in control where skrollr will scroll to. You get the clicked link as a parameter and are expected to return a number.
-		handleLink: function(link) {
-			return 400;//Hardcoding 400 doesn't make much sense.
-		},
-
-		//By default skrollr-menu will only react to links whose href attribute contains a hash and nothing more, e.g. `href="#foo"`.
-		//If you enable `complexLinks`, skrollr-menu also reacts to absolute and relative URLs which have a hash part.
-		//The following will all work (if the user is on the correct page):
-		//http://example.com/currentPage/#foo
-		//http://example.com/currentDir/currentPage.html?foo=bar#foo
-		///?foo=bar#foo
-		complexLinks: false
-	});
+	// skrollr, engage
+	var s = skrollr.init();
 
 	// Document ready.
 	jQuery(function() {
@@ -190,6 +223,8 @@ window.tracyappsdesign = window.tracyappsdesign || {};
 		tracyappsdesign.loadFitVids();
 		jQuery( document ).gamajoAccessibleMenu();
 	});
+
+
 })( this, jQuery );
 
 // jQuery(document).gamajoAccessibleMenu();

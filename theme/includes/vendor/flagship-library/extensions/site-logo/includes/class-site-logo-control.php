@@ -29,12 +29,12 @@ class Flagship_Site_Logo_Image_Control extends WP_Customize_Control {
 	public function __construct( $wp_customize, $control_id, $args = array() ) {
 		// declare these first so they can be overridden
 		$this->l10n = array(
-			'upload'      => __( 'Add logo',    'tracyappsdesign' ),
-			'set'         => __( 'Set as logo', 'tracyappsdesign' ),
-			'choose'      => __( 'Choose logo', 'tracyappsdesign' ),
-			'change'      => __( 'Change logo', 'tracyappsdesign' ),
-			'remove'      => __( 'Remove logo', 'tracyappsdesign' ),
-			'placeholder' => __( 'No logo set', 'tracyappsdesign' ),
+			'upload'      => __( 'Add logo',    'flagship-library' ),
+			'set'         => __( 'Set as logo', 'flagship-library' ),
+			'choose'      => __( 'Choose logo', 'flagship-library' ),
+			'change'      => __( 'Change logo', 'flagship-library' ),
+			'remove'      => __( 'Remove logo', 'flagship-library' ),
+			'placeholder' => __( 'No logo set', 'flagship-library' ),
 		);
 
 		parent::__construct( $wp_customize, $control_id, $args );

@@ -75,7 +75,7 @@ abstract class Flagship_Customizer_Base {
 		if ( ! method_exists( $this, 'register' ) ) {
 			_doing_it_wrong(
 				'Flagship_Customizer_Base',
-				__( 'When extending Flagship_Customizer_Base, you must create a register method.', 'tracyappsdesign' )
+				__( 'When extending Flagship_Customizer_Base, you must create a register method.', 'flagship-library' )
 			);
 		}
 		// Register our customizer sections.

@@ -11,11 +11,6 @@
 	}
 }
 
-.content .entry {
-	background-color: $entry-background-color;
-	border: 1px solid $entry-border-color;
-}
-
 .entry-title {
 	font-weight: 600;
 
@@ -212,5 +207,24 @@
 	img {
 		display: block;
 		margin: 0 auto;
+	}
+}
+
+/* parallax
+--------------------------------------- */
+#iphone-container {
+	width: 140px;
+	display: block;
+	position: relative;
+	overflow:hidden;
+	> img {max-width: 100%;}
+	#iphone-screen {
+		position: absolute;
+		width:100%;
+		top:0;
+		left:0;
+		overflow: hidden;
+
+		div img {display:inline;}
 	}
 }

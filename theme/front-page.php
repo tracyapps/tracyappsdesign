@@ -13,7 +13,7 @@
 
 <?php get_header(); ?>
 
-<div <?php hybrid_attr( 'site-inner' ); ?>>
+
 
 	<?php tha_content_before(); ?>
 
@@ -21,22 +21,27 @@
 
 		<?php tha_content_top(); ?>
 
-		<?php hybrid_get_menu( 'breadcrumbs' ); ?>
 
 		<?php if ( have_posts() ) : ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<section id="home" class="full-height">
-					<?php hybrid_get_content_template(); ?>
-				</section>
+					<section id="home" class="full-height section">
+						<div id="video-frame">
+							<div <?php hybrid_attr( 'site-inner' ); ?>>
+								<?php hybrid_get_content_template(); ?>
+							</div><!-- #site-inner -->
+						</div><!--/#video-frame-->
+					</section>
 
-				<?php
-				$homepage_sections_array = tracyappsdesign_get_meta( 'homepage_onepage_content' );
-				foreach ( $homepage_sections_array as $homepage_section ) :
-					echo tracyappsdesign_loop_home_section( $homepage_section );
-				endforeach;
-				?>
+					<?php
+					$homepage_sections_array = tracyappsdesign_get_meta( 'homepage_onepage_content' );
+					foreach ( $homepage_sections_array as $homepage_section ) :
+						echo tracyappsdesign_loop_home_section( $homepage_section );
+					endforeach;
+					?>
+
+				<?php get_template_part( 'content/parallax-stuff' ); ?>
 
 			<?php endwhile; ?>
 
@@ -53,9 +58,5 @@
 	</main><!-- #content -->
 
 	<?php tha_content_after(); ?>
-
-
-</div><!-- #site-inner -->
-
 <?php
 get_footer();

@@ -69,8 +69,8 @@ class Flagship_Footer_Widgets {
 			hybrid_register_sidebar(
 				array(
 					'id'          => sprintf( 'footer-%d', $counter ),
-					'name'        => sprintf( __( 'Footer %d', 'tracyappsdesign' ), $counter ),
-					'description' => sprintf( __( 'Footer %d widget area.', 'tracyappsdesign' ), $counter ),
+					'name'        => sprintf( __( 'Footer %d', 'flagship-library' ), $counter ),
+					'description' => sprintf( __( 'Footer %d widget area.', 'flagship-library' ), $counter ),
 				)
 			);
 

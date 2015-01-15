@@ -97,16 +97,13 @@ function tracyappsdesign_enqueue_scripts() {
 		null,
 		true
 	);
+	$site_parameters = array(
+		'site_url' => get_site_url(),
+		'theme_directory' => get_template_directory_uri()
+	);
+	wp_localize_script(
+		'tracyappsdesign',
+		'the_base_theme_directory',
+		$site_parameters
+	);
 }
-
-/**
- * quick and dirty, adding "data-skrollr-stylesheet" to the <link> tag for the main stylesheet
- *
- * @param $tag
- * @return mixed
- */
-
-function tracyappsdesign_style_loader_tag( $tag ) {
-	return preg_replace( "/id='style-css'/", "id='style-css' data-skrollr-stylesheet ", $tag );
-}
-add_filter( 'style_loader_tag', 'tracyappsdesign_style_loader_tag' );

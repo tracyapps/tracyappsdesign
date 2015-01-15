@@ -60,9 +60,20 @@ function tracyappsdesign_loop_home_section( $section_key ) {
 	$section_data = get_post( $section_id );
 	$section_color = get_post_meta( $section_id, 'page_bg_color', true );
 	?>
-	<section id='<?php esc_html_e( $section_data->post_name ); ?>' class='full-height <?php esc_html_e( $section_color ); ?>'>
-		<h3><?php esc_html_e( $section_key[ 'the_section_title' ] ); ?></h3>
-		<p><?php echo wp_kses_post( $section_data->post_content ); ?></p>
+	<section id='<?php esc_html_e( $section_data->post_name ); ?>' class='full-height <?php esc_html_e( $section_color ); ?> section'>
+		<div class="frame">
+			<div <?php hybrid_attr( 'site-inner' ); ?>>
+				<?php if ( '' != $section_tagline = get_post_meta( $section_id, 'page_tagline', true ) ) {
+					echo '<h2 class="page-title-top page-title"><span>' . esc_html( $section_key[ 'the_section_title' ] ) . '</span></h2>';
+					echo '<span class="page-title-inside-text">' . esc_html( $section_tagline ) . '</span>';
+					echo '<h2 class="page-title-bottom page-title"><span>' . esc_html( $section_key[ 'the_section_title' ] ) . '</span></h2>';
+
+				} else {
+					echo '<h2 class="page-title">' . esc_html( $section_key[ 'the_section_title' ] ) . '</h2>';
+				} ?>
+				<p><?php echo wp_kses_post( $section_data->post_content ); ?></p>
+			</div><!--#site-inner-->
+		</div><!--/.frame-->
 	</section>
 	<?php
 }

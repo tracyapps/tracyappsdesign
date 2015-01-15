@@ -74,7 +74,7 @@ class Flagship_Site_Logo extends Flagship_Customizer_Base {
 	public function register( $wp_customize ) {
 
 		//Update the Customizer section title for discoverability.
-		$wp_customize->get_section( 'title_tagline' )->title = __( 'Site Title, Tagline, and Logo', 'tracyappsdesign' );
+		$wp_customize->get_section( 'title_tagline' )->title = __( 'Site Title, Tagline, and Logo', 'flagship-library' );
 
 		// Add a setting to hide header text if the theme isn't supporting the feature itself
 		if ( ! current_theme_supports( 'custom-header' ) ) {
@@ -92,7 +92,7 @@ class Flagship_Site_Logo extends Flagship_Customizer_Base {
 					$wp_customize,
 					'site_logo_header_text',
 					array(
-						'label'    => __( 'Display Header Text', 'tracyappsdesign' ),
+						'label'    => __( 'Display Header Text', 'flagship-library' ),
 						'section'  => 'title_tagline',
 						'settings' => 'site_logo_header_text',
 						'type'     => 'checkbox',
@@ -123,7 +123,7 @@ class Flagship_Site_Logo extends Flagship_Customizer_Base {
 				$wp_customize,
 				'site_logo',
 				array(
-					'label'    => __( 'Logo', 'tracyappsdesign' ),
+					'label'    => __( 'Logo', 'flagship-library' ),
 					'section'  => 'title_tagline',
 					'settings' => 'site_logo',
 				)
@@ -254,7 +254,7 @@ class Flagship_Site_Logo extends Flagship_Customizer_Base {
 
 		// If our attachment ID and the site logo ID match, this image is the site logo.
 		if ( $post->ID == $this->logo['id'] ) {
-			$media_states[] = __( 'Site Logo', 'tracyappsdesign' );
+			$media_states[] = __( 'Site Logo', 'flagship-library' );
 		}
 		return $media_states;
 	}

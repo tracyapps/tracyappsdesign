@@ -33,12 +33,134 @@
 		max-width: $wrap-max-width-large;
 	}
 }
+
+#content,
+#site-inner,
+#site-container,
+.frame,
+#video-frame {
+	min-height:100%;
+}
+
 .full-height {
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
 	height: 100%;
-	&::before {
-		height: 100%;
+	min-height: 100%;
+	width: 100%;
+	display: block;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	clear: both;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: $dark-gray;
+	color: $light-fog;
+
+
+
+	&.red {
+		background-color: $red;
+		@include letterpress-medium-dark-bg;
+
+	}
+
+	&.orange {
+		background-color: $orange;
+		color: $white;
+		@include letterpress-medium-dark-bg;
+
+	}
+
+	&.yellow {
+		background-color: $yellow;
+		color: $dark-gray;
+		@include letterpress-light-bg;
+
+		@include link-color-for-light-bg;
+		@include underline-overline-for-light-bg;
+
+	}
+
+	&.green {
+		background-color: $green;
+		color: $off-black;
+		@include letterpress-light-bg;
+
+		@include link-color-for-light-bg;
+		@include underline-overline-for-light-bg;
+
+	}
+
+	&.seafoam {
+		background-color: $seafoam;
+		@include letterpress-medium-dark-bg;
+
+	}
+
+	&.light-blue {
+		background-color: $light-blue;
+		color: $dark-gray;
+		@include letterpress-medium-light-bg;
+
+		@include link-color-for-light-bg;
+		@include underline-overline-for-light-bg;
+
+	}
+
+	&.grey-blue {
+		background-color: $grey-blue;
+		color: $light-fog;
+
+	}
+
+	&.purple {
+		background-color: $purple;
+		color: $white;
+
+	}
+
+	&#home {
+		min-height: 75%;
+		height: auto;
+	}
+
+	#video-frame,
+	.frame {
+		position: relative;
+		display: block;
+		overflow: hidden;
+		z-index: 1;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		width: 100%;
+		min-width: 100%;
+		height: auto;
+		min-height: 0;
+		padding: 5% 20%;
+		display: flex;
+
+		.site-inner {
+			display: block;
+			z-index: 10;
+		}
+
+		video {
+			min-height:100% !important;
+			min-width: 100% !important;
+			height: auto;
+			width: auto;
+		}
 	}
 }
+
+
 
 /* Column Widths and Positions
 --------------------------------------------- */

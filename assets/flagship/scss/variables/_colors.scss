@@ -7,21 +7,25 @@
 // Theme Colors (private vars)
 //------------------------------------------------------------------------------
 $off-black:   	#1c1e1f;
-$dark-gray:   	#494b4c;
+$dark-gray: 	#3a3c3d;
 $medium-gray: 	#676869;
 $light-gray:  	#a4a5a5;
 $fog:         	#ccc;
 $medium-fog:  	#e0e0e0;
 $light-fog:   	#f5f5f5;
 $white:       	#fff;
-$purple:		#9a3bf3;
+$transparent-white:	rgba(255, 255, 255, 0.8);
+$more-transparent-white:	rgba(255, 255, 255, 0.5);
+$transparent-black:	rgba(0, 0, 0, 0.8);
+$more-transparent-black:	rgba(0, 0, 0, 0.5);
+$purple: 		#6f43aa;
 $grey-blue:		#55558f;
 $light-blue:	#05beda;
-$seafoam:     	#33b787;
-$green:       	#98d900;
+$seafoam: 		#319876;
+$green: 		#a4d92c;
 $yellow:		#f7f950;
-$orange:		#d16700;
-$red:	 		#c73333;
+$orange: 		#cb701d;
+$red: 			#aa2836;
 
 
 
@@ -31,18 +35,18 @@ $base-background-color:                $light-fog;
 $base-font-color:                      $dark-gray;
 $base-accent-color:                    $light-gray;
 $base-heading-color:                   $off-black;
-$base-heading-hover-color:             $green;
+$base-heading-hover-color:             $purple;
 $base-blockquote-color:                $medium-gray;
 $base-link-color:                      $green;
-$base-link-hover-color:                lighten($seafoam, 10);
-$base-button-background-color:         $seafoam;
-$base-button-background-hover-color:   lighten($base-button-background-color, 10);
-$base-button-font-color:               $white;
-$base-button-font-hover-color:         $white;
+$base-link-hover-color:                lighten($green, 60);
+$base-button-background-color:         $green;
+$base-button-background-hover-color:   lighten($base-button-background-color, 5);
+$base-button-font-color:               $dark-gray;
+$base-button-font-hover-color:         $dark-gray;
 $base-border-color:                    $medium-fog;
 $base-selection-background-color:      $off-black;
 $base-selection-color:                 $white;
-$base-insert-color:                    lighten($seafoam, 45);
+$base-insert-color:                    lighten($green, 45);
 $cta-background-color:                 $dark-gray;
 
 // Form Colors
@@ -62,19 +66,19 @@ $header-link-color:        $white;
 
 // Navigation Colors
 //------------------------------------------------------------------------------
-$nav-background-color:           $white;
+$nav-background-color:           $more-transparent-white;
 $nav-border-color:               $base-border-color;
 $nav-link-color:                 $dark-gray;
 $nav-link-hover-color:           $base-link-color;
 
 $menu-header-border-color:       $base-border-color;
 $menu-header-color:              $light-gray;
-$menu-header-hover-color:        $base-link-color;
+$menu-header-hover-color:        $purple;
 
 $after-header-background-color:  $nav-background-color;
 $after-header-border-color:      $base-border-color;
 $after-header-link-color:        lighten($nav-link-color, 10);
-$after-header-link-hover-color:  $base-link-color;
+$after-header-link-hover-color:  $purple;
 
 $menu-button-background-color:   $base-button-background-color;
 $menu-button-link-color:         $white;

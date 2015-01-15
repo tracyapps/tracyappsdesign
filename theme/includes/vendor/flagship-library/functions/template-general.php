@@ -97,7 +97,7 @@ function flagship_get_credit_link() {
 	$name  = $theme->display( 'Author', false, true );
 
 	// Translators: Theme name.
-	$title = sprintf( __( 'Purpose-Built WordPress Theme by %s', 'tracyappsdesign' ), $name );
+	$title = sprintf( __( 'Purpose-Built WordPress Theme by %s', 'flagship-library' ), $name );
 
 	return sprintf( '<a class="author-link" href="%s" title="%s">%s</a>', esc_url( $uri ), esc_attr( $title ), $name );
 }

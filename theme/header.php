@@ -9,6 +9,10 @@
  * @link        https://flagshipwp.com/
  * @since       1.0.0
  */
+require_once 'includes/vendor/Mobile_Detect.php';
+$detect = new Mobile_Detect;
+$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'desktop');
+$scriptVersion = $detect->getScriptVersion();
 ?>
 <!DOCTYPE html>
 <?php tha_html_before(); ?>
@@ -18,6 +22,9 @@
 <?php tha_head_top(); ?>
 <?php wp_head(); ?>
 <?php tha_head_bottom(); ?>
+	<script type="text/javascript">
+		var stupid_stylesheet_directory = "<?php get_template_directory(); ?>";
+	</script>
 </head>
 
 <body <?php hybrid_attr( 'body' ); ?>>
@@ -42,10 +49,11 @@
 
 				<div <?php hybrid_attr( 'branding' ); ?>>
 					<?php hybrid_site_title(); ?>
+					<img src="<?php echo bloginfo( 'template_directory' ); ?>/images/logo.png" class="logo" />
 					<?php hybrid_site_description(); ?>
 				</div><!-- #branding -->
 
-				<?php hybrid_get_sidebar( 'header-right' ); ?>
+				<?php // hybrid_get_sidebar( 'header-right' ); ?>
 
 				<?php tha_header_bottom(); ?>
 

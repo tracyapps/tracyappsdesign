@@ -44,7 +44,7 @@ class Flagship_Search_Form {
 	 * @return string
 	 */
 	protected function get_label() {
-		$label = apply_filters( 'flagship_search_form_label', __( 'Search site', 'tracyappsdesign' ) );
+		$label = apply_filters( 'flagship_search_form_label', __( 'Search site', 'flagship-library' ) );
 
 		return sprintf(
 			'<label for="%s" class="screen-reader-text">%s</label>',
@@ -62,7 +62,7 @@ class Flagship_Search_Form {
 	 */
 	protected function get_input() {
 		$value = get_search_query() ? apply_filters( 'the_search_query', get_search_query() ) : '';
-		$placeholder = apply_filters( 'flagship_search_text', __( 'Search this website', 'tracyappsdesign' ) );
+		$placeholder = apply_filters( 'flagship_search_text', __( 'Search this website', 'flagship-library' ) );
 
 		return sprintf(
 			'<input type="search" name="s" id="%s" placeholder="%s" autocomplete="off" value="%s" />',
@@ -82,8 +82,8 @@ class Flagship_Search_Form {
 	protected function get_button() {
 		return sprintf(
 			'<button type="submit" aria-label="%1$s"><span class="screen-reader-text">%2$s</span></button>',
-			esc_attr( apply_filters( 'flagship_search_button_label', __( 'Search', 'tracyappsdesign' ) ) ),
-			esc_attr( apply_filters( 'flagship_search_button_text', __( 'Search', 'tracyappsdesign' ) ) )
+			esc_attr( apply_filters( 'flagship_search_button_label', __( 'Search', 'flagship-library' ) ) ),
+			esc_attr( apply_filters( 'flagship_search_button_text', __( 'Search', 'flagship-library' ) ) )
 		);
 	}
 

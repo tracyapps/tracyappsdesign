@@ -1,8 +1,14 @@
 .header {
-	background-color: $header-background-color;
-	color: $header-font-color;
+	background-color: $green;
+	color: $off-black;
+	@include letterpress-light-bg;
 	padding-left: 5%;
 	padding-right: 5%;
+
+	* {
+		color: $off-black;
+		@include letterpress-light-bg;
+	}
 
 	@include media($small-screen-up) {
 		padding-left: 0;
@@ -10,7 +16,7 @@
 	}
 
 	.wrap {
-		padding: 20px 0;
+		padding: 15% 0 20% 0;
 	}
 }
 
@@ -21,12 +27,16 @@
 	float: none;
 	margin-right: 0;
 	padding: 10px 0;
-	width: auto;
+	width: 100%;
+	display: block;
+	text-align: center;
+	position: relative;
 
 	@include media($medium-screen-up) {
-		@include span-columns(3);
-		float: left;
+
 	}
+
+	.logo {margin: 0 auto;}
 }
 
 .site-title {
@@ -35,20 +45,23 @@
 	font-weight: 600;
 	line-height: 1.2;
 	text-rendering: optimizeLegibility;
+	display: none;
 
 	a,
 	a:hover,
 	a:focus {
-		color: $header-link-color;
+		color: $off-black;
 	}
 }
 
 .site-description {
-	color: $header-font-color;
+	color: $off-black;
 	font-family: $header-font-family;
-	font-size: $secondary-font-size;
+	font-size: 2em;
 	font-weight: 400;
-	line-height: 1.5;
+	line-height: 1.3;
+	opacity: 0.6;
+	margin: 10% 15%;
 }
 
 .site-description,
