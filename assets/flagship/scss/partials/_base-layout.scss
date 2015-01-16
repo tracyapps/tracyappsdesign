@@ -74,6 +74,7 @@
 		color: $white;
 		@include letterpress-medium-dark-bg;
 
+		@include light-text-form-styles;
 	}
 
 	&.yellow {
@@ -116,12 +117,14 @@
 		background-color: $grey-blue;
 		color: $light-fog;
 
+		@include light-text-form-styles;
 	}
 
 	&.purple {
 		background-color: $purple;
 		color: $white;
 
+		@include light-text-form-styles;
 	}
 
 	&#home {

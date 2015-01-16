@@ -23,3 +23,7 @@
 	.page-title-top {border-top: 1px solid rgba(0, 0, 0, 0.4);}
 	.page-title-bottom {border-bottom: 1px solid rgba(0, 0, 0, 0.4);}
 }
+
+@mixin light-text-form-styles {
+	div.frm_forms label {color: $white;}
+}

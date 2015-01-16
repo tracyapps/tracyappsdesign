@@ -1,3 +1,11 @@
+//general
+
+fieldset {
+	border: 0;
+}
+
+
+//gravity forms
 div.gform_wrapper {
 
 	input[type="email"],
@@ -20,5 +28,16 @@ div.gform_wrapper {
 	.gform_footer input[type=submit] {
 		font-size: $secondary-font-size;
 		padding: 16px 24px;
+	}
+}
+
+//formidable
+div.frm_forms {
+
+	&.full-width-form {
+		input {
+			width:100%;
+			display: block;
+		}
 	}
 }

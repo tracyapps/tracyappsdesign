@@ -1377,7 +1377,12 @@ Structure and Layout
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* line 79, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 28, ../assets/flagship/scss/variables/_mixins.scss */
+.full-height.orange div.frm_forms label {
+	color: #fff;
+}
+
+/* line 80, ../assets/flagship/scss/partials/_base-layout.scss */
 .full-height.yellow {
 	background-color: #f7f950;
 	color: #3a3c3d;
@@ -1404,7 +1409,7 @@ Structure and Layout
 	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
 
-/* line 89, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 90, ../assets/flagship/scss/partials/_base-layout.scss */
 .full-height.green {
 	background-color: #a4d92c;
 	color: #1c1e1f;
@@ -1431,13 +1436,13 @@ Structure and Layout
 	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
 
-/* line 99, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 100, ../assets/flagship/scss/partials/_base-layout.scss */
 .full-height.seafoam {
 	background-color: #319876;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* line 105, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 106, ../assets/flagship/scss/partials/_base-layout.scss */
 .full-height.light-blue {
 	background-color: #05beda;
 	color: #3a3c3d;
@@ -1464,25 +1469,35 @@ Structure and Layout
 	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
 
-/* line 115, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 116, ../assets/flagship/scss/partials/_base-layout.scss */
 .full-height.grey-blue {
 	background-color: #55558f;
 	color: #f5f5f5;
 }
 
-/* line 121, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 28, ../assets/flagship/scss/variables/_mixins.scss */
+.full-height.grey-blue div.frm_forms label {
+	color: #fff;
+}
+
+/* line 123, ../assets/flagship/scss/partials/_base-layout.scss */
 .full-height.purple {
 	background-color: #6f43aa;
 	color: #fff;
 }
 
-/* line 127, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 28, ../assets/flagship/scss/variables/_mixins.scss */
+.full-height.purple div.frm_forms label {
+	color: #fff;
+}
+
+/* line 130, ../assets/flagship/scss/partials/_base-layout.scss */
 .full-height#home {
 	height: auto;
 	min-height: 75%;
 }
 
-/* line 132, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 135, ../assets/flagship/scss/partials/_base-layout.scss */
 .full-height #video-frame,
 .full-height .frame {
 	display: block;
@@ -1505,14 +1520,14 @@ Structure and Layout
 	z-index: 1;
 }
 
-/* line 149, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 152, ../assets/flagship/scss/partials/_base-layout.scss */
 .full-height #video-frame .site-inner,
 .full-height .frame .site-inner {
 	display: block;
 	z-index: 10;
 }
 
-/* line 154, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 157, ../assets/flagship/scss/partials/_base-layout.scss */
 .full-height #video-frame video,
 .full-height .frame video {
 	height: auto;
@@ -1529,18 +1544,18 @@ Structure and Layout
 /* Content
 -------------------- */
 
-/* line 171, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 174, ../assets/flagship/scss/partials/_base-layout.scss */
 .layout-1c-narrow .content {
 	padding: 0;
 }
 
 @media screen and (min-width: 1023px) {
-	/* line 177, ../assets/flagship/scss/partials/_base-layout.scss */
+	/* line 180, ../assets/flagship/scss/partials/_base-layout.scss */
 	.layout-1c-narrow .content {
 		padding: 0 15%;
 	}
 
-/* line 181, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 184, ../assets/flagship/scss/partials/_base-layout.scss */
 	.layout-2c-l .content,
 	.layout-2c-r .content {
 		display: block;
@@ -1555,7 +1570,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 186, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 189, ../assets/flagship/scss/partials/_base-layout.scss */
 	.layout-2c-r .content {
 		float: left;
 		margin-left: 0;
@@ -1565,7 +1580,7 @@ Structure and Layout
 /* Primary Sidebar
   -------------------- */
 
-/* line 193, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 196, ../assets/flagship/scss/partials/_base-layout.scss */
 	.sidebar {
 		display: block;
 		float: right;
@@ -1578,7 +1593,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 197, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 200, ../assets/flagship/scss/partials/_base-layout.scss */
 	.layout-2c-l .sidebar {
 		float: left;
 		margin-left: 0;
@@ -1588,7 +1603,7 @@ Structure and Layout
 /* Secondary Sidebar
   -------------------- */
 
-/* line 204, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 207, ../assets/flagship/scss/partials/_base-layout.scss */
 	.sidebar-secondary {
 		display: block;
 		float: right;
@@ -1601,14 +1616,14 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 208, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 211, ../assets/flagship/scss/partials/_base-layout.scss */
 	.content-sidebar-sidebar .sidebar-secondary {
 		float: left;
 		margin-left: 0;
 	}
 }
 
-/* line 214, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 217, ../assets/flagship/scss/partials/_base-layout.scss */
 .layout-1c .sidebar,
 .layout-1c-narrow .sidebar {
 	display: none;
@@ -1619,7 +1634,7 @@ Structure and Layout
 --------------------------------------------- */
 
 @media screen and (min-width: 810px) {
-	/* line 224, ../assets/flagship/scss/partials/_base-layout.scss */
+	/* line 227, ../assets/flagship/scss/partials/_base-layout.scss */
 	.one-half,
 	.three-sixths,
 	.two-fourths {
@@ -1636,7 +1651,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 230, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 233, ../assets/flagship/scss/partials/_base-layout.scss */
 	.one-third,
 	.two-sixths {
 		display: block;
@@ -1651,7 +1666,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 235, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 238, ../assets/flagship/scss/partials/_base-layout.scss */
 	.four-sixths,
 	.two-thirds {
 		display: block;
@@ -1666,7 +1681,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 240, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 243, ../assets/flagship/scss/partials/_base-layout.scss */
 	.one-fourth {
 		display: block;
 		float: right;
@@ -1679,7 +1694,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 244, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 247, ../assets/flagship/scss/partials/_base-layout.scss */
 	.three-fourths {
 		display: block;
 		float: right;
@@ -1692,7 +1707,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 248, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 251, ../assets/flagship/scss/partials/_base-layout.scss */
 	.one-sixth {
 		display: block;
 		float: right;
@@ -1705,7 +1720,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 252, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 255, ../assets/flagship/scss/partials/_base-layout.scss */
 	.five-sixths {
 		display: block;
 		float: right;
@@ -1718,7 +1733,7 @@ Structure and Layout
 		margin-left: 0;
 	}
 
-/* line 256, ../assets/flagship/scss/partials/_base-layout.scss */
+/* line 259, ../assets/flagship/scss/partials/_base-layout.scss */
 	.last {
 		clear: left;
 		margin-left: 0;
@@ -3881,7 +3896,12 @@ Plugins
 /* Gravity Forms
 --------------------------------------------- */
 
-/* line 3, ../assets/flagship/scss/partials/_gravity-forms.scss */
+/* line 3, ../assets/flagship/scss/partials/_forms.scss */
+fieldset {
+	border: 0;
+}
+
+/* line 11, ../assets/flagship/scss/partials/_forms.scss */
 div.gform_wrapper input[type="email"],
 div.gform_wrapper input[type="text"],
 div.gform_wrapper textarea,
@@ -3890,21 +3910,27 @@ div.gform_wrapper .ginput_complex label {
 	padding: 16px;
 }
 
-/* line 11, ../assets/flagship/scss/partials/_gravity-forms.scss */
+/* line 19, ../assets/flagship/scss/partials/_forms.scss */
 div.gform_wrapper .ginput_complex label {
 	padding: 0;
 }
 
-/* line 15, ../assets/flagship/scss/partials/_gravity-forms.scss */
+/* line 23, ../assets/flagship/scss/partials/_forms.scss */
 div.gform_wrapper li,
 div.gform_wrapper form li {
 	margin: 16px 0 0;
 }
 
-/* line 20, ../assets/flagship/scss/partials/_gravity-forms.scss */
+/* line 28, ../assets/flagship/scss/partials/_forms.scss */
 div.gform_wrapper .gform_footer input[type=submit] {
 	font-size: 16px;
 	padding: 16px 24px;
+}
+
+/* line 38, ../assets/flagship/scss/partials/_forms.scss */
+div.frm_forms.full-width-form input {
+	display: block;
+	width: 100%;
 }
 
 
