@@ -168,10 +168,10 @@ window.tracyappsdesign = window.tracyappsdesign || {};
 
 
 	// animate anchors
-	$('ul.nav-menu.after-header a').bind('click',function(event){
+	$( 'a[href^="#"]' ).bind('click',function(event){
 		var $anchor = $(this);
 
-		$('html, body').stop().animate({
+		$( 'html, body' ).stop().animate({
 			scrollTop: $($anchor.attr('href')).offset().top
 		}, 1500,'easeInOutExpo');
 		/*
