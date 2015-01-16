@@ -71,7 +71,7 @@ function tracyappsdesign_loop_home_section( $section_key ) {
 				} else {
 					echo '<h2 class="page-title">' . esc_html( $section_key[ 'the_section_title' ] ) . '</h2>';
 				} ?>
-				<p><?php echo wp_kses_post( $section_data->post_content ); ?></p>
+				<p><?php echo apply_filters('the_content', $section_data->post_content); ?></p>
 			</div><!--#site-inner-->
 		</div><!--/.frame-->
 	</section>
