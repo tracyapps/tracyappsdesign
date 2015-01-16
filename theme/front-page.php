@@ -41,7 +41,7 @@
 					endforeach;
 					?>
 
-				<?php get_template_part( 'content/parallax-stuff' ); ?>
+				<?php // coming soon get_template_part( 'content/parallax-stuff' ); ?>
 
 			<?php endwhile; ?>
 
