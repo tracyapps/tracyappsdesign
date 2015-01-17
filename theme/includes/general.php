@@ -60,7 +60,7 @@ function tracyappsdesign_loop_home_section( $section_key ) {
 	$section_data = get_post( $section_id );
 	$section_color = get_post_meta( $section_id, 'page_bg_color', true );
 	?>
-	<section id='<?php esc_html_e( $section_data->post_name ); ?>' class='full-height <?php esc_html_e( $section_color ); ?> section'>
+	<section id='<?php esc_html_e( $section_data->post_name ); ?>' class='<?php if ( $deviceType == 'desktop' ) { echo 'full-height '; } ?><?php esc_html_e( $section_color ); ?> section'>
 		<div class="frame">
 			<div <?php hybrid_attr( 'site-inner' ); ?>>
 				<?php if ( '' != $section_tagline = get_post_meta( $section_id, 'page_tagline', true ) ) {

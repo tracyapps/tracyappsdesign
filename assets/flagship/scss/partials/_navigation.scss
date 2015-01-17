@@ -155,7 +155,8 @@
 /* After Header Navigation
 --------------------------------------------- */
 
-.menu-after-header {
+.menu-after-header,
+nav#menu-after-header.menu.menu-after-header {
 	background-color: $after-header-background-color;
 	border-bottom: 1px solid $after-header-border-color;
 	display: none;
@@ -183,6 +184,19 @@
 
 /* Responsive Menu
 --------------------------------------------- */
+.js #menu {
+	display:none;
+}
+
+.js .slicknav_menu {
+	display:block;
+}
+
+@include media($small-screen-up) {
+	.slicknav_menu {
+		display:none;
+	}
+}
 
 .menu-button {
 	@include transition (all 0.2s ease-in-out);
@@ -209,80 +223,121 @@
 	}
 }
 
-.sidr {
-	display: none;
+// slicknav
+
+/*
+    Mobile Menu Core Style
+*/
+
+.slicknav_btn { position: relative; display: block; vertical-align: middle; float: right; padding: 0.438em 0.625em 0.438em 0.625em; line-height: 1.125em; cursor: pointer; }
+.slicknav_menu  .slicknav_menutxt { display: block; line-height: 1.188em; float: left; }
+.slicknav_menu .slicknav_icon { float: left; margin: 0.188em 0 0 0.438em; }
+.slicknav_menu .slicknav_no-text { margin: 0 }
+.slicknav_menu .slicknav_icon-bar { display: block; width: 1.125em; height: 0.125em; -webkit-border-radius: 1px; -moz-border-radius: 1px; border-radius: 1px; -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
+.slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar { margin-top: 0.188em }
+.slicknav_nav { clear: both }
+.slicknav_nav ul,
+.slicknav_nav li { display: block }
+.slicknav_nav .slicknav_arrow { font-size: 0.8em; margin: 0 0 0 0.4em; }
+.slicknav_nav .slicknav_item { cursor: pointer; }
+.slicknav_nav .slicknav_row { display: block; }
+.slicknav_nav a { display: block }
+.slicknav_nav .slicknav_item a,
+.slicknav_nav .slicknav_parent-link a { display: inline }
+.slicknav_menu:before,
+.slicknav_menu:after { content: " "; display: table; }
+.slicknav_menu:after { clear: both }
+/* IE6/7 support */
+.slicknav_menu { *zoom: 1 }
+
+/*
+    User Default Style
+    Change the following styles to modify the appearance of the menu.
+*/
+
+.slicknav_menu {
+	font-size:16px;
 	position: fixed;
 	top: 0;
-	height: 100%;
-	z-index: $sidr-z-index;
-	width: 260px;
-	overflow-x: hidden;
-	overflow-y: auto;
-	background: $sidr-background-color;
+	display: block;
+	z-index: 500;
+	width: 100%;
+}
+/* Button */
+.slicknav_btn {
+	margin: 5px 5px 6px;
+	text-decoration:none;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	background-color: $sidr-background-color;
+}
+/* Button Text */
+.slicknav_menu  .slicknav_menutxt {
+	color: $sidr-color;
+	font-weight: bold;
+	text-shadow: 0 1px 3px #000;
+}
+/* Button Lines */
+.slicknav_menu .slicknav_icon-bar {
+	background-color: $light-gray;
+}
+.slicknav_menu {
+	background: $more-transparent-black;
+	padding: 0 10px;
+}
+.slicknav_nav {
+	color: $sidr-color;
+	margin: 0;
+	padding: 0;
+	font-size: 0.875em;
+}
+.slicknav_nav, .slicknav_nav ul {
+	list-style: none;
+	overflow: hidden;
+}
+.slicknav_nav ul {
+	padding: 0;
+	margin: 0 0 0 20px;
+}
+.slicknav_nav .slicknav_row {
+	padding:$sidr-item-padding;
+	margin:2px 5px;
+}
+.slicknav_nav a{
+	padding:5px 10px;
+	margin:2px 5px;
+	text-decoration:none;
+	color: $white;
+	@include letterpress-dark-bg;
+}
+.slicknav_nav .slicknav_item a,
+.slicknav_nav .slicknav_parent-link a {
+	padding:0;
+	margin:0;
+}
+.slicknav_nav .slicknav_row:hover {
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	background: $transparent-black;
+	color:#fff;
+}
+.slicknav_nav a:hover{
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	background: $transparent-black;
+	color:#222;
+}
+.slicknav_nav .slicknav_txtnode {
+	margin-left:15px;
+}
 
-	&.right {
-		/* @noflip */
-		left: auto;
-		/* @noflip */
-		right: -260px;
-	}
-
-	&.left {
-		/* @noflip */
-		left: -260px;
-		/* @noflip */
-		right: auto;
-	}
-
-	.nav-menu {
-		.menu-item {
-			display: block;
-		}
-
-		li a {
-			color: $sidr-color;
-			padding: $sidr-item-padding;
-			border-bottom: 1px solid $sidr-border-color;
-		}
-
-		li a:hover,
-		li a:focus {
-			color: $sidr-hover-color;
-			background: lighten($sidr-background-color, 3);
-		}
-	}
-
-	.sub-menu,
-	.sub-menu .sub-menu {
-		position: static;
-		width: 100%;
-		margin: 0;
-		background: transparent;
-		border-top: 0;
-		opacity: 1;
-		box-shadow: none;
-
-		li a {
-			width: auto;
-			padding: $sidr-item-padding;
-			padding-left: $sidr-item-padding + 10px;
-			color: $sidr-subnav-color;
-			background: $sidr-background-color;
-			border-bottom: 1px solid $sidr-border-color;
-			border-top: 0;
-			border-left: 0;
-			border-right: 0;
-		}
-
-		li a:hover,
-		li a:focus {
-			color: $sidr-hover-color;
-			background: lighten($sidr-background-color, 3);
-		}
-	}
-
-	.sub-menu .sub-menu li a {
-		padding-left: $sidr-item-padding + 20px;
+@include media($small-screen-up) {
+	.slicknav_menu {
+		display: none;
 	}
 }
 

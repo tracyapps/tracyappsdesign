@@ -26,7 +26,7 @@
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-					<section id="home" class="full-height section">
+					<section id="home" class="<?php if ( $deviceType == 'desktop' ) { echo 'full-height '; } ?>section">
 						<div id="video-frame">
 							<div <?php hybrid_attr( 'site-inner' ); ?>>
 								<?php hybrid_get_content_template(); ?>

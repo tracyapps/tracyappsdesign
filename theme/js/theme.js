@@ -163,10 +163,12 @@
   };
 })( jQuery, window, document );
 
-/*! Sidr - v1.2.1 - 2013-11-06
- * https://github.com/artberri/sidr
- * Copyright (c) 2013 Alberto Varela; Licensed MIT */
-(function(e){var t=!1,i=!1,n={isUrl:function(e){var t=RegExp("^(https?:\\/\\/)?((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|((\\d{1,3}\\.){3}\\d{1,3}))(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*(\\?[;&a-z\\d%_.~+=-]*)?(\\#[-a-z\\d_]*)?$","i");return t.test(e)?!0:!1},loadContent:function(e,t){e.html(t)},addPrefix:function(e){var t=e.attr("id"),i=e.attr("class");"string"==typeof t&&""!==t&&e.attr("id",t.replace(/([A-Za-z0-9_.\-]+)/g,"sidr-id-$1")),"string"==typeof i&&""!==i&&"sidr-inner"!==i&&e.attr("class",i.replace(/([A-Za-z0-9_.\-]+)/g,"sidr-class-$1")),e.removeAttr("style")},execute:function(n,s,a){"function"==typeof s?(a=s,s="sidr"):s||(s="sidr");var r,d,l,c=e("#"+s),u=e(c.data("body")),f=e("html"),p=c.outerWidth(!0),g=c.data("speed"),h=c.data("side"),m=c.data("displace"),v=c.data("onOpen"),y=c.data("onClose"),x="sidr"===s?"sidr-open":"sidr-open "+s+"-open";if("open"===n||"toggle"===n&&!c.is(":visible")){if(c.is(":visible")||t)return;if(i!==!1)return o.close(i,function(){o.open(s)}),void 0;t=!0,"left"===h?(r={left:p+"px"},d={left:"0px"}):(r={right:p+"px"},d={right:"0px"}),u.is("body")&&(l=f.scrollTop(),f.css("overflow-x","hidden").scrollTop(l)),m?u.addClass("sidr-animating").css({width:u.width(),position:"absolute"}).animate(r,g,function(){e(this).addClass(x)}):setTimeout(function(){e(this).addClass(x)},g),c.css("display","block").animate(d,g,function(){t=!1,i=s,"function"==typeof a&&a(s),u.removeClass("sidr-animating")}),v()}else{if(!c.is(":visible")||t)return;t=!0,"left"===h?(r={left:0},d={left:"-"+p+"px"}):(r={right:0},d={right:"-"+p+"px"}),u.is("body")&&(l=f.scrollTop(),f.removeAttr("style").scrollTop(l)),u.addClass("sidr-animating").animate(r,g).removeClass(x),c.animate(d,g,function(){c.removeAttr("style").hide(),u.removeAttr("style"),e("html").removeAttr("style"),t=!1,i=!1,"function"==typeof a&&a(s),u.removeClass("sidr-animating")}),y()}}},o={open:function(e,t){n.execute("open",e,t)},close:function(e,t){n.execute("close",e,t)},toggle:function(e,t){n.execute("toggle",e,t)},toogle:function(e,t){n.execute("toggle",e,t)}};e.sidr=function(t){return o[t]?o[t].apply(this,Array.prototype.slice.call(arguments,1)):"function"!=typeof t&&"string"!=typeof t&&t?(e.error("Method "+t+" does not exist on jQuery.sidr"),void 0):o.toggle.apply(this,arguments)},e.fn.sidr=function(t){var i=e.extend({name:"sidr",speed:200,side:"left",source:null,renaming:!0,body:"body",displace:!0,onOpen:function(){},onClose:function(){}},t),s=i.name,a=e("#"+s);if(0===a.length&&(a=e("<div />").attr("id",s).appendTo(e("body"))),a.addClass("sidr").addClass(i.side).data({speed:i.speed,side:i.side,body:i.body,displace:i.displace,onOpen:i.onOpen,onClose:i.onClose}),"function"==typeof i.source){var r=i.source(s);n.loadContent(a,r)}else if("string"==typeof i.source&&n.isUrl(i.source))e.get(i.source,function(e){n.loadContent(a,e)});else if("string"==typeof i.source){var d="",l=i.source.split(",");if(e.each(l,function(t,i){d+='<div class="sidr-inner">'+e(i).html()+"</div>"}),i.renaming){var c=e("<div />").html(d);c.find("*").each(function(t,i){var o=e(i);n.addPrefix(o)}),d=c.html()}n.loadContent(a,d)}else null!==i.source&&e.error("Invalid Sidr Source");return this.each(function(){var t=e(this),i=t.data("sidr");i||(t.data("sidr",s),"ontouchstart"in document.documentElement?(t.bind("touchstart",function(e){e.originalEvent.touches[0],this.touched=e.timeStamp}),t.bind("touchend",function(e){var t=Math.abs(e.timeStamp-this.touched);200>t&&(e.preventDefault(),o.toggle(s))})):t.click(function(e){e.preventDefault(),o.toggle(s)}))})}})(jQuery);
+/*!
+    SlickNav Responsive Mobile Menu v1.0.1
+    (c) 2014 Josh Cope
+    licensed under MIT
+*/
+;(function(e,t,n){function o(t,n){this.element=t;this.settings=e.extend({},r,n);this._defaults=r;this._name=i;this.init()}var r={label:"MENU",duplicate:true,duration:200,easingOpen:"swing",easingClose:"swing",closedSymbol:"&#9658;",openedSymbol:"&#9660;",prependTo:"body",parentTag:"a",closeOnClick:false,allowParentLinks:false,nestedParentLinks:true,showChildren:false,init:function(){},open:function(){},close:function(){}},i="slicknav",s="slicknav";o.prototype.init=function(){var n=this,r=e(this.element),i=this.settings,o,u;if(i.duplicate){n.mobileNav=r.clone();n.mobileNav.removeAttr("id");n.mobileNav.find("*").each(function(t,n){e(n).removeAttr("id")})}else{n.mobileNav=r}o=s+"_icon";if(i.label===""){o+=" "+s+"_no-text"}if(i.parentTag=="a"){i.parentTag='a href="#"'}n.mobileNav.attr("class",s+"_nav");u=e('<div class="'+s+'_menu"></div>');n.btn=e(["<"+i.parentTag+' aria-haspopup="true" tabindex="0" class="'+s+"_btn "+s+'_collapsed">','<span class="'+s+'_menutxt">'+i.label+"</span>",'<span class="'+o+'">','<span class="'+s+'_icon-bar"></span>','<span class="'+s+'_icon-bar"></span>','<span class="'+s+'_icon-bar"></span>',"</span>","</"+i.parentTag+">"].join(""));e(u).append(n.btn);e(i.prependTo).prepend(u);u.append(n.mobileNav);var a=n.mobileNav.find("li");e(a).each(function(){var t=e(this),r={};r.children=t.children("ul").attr("role","menu");t.data("menu",r);if(r.children.length>0){var o=t.contents(),u=false;nodes=[];e(o).each(function(){if(!e(this).is("ul")){nodes.push(this)}else{return false}if(e(this).is("a")){u=true}});var a=e("<"+i.parentTag+' role="menuitem" aria-haspopup="true" tabindex="-1" class="'+s+'_item"/>');if(!i.allowParentLinks||i.nestedParentLinks||!u){var f=e(nodes).wrapAll(a).parent();f.addClass(s+"_row")}else e(nodes).wrapAll('<span class="'+s+"_parent-link "+s+'_row"/>').parent();t.addClass(s+"_collapsed");t.addClass(s+"_parent");var l=e('<span class="'+s+'_arrow">'+i.closedSymbol+"</span>");if(i.allowParentLinks&&!i.nestedParentLinks&&u)l=l.wrap(a).parent();e(nodes).last().after(l)}else if(t.children().length===0){t.addClass(s+"_txtnode")}t.children("a").attr("role","menuitem").click(function(t){if(i.closeOnClick&&!e(t.target).parent().closest("li").hasClass(s+"_parent")){e(n.btn).click()}});if(i.closeOnClick&&i.allowParentLinks){t.children("a").children("a").click(function(t){e(n.btn).click()});t.find("."+s+"_parent-link a:not(."+s+"_item)").click(function(t){e(n.btn).click()})}});e(a).each(function(){var t=e(this).data("menu");if(!i.showChildren){n._visibilityToggle(t.children,null,false,null,true)}});n._visibilityToggle(n.mobileNav,null,false,"init",true);n.mobileNav.attr("role","menu");e(t).mousedown(function(){n._outlines(false)});e(t).keyup(function(){n._outlines(true)});e(n.btn).click(function(e){e.preventDefault();n._menuToggle()});n.mobileNav.on("click","."+s+"_item",function(t){t.preventDefault();n._itemClick(e(this))});e(n.btn).keydown(function(e){var t=e||event;if(t.keyCode==13){e.preventDefault();n._menuToggle()}});n.mobileNav.on("keydown","."+s+"_item",function(t){var r=t||event;if(r.keyCode==13){t.preventDefault();n._itemClick(e(t.target))}});if(i.allowParentLinks&&i.nestedParentLinks){e("."+s+"_item a").click(function(e){e.stopImmediatePropagation()})}};o.prototype._menuToggle=function(e){var t=this;var n=t.btn;var r=t.mobileNav;if(n.hasClass(s+"_collapsed")){n.removeClass(s+"_collapsed");n.addClass(s+"_open")}else{n.removeClass(s+"_open");n.addClass(s+"_collapsed")}n.addClass(s+"_animating");t._visibilityToggle(r,n.parent(),true,n)};o.prototype._itemClick=function(e){var t=this;var n=t.settings;var r=e.data("menu");if(!r){r={};r.arrow=e.children("."+s+"_arrow");r.ul=e.next("ul");r.parent=e.parent();if(r.parent.hasClass(s+"_parent-link")){r.parent=e.parent().parent();r.ul=e.parent().next("ul")}e.data("menu",r)}if(r.parent.hasClass(s+"_collapsed")){r.arrow.html(n.openedSymbol);r.parent.removeClass(s+"_collapsed");r.parent.addClass(s+"_open");r.parent.addClass(s+"_animating");t._visibilityToggle(r.ul,r.parent,true,e)}else{r.arrow.html(n.closedSymbol);r.parent.addClass(s+"_collapsed");r.parent.removeClass(s+"_open");r.parent.addClass(s+"_animating");t._visibilityToggle(r.ul,r.parent,true,e)}};o.prototype._visibilityToggle=function(t,n,r,i,o){var u=this;var a=u.settings;var f=u._getActionItems(t);var l=0;if(r){l=a.duration}if(t.hasClass(s+"_hidden")){t.removeClass(s+"_hidden");t.slideDown(l,a.easingOpen,function(){e(i).removeClass(s+"_animating");e(n).removeClass(s+"_animating");if(!o){a.open(i)}});t.attr("aria-hidden","false");f.attr("tabindex","0");u._setVisAttr(t,false)}else{t.addClass(s+"_hidden");t.slideUp(l,this.settings.easingClose,function(){t.attr("aria-hidden","true");f.attr("tabindex","-1");u._setVisAttr(t,true);t.hide();e(i).removeClass(s+"_animating");e(n).removeClass(s+"_animating");if(!o){a.close(i)}else if(i=="init"){a.init()}})}};o.prototype._setVisAttr=function(t,n){var r=this;var i=t.children("li").children("ul").not("."+s+"_hidden");if(!n){i.each(function(){var t=e(this);t.attr("aria-hidden","false");var i=r._getActionItems(t);i.attr("tabindex","0");r._setVisAttr(t,n)})}else{i.each(function(){var t=e(this);t.attr("aria-hidden","true");var i=r._getActionItems(t);i.attr("tabindex","-1");r._setVisAttr(t,n)})}};o.prototype._getActionItems=function(e){var t=e.data("menu");if(!t){t={};var n=e.children("li");var r=n.find("a");t.links=r.add(n.find("."+s+"_item"));e.data("menu",t)}return t.links};o.prototype._outlines=function(t){if(!t){e("."+s+"_item, ."+s+"_btn").css("outline","none")}else{e("."+s+"_item, ."+s+"_btn").css("outline","")}};o.prototype.toggle=function(){var e=this;e._menuToggle()};o.prototype.open=function(){var e=this;if(e.btn.hasClass(s+"_collapsed")){e._menuToggle()}};o.prototype.close=function(){var e=this;if(e.btn.hasClass(s+"_open")){e._menuToggle()}};e.fn[i]=function(t){var n=arguments;if(t===undefined||typeof t==="object"){return this.each(function(){if(!e.data(this,"plugin_"+i)){e.data(this,"plugin_"+i,new o(this,t))}})}else if(typeof t==="string"&&t[0]!=="_"&&t!=="init"){var r;this.each(function(){var s=e.data(this,"plugin_"+i);if(s instanceof o&&typeof s[t]==="function"){r=s[t].apply(s,Array.prototype.slice.call(n,1))}});return r!==undefined?r:this}}})(jQuery,document,window)
 /*
  *  Vide - v0.3.0
  *  Easy as hell jQuery plugin for video backgrounds.
@@ -437,99 +439,14 @@ window.tracyappsdesign = window.tracyappsdesign || {};
 			}
 		},
 
-		//* Mobile Menu
-		mobileNav: function() {
-			var menuSelectors = [],
-				menuSide      = 'right',
-				name          = 'sidr-main',
-				responsiveMenuButton = $( '<button type="button" id="responsive-menu-button" class="menu-button" aria-expanded="false"></button>' );
-
-			if ( $( '#menu-header' ).length ) {
-				menuSelectors.push( '#menu-header' );
+		slicknav: function() {
+			if ( $.fn.slicknav ) {
+				$('#after-header').slicknav({
+					closeOnClick: true
+				});
 			}
-
-			if ( $( '#after-header' ).length ) {
-				menuSelectors.push( '#menu-after-header' );
-			}
-
-			//* End here if we don't have a menu.
-			if ( menuSelectors.length === 0 ) {
-				return;
-			}
-
-			//* Add a responsive menu button.
-			$( '#branding' ).before( responsiveMenuButton );
-
-			//* Switch the menu side if a RTL langauge is in use.
-			if ( $( 'body' ).hasClass( 'rtl' ) ) {
-				menuSide = 'left';
-			}
-
-			//* Sidr menu init.
-			responsiveMenuButton.sidr( {
-				name: name,
-				renaming: false,
-				side: menuSide,
-				source: menuSelectors.toString(),
-				onOpen: function() {
-					var navEl        = $( '#' + name ),
-						navItems     = $( '#' + name + ' a' ),
-						firstNavItem = navItems.first(),
-						lastNavItem  = navItems.last();
-
-					responsiveMenuButton.toggleClass( 'activated' ).attr( 'aria-expanded', true );
-					$( '.site-container' ).on( 'click.CloseSidr', function( event ) {
-						$.sidr( 'close', name );
-						event.preventDefault();
-					});
-					// Add some attributes to the menu container.
-					navEl.attr({ role: 'navigation', tabindex: '0' }).focus();
-					// When focus is on the menu container.
-					navEl.on( 'keydown.sidrNav', function( event ) {
-						// If it's not the tab key then return.
-						if ( 9 !== event.keyCode ) {
-							return;
-						}
-						// When tabbing forwards and tabbing out of the last link.
-						if ( lastNavItem[0] === event.target && ! event.shiftKey ) {
-							responsiveMenuButton.focus();
-							return false;
-						// When tabbing backwards and tabbing out of the first link OR the menu container.
-						} else if ( ( firstNavItem[0] === event.target || navEl[0] === event.target ) && event.shiftKey ) {
-							responsiveMenuButton.focus();
-							return false;
-						}
-					});
-					// When focus is on the toggle button.
-					responsiveMenuButton.on( 'keydown.sidrNav', function( event ) {
-						// If it's not the tab key then return.
-						if ( 9 !== event.keyCode ) {
-							return;
-						}
-						// when tabbing forwards
-						if ( responsiveMenuButton[0] === event.target && ! event.shiftKey ) {
-							navEl.focus();
-							return false;
-						}
-					});
-				},
-				onClose: function() {
-					responsiveMenuButton.toggleClass( 'activated' ).attr( 'aria-expanded', false );
-					$( '.site-container' ).off( 'click.CloseSidr' );
-					// Remove the toggle button keydown event.
-					responsiveMenuButton.off( 'keydown.sidrNav' );
-				}
-			});
-
-			//* Close sidr menu if open on larger screens
-			$( window ).resize(function() {
-				if( window.innerWidth > 810 ) {
-					$.sidr('close', 'sidr-main');
-					responsiveMenuButton.attr( 'aria-expanded', false );
-				}
-			});
-
 		},
+
 
 		//* FitVids Init
 		loadFitVids: function() {
@@ -540,30 +457,46 @@ window.tracyappsdesign = window.tracyappsdesign || {};
 
 	});
 
+	// slick nav (mobile)
+	$(function() {
+		$(window).resize(function(){
+			if( window.innerWidth <= 810 ) {
+				if ( $.fn.slicknav ) {
+					$('#after-header').slicknav({
+						closeOnClick: true
+					});
+				}
+			}
+		});
+	});
+
 	//  sticky nav
 	$(function() {
+		$(window).resize(function(){
+			if( window.innerWidth > 810 ) {
+				// grab the initial top offset of the navigation
+				var sticky_navigation_offset_top = $('#menu-after-header').offset().top;
 
-		// grab the initial top offset of the navigation
-		var sticky_navigation_offset_top = $('#menu-after-header').offset().top;
+				// our function that decides weather the navigation bar should have "fixed" css position or not.
+				var sticky_navigation = function(){
+					var scroll_top = $(window).scrollTop(); // our current vertical position from the top
 
-		// our function that decides weather the navigation bar should have "fixed" css position or not.
-		var sticky_navigation = function(){
-			var scroll_top = $(window).scrollTop(); // our current vertical position from the top
+					// if we've scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
+					if (scroll_top > sticky_navigation_offset_top) {
+						$('#menu-after-header').css({ 'position': 'fixed', 'top':0, 'left':0, 'width': '100%', 'display': 'block', 'z-index':350 });
+					} else {
+						$('#menu-after-header').css({ 'position': 'relative' });
+					}
+				};
 
-			// if we've scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
-			if (scroll_top > sticky_navigation_offset_top) {
-				$('#menu-after-header').css({ 'position': 'fixed', 'top':0, 'left':0, 'width': '100%', 'display': 'block', 'z-index':350 });
-			} else {
-				$('#menu-after-header').css({ 'position': 'relative' });
+				// run our function on load
+				sticky_navigation();
+
+				// and run it again every time you scroll
+				$( window ).scroll(function() {
+					sticky_navigation();
+				});
 			}
-		};
-
-		// run our function on load
-		sticky_navigation();
-
-		// and run it again every time you scroll
-		$(window).scroll(function() {
-			sticky_navigation();
 		});
 	});
 
@@ -597,7 +530,7 @@ window.tracyappsdesign = window.tracyappsdesign || {};
 		position: '50% 50%'
 	});
 
-	var vph = $(window).height();
+	var vph = $( window ).height();
 	$( '.full-height' ).height(vph);
 
 	$(document).ready(function() {
@@ -614,17 +547,14 @@ window.tracyappsdesign = window.tracyappsdesign || {};
 
 	});
 
-	// skrollr, engage
-	var s = skrollr.init();
 
 	// Document ready.
 	jQuery(function() {
 		tracyappsdesign.skipLinks();
-		tracyappsdesign.mobileNav();
+		tracyappsdesign.slicknav();
 		tracyappsdesign.loadFitVids();
 		jQuery( document ).gamajoAccessibleMenu();
 	});
-
 
 })( this, jQuery );
 
