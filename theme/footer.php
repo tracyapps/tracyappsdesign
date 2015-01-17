@@ -11,6 +11,10 @@
  * @link        https://flagshipwp.com/
  * @since       1.0.0
  */
+require_once 'includes/vendor/Mobile_Detect.php';
+$detect = new Mobile_Detect;
+$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'desktop');
+$scriptVersion = $detect->getScriptVersion();
 ?>
 
 		<?php tha_footer_before(); ?>
@@ -45,6 +49,8 @@
 
 	<?php tha_body_bottom(); ?>
 	<?php wp_footer(); ?>
-
+	<?php if ( $deviceType == 'desktop' ) { ?>
+		<script type="text/javascript" src="<?php echo get_bloginfo( 'template_directory' ); ?>/includes/theme-desktop-only.js"></script>
+	<?php } //end if desktop  ?>
 </body>
 </html>

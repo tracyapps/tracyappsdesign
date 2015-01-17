@@ -9,10 +9,6 @@
  * @link        https://flagshipwp.com/
  * @since       1.0.0
  */
-require_once 'includes/vendor/Mobile_Detect.php';
-$detect = new Mobile_Detect;
-$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'desktop');
-$scriptVersion = $detect->getScriptVersion();
 ?>
 <!DOCTYPE html>
 <?php tha_html_before(); ?>
@@ -52,8 +48,6 @@ $scriptVersion = $detect->getScriptVersion();
 					<img src="<?php echo bloginfo( 'template_directory' ); ?>/images/logo.png" class="logo" />
 					<?php hybrid_site_description(); ?>
 				</div><!-- #branding -->
-
-				<?php // hybrid_get_sidebar( 'header-right' ); ?>
 
 				<?php tha_header_bottom(); ?>
 

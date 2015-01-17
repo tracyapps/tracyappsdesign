@@ -9,6 +9,10 @@
  * @link        https://flagshipwp.com/
  * @since       1.0.0
  */
+require_once 'includes/vendor/Mobile_Detect.php';
+$detect = new Mobile_Detect;
+$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'desktop');
+$scriptVersion = $detect->getScriptVersion();
 ?>
 
 <?php get_header(); ?>
@@ -41,7 +45,7 @@
 					endforeach;
 					?>
 
-				<?php // coming soon get_template_part( 'content/parallax-stuff' ); ?>
+				<?php if ( $deviceType == 'desktop' ) {  get_template_part( 'content/parallax-stuff' ); } ?>
 
 			<?php endwhile; ?>
 
