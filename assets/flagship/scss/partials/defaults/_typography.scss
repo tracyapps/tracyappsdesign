@@ -201,7 +201,7 @@ h6 {
 }
 
 .page-title {
-	font-size: 6em;
+	font-size: 5em;
 	font-weight: 900;
 	display: block;
 	margin: 0;
@@ -210,14 +210,20 @@ h6 {
 	border-top: 1px solid rgba(255, 255, 255, 0.5);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 	margin-bottom: 10px;
+	@include media($smaller-screen-up) {
+		font-size: 6em;
+	}
 }
 
 .page-title-top {
-	height: 88px;
+	height: 65px;
 	overflow: hidden;
 	border-top: 1px solid rgba(255, 255, 255, 0.5);
 	border-bottom: 0;
 	margin-bottom: 0;
+	@include media($smaller-screen-up) {
+		height: 88px;
+	}
 }
 
 .page-title-inside-text {
@@ -229,14 +235,21 @@ h6 {
 }
 
 .page-title-bottom {
-	height: 55px;
+	height: 40px;
 	overflow: hidden;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 	border-top: 0;
 	margin-bottom: 10px;
 
+	@include media($smaller-screen-up) {
+		height: 55px;
+	}
+
 	span {
 		display: block;
-		margin-top: -88px;
+		margin-top: -65px;
+		@include media($smaller-screen-up) {
+			margin-top: -88px;
+		}
 	}
 }

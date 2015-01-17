@@ -676,7 +676,7 @@ h6 {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 	border-top: 1px solid rgba(255, 255, 255, 0.5);
 	display: block;
-	font-size: 6em;
+	font-size: 5em;
 	font-weight: 900;
 	margin: 0;
 	margin-bottom: 10px;
@@ -684,16 +684,30 @@ h6 {
 	padding: 0;
 }
 
-/* line 215, ../assets/flagship/scss/partials/defaults/_typography.scss */
+@media screen and (min-width: 480px) {
+	/* line 203, ../assets/flagship/scss/partials/defaults/_typography.scss */
+	.page-title {
+		font-size: 6em;
+	}
+}
+
+/* line 218, ../assets/flagship/scss/partials/defaults/_typography.scss */
 .page-title-top {
 	border-bottom: 0;
 	border-top: 1px solid rgba(255, 255, 255, 0.5);
-	height: 88px;
+	height: 65px;
 	margin-bottom: 0;
 	overflow: hidden;
 }
 
-/* line 223, ../assets/flagship/scss/partials/defaults/_typography.scss */
+@media screen and (min-width: 480px) {
+	/* line 218, ../assets/flagship/scss/partials/defaults/_typography.scss */
+	.page-title-top {
+		height: 88px;
+	}
+}
+
+/* line 229, ../assets/flagship/scss/partials/defaults/_typography.scss */
 .page-title-inside-text {
 	display: block;
 	font-size: 0.9em;
@@ -702,19 +716,33 @@ h6 {
 	padding-right: 1em;
 }
 
-/* line 231, ../assets/flagship/scss/partials/defaults/_typography.scss */
+/* line 237, ../assets/flagship/scss/partials/defaults/_typography.scss */
 .page-title-bottom {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 	border-top: 0;
-	height: 55px;
+	height: 40px;
 	margin-bottom: 10px;
 	overflow: hidden;
 }
 
-/* line 238, ../assets/flagship/scss/partials/defaults/_typography.scss */
+@media screen and (min-width: 480px) {
+	/* line 237, ../assets/flagship/scss/partials/defaults/_typography.scss */
+	.page-title-bottom {
+		height: 55px;
+	}
+}
+
+/* line 248, ../assets/flagship/scss/partials/defaults/_typography.scss */
 .page-title-bottom span {
 	display: block;
-	margin-top: -88px;
+	margin-top: -65px;
+}
+
+@media screen and (min-width: 480px) {
+	/* line 248, ../assets/flagship/scss/partials/defaults/_typography.scss */
+	.page-title-bottom span {
+		margin-top: -88px;
+	}
 }
 
 
@@ -1534,7 +1562,7 @@ Structure and Layout
 	min-height: 0;
 	min-width: 100%;
 	overflow: hidden;
-	padding: 5% 2%;
+	padding: 10% 2%;
 	position: relative;
 	top: 0;
 	left: 0;
