@@ -156,9 +156,9 @@
 --------------------------------------------- */
 
 .menu-after-header,
+nav#menu-after-header,
 nav#menu-after-header.menu.menu-after-header {
-	background-color: $after-header-background-color;
-	border-bottom: 1px solid $after-header-border-color;
+	position: relative;
 	display: none;
 
 	@include media($small-screen-up) {
@@ -166,6 +166,8 @@ nav#menu-after-header.menu.menu-after-header {
 		z-index: 300;
 		position: relative;
 		text-align: center;
+		background-color: $after-header-background-color;
+		border-bottom: 1px solid $after-header-border-color;
 	}
 
 	li > a {
