@@ -24,6 +24,7 @@ function tracyappsdesign_register_image_sizes() {
 
 	// Add the 'tracyappsdesign-full' image size.
 	add_image_size( 'tracyappsdesign-full', 1025, 500, true );
+	add_image_size( 'iphone-screen', 435, 775, true );
 }
 
 add_filter( 'excerpt_length', 'tracyappsdesign_excerpt_length' );
