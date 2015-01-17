@@ -56,6 +56,10 @@ function tracyappsdesign_get_meta( $meta_key ) {
  */
 
 function tracyappsdesign_loop_home_section( $section_key ) {
+	require_once get_template_directory() . '/includes/vendor/Mobile_Detect.php';
+	$detect = new Mobile_Detect;
+	$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'desktop');
+
 	$section_id = $section_key[ 'the_section_page' ];
 	$section_data = get_post( $section_id );
 	$section_color = get_post_meta( $section_id, 'page_bg_color', true );
