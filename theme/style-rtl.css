@@ -4251,6 +4251,7 @@ div.frm_forms.full-width-form input {
 /* line 64, ../assets/flagship/scss/partials/_parallax.scss */
 .bss-next,
 .bss-prev {
+	display: none;
 	opacity: 0.5;
 	/* for the next/prev buttons
      this positions them vertically
@@ -4270,7 +4271,7 @@ div.frm_forms.full-width-form input {
 	z-index: 1;
 }
 
-/* line 80, ../assets/flagship/scss/partials/_parallax.scss */
+/* line 81, ../assets/flagship/scss/partials/_parallax.scss */
 .bss-next:hover,
 .bss-prev:hover {
 	/* give the buttons a pointer/hand cursor
@@ -4280,13 +4281,13 @@ div.frm_forms.full-width-form input {
 	opacity: 1;
 }
 
-/* line 87, ../assets/flagship/scss/partials/_parallax.scss */
+/* line 88, ../assets/flagship/scss/partials/_parallax.scss */
 .bss-next {
 	/* position 'next' button at right */
 	left: 0;
 }
 
-/* line 91, ../assets/flagship/scss/partials/_parallax.scss */
+/* line 92, ../assets/flagship/scss/partials/_parallax.scss */
 .bss-prev {
 	/* position 'previous' button at left */
 	right: 0;
