@@ -4172,6 +4172,18 @@ div.frm_forms.full-width-form input {
 --------------------------------------------- */
 
 /* line 3, ../assets/flagship/scss/partials/_parallax.scss */
+div#all-parallax-stuff {
+	display: none;
+}
+
+@media screen and (min-width: 1023px) {
+	/* line 3, ../assets/flagship/scss/partials/_parallax.scss */
+	div#all-parallax-stuff {
+		display: block;
+	}
+}
+
+/* line 12, ../assets/flagship/scss/partials/_parallax.scss */
 .slideshow {
 	display: block;
 	/* the container element needs to be
@@ -4181,7 +4193,7 @@ div.frm_forms.full-width-form input {
 	position: relative;
 }
 
-/* line 11, ../assets/flagship/scss/partials/_parallax.scss */
+/* line 20, ../assets/flagship/scss/partials/_parallax.scss */
 .slideshow figure {
 	/* these are the individual slides
      each containing an img and caption.
@@ -4193,7 +4205,7 @@ div.frm_forms.full-width-form input {
 	width: 100%;
 }
 
-/* line 21, ../assets/flagship/scss/partials/_parallax.scss */
+/* line 30, ../assets/flagship/scss/partials/_parallax.scss */
 .slideshow figure:first-child {
 	/* the very first slide is relatively
      positioned in order to give height
@@ -4201,7 +4213,7 @@ div.frm_forms.full-width-form input {
 	position: relative;
 }
 
-/* line 27, ../assets/flagship/scss/partials/_parallax.scss */
+/* line 36, ../assets/flagship/scss/partials/_parallax.scss */
 .slideshow figure img {
 	/* all slide images are made "invisible"
      with an opacity of 0, then we
@@ -4215,7 +4227,7 @@ div.frm_forms.full-width-form input {
 	transition: opacity 1.2s;
 }
 
-/* line 38, ../assets/flagship/scss/partials/_parallax.scss */
+/* line 47, ../assets/flagship/scss/partials/_parallax.scss */
 .slideshow .bss-show img {
 	/* this is for the currently visible slide
      it's the only one that shows, with full
@@ -4223,7 +4235,7 @@ div.frm_forms.full-width-form input {
 	opacity: 1;
 }
 
-/* line 44, ../assets/flagship/scss/partials/_parallax.scss */
+/* line 53, ../assets/flagship/scss/partials/_parallax.scss */
 .slideshow figcaption {
 	opacity: 0;
 	/* the caption is positioned absolutely near
@@ -4237,7 +4249,7 @@ div.frm_forms.full-width-form input {
 	transition: opacity 1.2s;
 }
 
-/* line 55, ../assets/flagship/scss/partials/_parallax.scss */
+/* line 64, ../assets/flagship/scss/partials/_parallax.scss */
 .slideshow .bss-show figcaption {
 	opacity: 1;
 	/* this is for the currently visible slide caption
@@ -4248,7 +4260,7 @@ div.frm_forms.full-width-form input {
 	z-index: 2;
 }
 
-/* line 64, ../assets/flagship/scss/partials/_parallax.scss */
+/* line 73, ../assets/flagship/scss/partials/_parallax.scss */
 .bss-next,
 .bss-prev {
 	display: none;
@@ -4271,7 +4283,7 @@ div.frm_forms.full-width-form input {
 	z-index: 1;
 }
 
-/* line 81, ../assets/flagship/scss/partials/_parallax.scss */
+/* line 90, ../assets/flagship/scss/partials/_parallax.scss */
 .bss-next:hover,
 .bss-prev:hover {
 	/* give the buttons a pointer/hand cursor
@@ -4281,13 +4293,13 @@ div.frm_forms.full-width-form input {
 	opacity: 1;
 }
 
-/* line 88, ../assets/flagship/scss/partials/_parallax.scss */
+/* line 97, ../assets/flagship/scss/partials/_parallax.scss */
 .bss-next {
 	/* position 'next' button at right */
 	right: 0;
 }
 
-/* line 92, ../assets/flagship/scss/partials/_parallax.scss */
+/* line 101, ../assets/flagship/scss/partials/_parallax.scss */
 .bss-prev {
 	/* position 'previous' button at left */
 	left: 0;

@@ -1,3 +1,12 @@
+// first off, only show the parallax goodies when the user's window with can support it (desktop only)
+
+div#all-parallax-stuff {
+	display: none;
+	@include media($medium-screen-up) {
+		display:block;
+	}
+}
+
 // default "better simple slideshow" styles
 
 .slideshow{
