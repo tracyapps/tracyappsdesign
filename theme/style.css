@@ -676,7 +676,7 @@ h6 {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 	border-top: 1px solid rgba(255, 255, 255, 0.5);
 	display: block;
-	font-size: 5em;
+	font-size: 4.6em;
 	font-weight: 900;
 	margin: 0;
 	margin-bottom: 10px;
@@ -695,7 +695,7 @@ h6 {
 .page-title-top {
 	border-bottom: 0;
 	border-top: 1px solid rgba(255, 255, 255, 0.5);
-	height: 65px;
+	height: 57px;
 	margin-bottom: 0;
 	overflow: hidden;
 }
@@ -728,14 +728,14 @@ h6 {
 @media screen and (min-width: 480px) {
 	/* line 237, ../assets/flagship/scss/partials/defaults/_typography.scss */
 	.page-title-bottom {
-		height: 55px;
+		height: 65px;
 	}
 }
 
 /* line 248, ../assets/flagship/scss/partials/defaults/_typography.scss */
 .page-title-bottom span {
 	display: block;
-	margin-top: -65px;
+	margin-top: -57px;
 }
 
 @media screen and (min-width: 480px) {
@@ -3494,37 +3494,6 @@ Content Area
 .featured-media img {
 	display: block;
 	margin: 0 auto;
-}
-
-
-/* parallax
---------------------------------------- */
-
-/* line 215, ../assets/flagship/scss/partials/_content-area.scss */
-#iphone-container {
-	display: block;
-	overflow: hidden;
-	position: relative;
-	width: 140px;
-}
-
-/* line 220, ../assets/flagship/scss/partials/_content-area.scss */
-#iphone-container > img {
-	max-width: 100%;
-}
-
-/* line 221, ../assets/flagship/scss/partials/_content-area.scss */
-#iphone-container #iphone-screen {
-	overflow: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-}
-
-/* line 228, ../assets/flagship/scss/partials/_content-area.scss */
-#iphone-container #iphone-screen div img {
-	display: inline;
 }
 
 

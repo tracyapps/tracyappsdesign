@@ -201,7 +201,7 @@ h6 {
 }
 
 .page-title {
-	font-size: 5em;
+	font-size: 4.6em;
 	font-weight: 900;
 	display: block;
 	margin: 0;
@@ -216,7 +216,7 @@ h6 {
 }
 
 .page-title-top {
-	height: 65px;
+	height: 57px;
 	overflow: hidden;
 	border-top: 1px solid rgba(255, 255, 255, 0.5);
 	border-bottom: 0;
@@ -242,12 +242,13 @@ h6 {
 	margin-bottom: 10px;
 
 	@include media($smaller-screen-up) {
-		height: 55px;
+		height: 65px;
 	}
 
 	span {
 		display: block;
-		margin-top: -65px;
+		margin-top: -57px;
+
 		@include media($smaller-screen-up) {
 			margin-top: -88px;
 		}
