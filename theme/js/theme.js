@@ -510,7 +510,7 @@ window.tracyappsdesign = window.tracyappsdesign || {};
 
 		$( 'html, body' ).stop().animate({
 			scrollTop: $($anchor.attr('href')).offset().top
-		}, 1500,'easeInOutExpo');
+		}, 3500,'easeInOutExpo');
 		/*
 		 if you don't want to use the easing effects:
 		 $('html, body').stop().animate({

@@ -6,6 +6,12 @@
 //skrollr.... engage!
 var s = skrollr.init();
 
+var skrollHome = s.relativeToAbsolute(document.getElementById('home'), 'top', 'bottom');
+var skrollServices = s.relativeToAbsolute(document.getElementById('services'), 'top', 'bottom');
+var skrollAbout = s.relativeToAbsolute(document.getElementById('about'), 'top', 'bottom');
+var skrollOurProcess = s.relativeToAbsolute(document.getElementById('our-process'), 'top', 'bottom');
+var skrollContact = s.relativeToAbsolute(document.getElementById('contact'), 'top', 'bottom');
+
 
 // better simple slideshow
 
