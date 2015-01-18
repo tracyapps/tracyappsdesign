@@ -9,8 +9,8 @@ $imgs = get_bloginfo( 'template_directory' ) . '/images/';
 <?php /*  ------------- START devices overlay ------ */ ?>
 <section id="web-devices-container" style="position: fixed; bottom: -48px; left: -83px; width: 200px; height: 390px; float: left; z-index: 5;"
 		 data-start="opacity:1; left: -83px; bottom: -48px;"
-		 data-850-start="left: -83px; bottom: -48px;"
-		 data-950-start="bottom:-110px; left:-121px;"
+		 data-1550-start="left: -83px; bottom: -48px;"
+		 data-1650-start="bottom:-110px; left:-121px;"
 		 data-anchor-target="#services"
 		 data-bottom-top="opacity:1;"
 		 data-center-top="opacity:1; bottom:-110px; "
@@ -22,8 +22,8 @@ $imgs = get_bloginfo( 'template_directory' ) . '/images/';
 <aside id="phone-contaner" style="position: absolute; left: 626px; top: 197px; z-index: 400; width: 89px; height: 179px;">
 	<div class="phone phone-slideshow slideshow" style="background:url( '<?php echo esc_url( $imgs ); ?>iphone-bg.png' ) no-repeat; background-size:contain; overflow: hidden; position: relative;"
 		 data-start="opacity:0; width: 10px; height: 10px;"
-		 data-600-start="opacity:0; width: 10px; height: 10px;"
-		 data-610-start="opacity:1; width:89px; height:179px;">
+		 data-1200-start="opacity:0; width: 10px; height: 10px;"
+		 data-1210-start="opacity:1; width:89px; height:179px;">
 		<div class="padding" style="position:absolute; top: 21px; left: 6px; z-index: 450; width: 79px; height: 140px;  z-index: 450;">
 			<figure class="slide">
 				<img src="<?php echo esc_url( $imgs ); ?>iphone-crossfit100.jpg">
@@ -45,8 +45,8 @@ $imgs = get_bloginfo( 'template_directory' ) . '/images/';
 <aside id="tablet-contaner" style="position: absolute; left: 512px; top: 158px; z-index: 300; width: 140px; height: 216px;">
 	<div class="tablet tablet-slideshow slideshow" style="background:url( '<?php echo esc_url( $imgs ); ?>ipad-bg.png' ) no-repeat; background-size:contain; overflow: hidden; position: relative;"
 		 data-start="opacity:0; width: 10px; height: 10px;"
-		 data-570-start="opacity:0; width: 10px; height: 10px;"
-		 data-580-start="opacity:1; width:140px; height:216px;">
+		 data-1170-start="opacity:0; width: 10px; height: 10px;"
+		 data-1180-start="opacity:1; width:140px; height:216px;">
 		<div class="padding" style="position: absolute; top: 24px; left: 8px; z-index: 350; width: 124px; height: 165px">
 			<figure class="slide">
 				<img src="<?php echo esc_url( $imgs ); ?>ipad-splc.jpg">
@@ -65,13 +65,13 @@ $imgs = get_bloginfo( 'template_directory' ) . '/images/';
 <aside id="laptop-contaner" style="position: absolute; left: 229px; top: 136px; z-index: 200">
 	<div class="laptop" style="background:url( '<?php echo esc_url( $imgs ); ?>macbook-bg.png' ) no-repeat;  background-size:contain; overflow: hidden; position: relative;"
 		 data-start="opacity:0; width: 10px; height: 10px;"
-		 data-540-start="opacity:0; width: 10px; height: 10px;"
-		 data-550-start="opacity:1; width:393px; height:201px;">
+		 data-1140-start="opacity:0; width: 10px; height: 10px;"
+		 data-1150-start="opacity:1; width:393px; height:201px;">
 		<div class="padding" style="position: absolute; top: 10px; left: 50px;">
 			<div id="chrome-laptop" class="browser laptop-browser-slideshow slideshow" style="background:url( '<?php echo esc_url( $imgs ); ?>chrome-laptop-bg.png' ) no-repeat; background-size:contain; overflow: hidden; position:relative;"
 				 data-start="opacity:0; width:298px; height:177px;"
-				 data-700-start="opacity:0;"
-				 data-710-start="opacity:1">
+				 data-1200-start="opacity:0;"
+				 data-1210-start="opacity:1">
 				<div class="padding" style="position: absolute; top: 29px; left: 13px; z-index: 250; width:272px; height: 121px;">
 					<figure class="slide">
 						<img src="<?php echo esc_url( $imgs ); ?>chrome-laptop-oaktonavelaw.jpg">
@@ -92,13 +92,13 @@ $imgs = get_bloginfo( 'template_directory' ) . '/images/';
 <aside id="desktop-contaner" style="position: absolute; left: 0; top:0; z-index: 100; width: 414px; height: 330px;">
 	<div class="desktop" style="background:url( '<?php echo esc_url( $imgs ); ?>imac-bg.png' ) no-repeat; position: relative;  background-size:contain; overflow: hidden;"
 		 data-start="opacity:0; width: 10px; height: 10px;"
-		 data-520-start="opacity:0; width: 10px; height: 10px;"
-		 data-530-start="opacity:1; width: 414px; height: 330px;">
+		 data-1120-start="opacity:0; width: 10px; height: 10px;"
+		 data-1130-start="opacity:1; width: 414px; height: 330px;">
 		<div class="padding" style="position: absolute; top: 11px; left: 68px; width: 414px; height: 330px;">
 			<div id="chrome-desktop" class="browser desktop-browser-slideshow slideshow" style="background:url( '<?php echo esc_url( $imgs ); ?>chrome-desktop-bg.png' ) no-repeat; background-size:contain; overflow: hidden; position: relative; z-index: 150; width: 299px; height: 232px;"
 				 data-start="opacity:0; width:323; height:232;"
-				 data-700-start="opacity:0;"
-				 data-710-start="opacity:1;">
+				 data-1200-start="opacity:0;"
+				 data-1210-start="opacity:1;">
 				<div class="padding" style="position: absolute; top: 29px; left: 12px; width: 275px; height: 181px;">
 					<figure class="slide">
 						<img src="<?php echo esc_url( $imgs ); ?>chrome-desktop-iamtapps.jpg">
