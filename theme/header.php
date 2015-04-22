@@ -21,6 +21,7 @@
 	<script type="text/javascript">
 		var stupid_stylesheet_directory = "<?php get_template_directory(); ?>";
 	</script>
+	<meta name="google-site-verification" content="FSmh0CeqcjyFs_uya-24dRxpCofFb95Xi9AewX98T8c" />
 </head>
 
 <body <?php hybrid_attr( 'body' ); ?>>
