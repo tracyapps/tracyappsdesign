@@ -2760,7 +2760,8 @@ Site Navigation
 /* After Header Navigation
 --------------------------------------------- */
 
-/* line 158, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 157, ../assets/flagship/scss/partials/_navigation.scss */
+.js .menu-after-header,
 .menu-after-header,
 nav#menu-after-header,
 nav#menu-after-header.menu.menu-after-header {
@@ -2769,7 +2770,8 @@ nav#menu-after-header.menu.menu-after-header {
 }
 
 @media screen and (min-width: 810px) {
-	/* line 158, ../assets/flagship/scss/partials/_navigation.scss */
+	/* line 157, ../assets/flagship/scss/partials/_navigation.scss */
+	.js .menu-after-header,
 	.menu-after-header,
 	nav#menu-after-header,
 	nav#menu-after-header.menu.menu-after-header {
@@ -2783,6 +2785,7 @@ nav#menu-after-header.menu.menu-after-header {
 }
 
 /* line 173, ../assets/flagship/scss/partials/_navigation.scss */
+.js .menu-after-header li > a,
 .menu-after-header li > a,
 nav#menu-after-header li > a,
 nav#menu-after-header.menu.menu-after-header li > a {
@@ -2791,6 +2794,11 @@ nav#menu-after-header.menu.menu-after-header li > a {
 }
 
 /* line 178, ../assets/flagship/scss/partials/_navigation.scss */
+.js .menu-after-header li > a:hover,
+.js .menu-after-header li > a:focus,
+.js .menu-after-header .current-menu-item > a,
+.js .menu-after-header .sub-menu .current-menu-item > a:hover,
+.js .menu-after-header .sub-menu .current-menu-item > a:focus,
 .menu-after-header li > a:hover,
 .menu-after-header li > a:focus,
 .menu-after-header .current-menu-item > a,
@@ -2823,14 +2831,7 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 	display: block;
 }
 
-@media screen and (min-width: 810px) {
-	/* line 198, ../assets/flagship/scss/partials/_navigation.scss */
-	.slicknav_menu {
-		display: none;
-	}
-}
-
-/* line 203, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 204, ../assets/flagship/scss/partials/_navigation.scss */
 .menu-button {
 	background: #a4d92c;
 	-webkit-border-radius: 3px;
@@ -2847,18 +2848,18 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 }
 
 @media screen and (min-width: 810px) {
-	/* line 203, ../assets/flagship/scss/partials/_navigation.scss */
+	/* line 204, ../assets/flagship/scss/partials/_navigation.scss */
 	.menu-button {
 		display: none;
 	}
 }
 
-/* line 219, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 220, ../assets/flagship/scss/partials/_navigation.scss */
 .menu-button:hover {
 	background: #addd42;
 }
 
-/* line 223, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 224, ../assets/flagship/scss/partials/_navigation.scss */
 .menu-button::before {
 	font-size: 26px;
 }
@@ -2866,7 +2867,7 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 /*
     Mobile Menu Core Style
 */
-/* line 234, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 235, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_btn {
 	cursor: pointer;
 	display: block;
@@ -2877,25 +2878,25 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 	vertical-align: middle;
 }
 
-/* line 235, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 236, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_menu .slicknav_menutxt {
 	display: block;
 	float: left;
 	line-height: 1.188em;
 }
 
-/* line 236, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 237, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_menu .slicknav_icon {
 	float: left;
 	margin: 0.188em 0 0 0.438em;
 }
 
-/* line 237, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 238, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_menu .slicknav_no-text {
 	margin: 0;
 }
 
-/* line 238, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 239, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_menu .slicknav_icon-bar {
 	-webkit-border-radius: 1px;
 	border-radius: 1px;
@@ -2906,63 +2907,63 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 	width: 1.125em;
 }
 
-/* line 239, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 240, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar {
 	margin-top: 0.188em;
 }
 
-/* line 240, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 241, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_nav {
 	clear: both;
 }
 
-/* line 241, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 242, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_nav ul,
 .slicknav_nav li {
 	display: block;
 }
 
-/* line 243, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 244, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_nav .slicknav_arrow {
 	font-size: 0.8em;
 	margin: 0 0 0 0.4em;
 }
 
-/* line 244, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 245, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_nav .slicknav_item {
 	cursor: pointer;
 }
 
-/* line 245, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 246, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_nav .slicknav_row {
 	display: block;
 }
 
-/* line 246, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 247, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_nav a {
 	display: block;
 }
 
-/* line 247, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 248, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_nav .slicknav_item a,
 .slicknav_nav .slicknav_parent-link a {
 	display: inline;
 }
 
-/* line 249, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 250, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_menu:before,
 .slicknav_menu:after {
 	content: " ";
 	display: table;
 }
 
-/* line 251, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 252, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_menu:after {
 	clear: both;
 }
 
 /* IE6/7 support */
-/* line 253, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 254, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_menu {
 	*zoom: 1;
 }
@@ -2971,7 +2972,7 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
     User Default Style
     Change the following styles to modify the appearance of the menu.
 */
-/* line 260, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 261, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_menu {
 	display: block;
 	font-size: 16px;
@@ -2982,7 +2983,7 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 }
 
 /* Button */
-/* line 269, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 270, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_btn {
 	background-color: #232627;
 	-webkit-border-radius: 4px;
@@ -2993,7 +2994,7 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 }
 
 /* Button Text */
-/* line 279, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 280, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_menu .slicknav_menutxt {
 	color: #85898b;
 	font-weight: bold;
@@ -3001,18 +3002,18 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 }
 
 /* Button Lines */
-/* line 285, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 286, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_menu .slicknav_icon-bar {
 	background-color: #a4a5a5;
 }
 
-/* line 288, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 289, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_menu {
 	background: rgba(0, 0, 0, 0.5);
 	padding: 0 10px;
 }
 
-/* line 292, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 293, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_nav {
 	color: #85898b;
 	font-size: 0.875em;
@@ -3020,26 +3021,26 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 	padding: 0;
 }
 
-/* line 298, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 299, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_nav,
 .slicknav_nav ul {
 	list-style: none;
 	overflow: hidden;
 }
 
-/* line 302, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 303, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_nav ul {
 	margin: 0 0 0 20px;
 	padding: 0;
 }
 
-/* line 306, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 307, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_nav .slicknav_row {
 	margin: 2px 5px;
 	padding: 20px;
 }
 
-/* line 310, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 311, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_nav a {
 	color: #fff;
 	margin: 2px 5px;
@@ -3048,14 +3049,14 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
 }
 
-/* line 317, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 318, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_nav .slicknav_item a,
 .slicknav_nav .slicknav_parent-link a {
 	margin: 0;
 	padding: 0;
 }
 
-/* line 322, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 323, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_nav .slicknav_row:hover {
 	background: rgba(0, 0, 0, 0.8);
 	-webkit-border-radius: 6px;
@@ -3063,7 +3064,7 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 	color: #fff;
 }
 
-/* line 329, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 330, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_nav a:hover {
 	background: rgba(0, 0, 0, 0.8);
 	-webkit-border-radius: 6px;
@@ -3071,13 +3072,13 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 	color: #222;
 }
 
-/* line 336, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 337, ../assets/flagship/scss/partials/_navigation.scss */
 .slicknav_nav .slicknav_txtnode {
 	margin-left: 15px;
 }
 
 @media screen and (min-width: 810px) {
-	/* line 341, ../assets/flagship/scss/partials/_navigation.scss */
+	/* line 342, ../assets/flagship/scss/partials/_navigation.scss */
 	.js .slicknav_menu,
 	.slicknav_menu {
 		display: none;
@@ -3088,14 +3089,14 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 /* Pagination
 --------------------------------------------- */
 
-/* line 351, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 352, ../assets/flagship/scss/partials/_navigation.scss */
 .pagination {
 	display: block;
 	margin-bottom: 20px;
 	text-align: center;
 }
 
-/* line 356, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 357, ../assets/flagship/scss/partials/_navigation.scss */
 .pagination .page-numbers {
 	background: #fafafa;
 	border: 1px solid #e0e0e0;
@@ -3108,39 +3109,39 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 	transition: all 0.2s ease-in-out;
 }
 
-/* line 366, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 367, ../assets/flagship/scss/partials/_navigation.scss */
 .pagination .current {
 	background: #ededed;
 }
 
-/* line 370, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 371, ../assets/flagship/scss/partials/_navigation.scss */
 .pagination .next:before {
 	content: "\2192";
 }
 
-/* line 374, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 375, ../assets/flagship/scss/partials/_navigation.scss */
 .pagination .prev:before {
 	content: "\2190";
 }
 
-/* line 378, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 379, ../assets/flagship/scss/partials/_navigation.scss */
 .pagination a {
 	color: #3a3c3d;
 }
 
-/* line 381, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 382, ../assets/flagship/scss/partials/_navigation.scss */
 .pagination a:hover,
 .pagination a:focus {
 	background: white;
 	border: 1px solid #e8e8e8;
 }
 
-/* line 390, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 391, ../assets/flagship/scss/partials/_navigation.scss */
 .rtl .pagination .next:before {
 	content: "\2190";
 }
 
-/* line 394, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 395, ../assets/flagship/scss/partials/_navigation.scss */
 .rtl .pagination .prev:before {
 	content: "\2192";
 }
@@ -3149,7 +3150,7 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 /* Single Entry Pagination
 --------------------------------------------- */
 
-/* line 402, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 403, ../assets/flagship/scss/partials/_navigation.scss */
 .nav-single {
 	clear: both;
 	display: block;
@@ -3162,18 +3163,18 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 }
 
 @media screen and (min-width: 1023px) {
-	/* line 413, ../assets/flagship/scss/partials/_navigation.scss */
+	/* line 414, ../assets/flagship/scss/partials/_navigation.scss */
 	.nav-single .nav-previous {
 		float: left;
 	}
 
-/* line 417, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 418, ../assets/flagship/scss/partials/_navigation.scss */
 	.nav-single .nav-next {
 		float: right;
 	}
 }
 
-/* line 422, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 423, ../assets/flagship/scss/partials/_navigation.scss */
 .nav-single .nav-next a,
 .nav-single .nav-previous a {
 	background: #fafafa;
@@ -3187,7 +3188,7 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 	text-align: center;
 }
 
-/* line 434, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 435, ../assets/flagship/scss/partials/_navigation.scss */
 .nav-single .nav-next a:hover,
 .nav-single .nav-previous a:hover,
 .nav-single .nav-next a:focus,
@@ -3200,13 +3201,13 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 /* Page Links
 --------------------------------------------- */
 
-/* line 447, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 448, ../assets/flagship/scss/partials/_navigation.scss */
 .page-links {
 	display: block;
 	margin: 30px 0;
 }
 
-/* line 451, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 452, ../assets/flagship/scss/partials/_navigation.scss */
 .page-links span,
 .page-links a {
 	border: 1px solid #e0e0e0;
@@ -3219,17 +3220,17 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 	transition: all 0.2s ease-in-out;
 }
 
-/* line 461, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 462, ../assets/flagship/scss/partials/_navigation.scss */
 .page-links span {
 	background: #ededed;
 }
 
-/* line 465, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 466, ../assets/flagship/scss/partials/_navigation.scss */
 .page-links a {
 	background: #fafafa;
 }
 
-/* line 468, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 469, ../assets/flagship/scss/partials/_navigation.scss */
 .page-links a:hover,
 .page-links a:focus {
 	background: white;

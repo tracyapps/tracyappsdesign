@@ -79,7 +79,7 @@ window.tracyappsdesign = window.tracyappsdesign || {};
 
 				// if we've scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
 				if (scroll_top > sticky_navigation_offset_top) {
-					$('#menu-after-header').css({ 'position': 'fixed', 'top':0, 'left':0, 'width': '100%', 'display': 'block', 'z-index':350 });
+					$('#menu-after-header').css({ 'position': 'fixed', 'top':0, 'left':0, 'width': '100%', 'z-index':350 });
 				} else {
 					$('#menu-after-header').css({ 'position': 'relative' });
 				}

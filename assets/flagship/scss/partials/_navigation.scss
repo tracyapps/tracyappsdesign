@@ -154,7 +154,7 @@
 
 /* After Header Navigation
 --------------------------------------------- */
-
+.js .menu-after-header,
 .menu-after-header,
 nav#menu-after-header,
 nav#menu-after-header.menu.menu-after-header {
@@ -195,8 +195,9 @@ nav#menu-after-header.menu.menu-after-header {
 }
 
 @include media($small-screen-up) {
-	.slicknav_menu {
-		display:none;
+	.slicknav_menu,
+	.js .slicknav_menu {
+		//display:none;
 	}
 }
 
