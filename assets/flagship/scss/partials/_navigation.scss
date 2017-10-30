@@ -338,6 +338,7 @@ nav#menu-after-header.menu.menu-after-header {
 }
 
 @include media($small-screen-up) {
+	.js .slicknav_menu,
 	.slicknav_menu {
 		display: none;
 	}

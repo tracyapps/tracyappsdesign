@@ -3078,6 +3078,7 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 
 @media screen and (min-width: 810px) {
 	/* line 341, ../assets/flagship/scss/partials/_navigation.scss */
+	.js .slicknav_menu,
 	.slicknav_menu {
 		display: none;
 	}
@@ -3087,14 +3088,14 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 /* Pagination
 --------------------------------------------- */
 
-/* line 350, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 351, ../assets/flagship/scss/partials/_navigation.scss */
 .pagination {
 	display: block;
 	margin-bottom: 20px;
 	text-align: center;
 }
 
-/* line 355, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 356, ../assets/flagship/scss/partials/_navigation.scss */
 .pagination .page-numbers {
 	background: #fafafa;
 	border: 1px solid #e0e0e0;
@@ -3107,39 +3108,39 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 	transition: all 0.2s ease-in-out;
 }
 
-/* line 365, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 366, ../assets/flagship/scss/partials/_navigation.scss */
 .pagination .current {
 	background: #ededed;
 }
 
-/* line 369, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 370, ../assets/flagship/scss/partials/_navigation.scss */
 .pagination .next:before {
 	content: "\2192";
 }
 
-/* line 373, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 374, ../assets/flagship/scss/partials/_navigation.scss */
 .pagination .prev:before {
 	content: "\2190";
 }
 
-/* line 377, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 378, ../assets/flagship/scss/partials/_navigation.scss */
 .pagination a {
 	color: #3a3c3d;
 }
 
-/* line 380, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 381, ../assets/flagship/scss/partials/_navigation.scss */
 .pagination a:hover,
 .pagination a:focus {
 	background: white;
 	border: 1px solid #e8e8e8;
 }
 
-/* line 389, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 390, ../assets/flagship/scss/partials/_navigation.scss */
 .rtl .pagination .next:before {
 	content: "\2190";
 }
 
-/* line 393, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 394, ../assets/flagship/scss/partials/_navigation.scss */
 .rtl .pagination .prev:before {
 	content: "\2192";
 }
@@ -3148,7 +3149,7 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 /* Single Entry Pagination
 --------------------------------------------- */
 
-/* line 401, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 402, ../assets/flagship/scss/partials/_navigation.scss */
 .nav-single {
 	clear: both;
 	display: block;
@@ -3161,18 +3162,18 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 }
 
 @media screen and (min-width: 1023px) {
-	/* line 412, ../assets/flagship/scss/partials/_navigation.scss */
+	/* line 413, ../assets/flagship/scss/partials/_navigation.scss */
 	.nav-single .nav-previous {
 		float: left;
 	}
 
-/* line 416, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 417, ../assets/flagship/scss/partials/_navigation.scss */
 	.nav-single .nav-next {
 		float: right;
 	}
 }
 
-/* line 421, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 422, ../assets/flagship/scss/partials/_navigation.scss */
 .nav-single .nav-next a,
 .nav-single .nav-previous a {
 	background: #fafafa;
@@ -3186,7 +3187,7 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 	text-align: center;
 }
 
-/* line 433, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 434, ../assets/flagship/scss/partials/_navigation.scss */
 .nav-single .nav-next a:hover,
 .nav-single .nav-previous a:hover,
 .nav-single .nav-next a:focus,
@@ -3199,13 +3200,13 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 /* Page Links
 --------------------------------------------- */
 
-/* line 446, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 447, ../assets/flagship/scss/partials/_navigation.scss */
 .page-links {
 	display: block;
 	margin: 30px 0;
 }
 
-/* line 450, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 451, ../assets/flagship/scss/partials/_navigation.scss */
 .page-links span,
 .page-links a {
 	border: 1px solid #e0e0e0;
@@ -3218,17 +3219,17 @@ nav#menu-after-header.menu.menu-after-header .sub-menu .current-menu-item > a:fo
 	transition: all 0.2s ease-in-out;
 }
 
-/* line 460, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 461, ../assets/flagship/scss/partials/_navigation.scss */
 .page-links span {
 	background: #ededed;
 }
 
-/* line 464, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 465, ../assets/flagship/scss/partials/_navigation.scss */
 .page-links a {
 	background: #fafafa;
 }
 
-/* line 467, ../assets/flagship/scss/partials/_navigation.scss */
+/* line 468, ../assets/flagship/scss/partials/_navigation.scss */
 .page-links a:hover,
 .page-links a:focus {
 	background: white;
