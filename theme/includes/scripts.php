@@ -92,7 +92,7 @@ function tracyappsdesign_enqueue_scripts() {
 
 	wp_enqueue_script(
 		'tracyappsdesign',
-		$js_dir . "theme{$suffix}.js",
+		$js_dir . "theme.js",
 		array( 'jquery' ),
 		null,
 		true
