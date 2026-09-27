@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "acf/tad-hero",
+  "title": "Hero",
+  "description": "Headline, lead, buttons, stats, and the floating card cluster.",
+  "category": "tad",
+  "icon": "cover-image",
+  "keywords": [
+    "hero",
+    "header",
+    "intro"
+  ],
+  "textdomain": "tad",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "tad-hero.php"
+  },
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "jsx": false,
+    "customClassName": true
+  }
+}

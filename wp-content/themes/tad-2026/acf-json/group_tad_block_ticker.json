@@ -1,0 +1,100 @@
+{
+  "key": "group_tad_block_ticker",
+  "title": "Block: Ticker",
+  "fields": [
+    {
+      "key": "field_tad_tk_items",
+      "label": "Keywords",
+      "name": "items",
+      "type": "repeater",
+      "sub_fields": [
+        {
+          "key": "field_tad_tk_item_text",
+          "label": "Text",
+          "name": "text",
+          "type": "text"
+        }
+      ],
+      "layout": "table",
+      "button_label": "Add keyword",
+      "min": 0,
+      "max": 0,
+      "collapsed": ""
+    },
+    {
+      "key": "field_tad_tk_sep",
+      "label": "Separator",
+      "name": "separator",
+      "type": "text",
+      "default_value": "✦",
+      "instructions": "Character between keywords."
+    },
+    {
+      "key": "field_tad_tk_speed",
+      "label": "Loop duration",
+      "name": "speed",
+      "type": "number",
+      "default_value": 40,
+      "step": 5,
+      "min": 10,
+      "max": 400,
+      "append": "s",
+      "instructions": "Seconds for one full loop. Bigger = slower."
+    },
+    {
+      "key": "field_tad_tk_dir",
+      "label": "Direction",
+      "name": "direction",
+      "type": "select",
+      "choices": {
+        "left": "Scroll left",
+        "right": "Scroll right"
+      },
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "value",
+      "default_value": "left"
+    },
+    {
+      "key": "field_tad_tk_hover",
+      "label": "Pause on hover / focus",
+      "name": "pause_on_hover",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 1,
+      "ui_on_text": "",
+      "ui_off_text": ""
+    },
+    {
+      "key": "field_tad_tk_decor",
+      "label": "Decorative (hide from screen readers)",
+      "name": "decorative",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 1,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "instructions": "Recommended when the same keywords appear elsewhere on the page."
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/tad-ticker"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1790236000
+}

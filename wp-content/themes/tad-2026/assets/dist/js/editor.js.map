@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/js/editor.js"],
+  "sourcesContent": ["window.wp?.domReady?.(() => {\n  const unregister = window.wp?.blocks?.unregisterBlockStyle;\n\n  if (!unregister) return;\n\n  [\n    [\"core/image\", \"rounded\"],\n    [\"core/button\", \"outline\"],\n    [\"core/separator\", \"dots\"],\n    [\"core/social-links\", \"logos-only\"],\n    [\"core/social-links\", \"pill-shape\"],\n  ].forEach(([block, style]) => unregister(block, style));\n});\n"],
+  "mappings": "MAAA,IAAAA,EAAAC,MAAAD,EAAA,OAAO,KAAP,YAAAA,EAAW,WAAX,MAAAC,EAAA,KAAAD,EAAsB,IAAM,CAA5B,IAAAA,EAAAC,EACE,IAAMC,GAAaD,GAAAD,EAAA,OAAO,KAAP,YAAAA,EAAW,SAAX,YAAAC,EAAmB,qBAEjCC,GAEL,CACE,CAAC,aAAc,SAAS,EACxB,CAAC,cAAe,SAAS,EACzB,CAAC,iBAAkB,MAAM,EACzB,CAAC,oBAAqB,YAAY,EAClC,CAAC,oBAAqB,YAAY,CACpC,EAAE,QAAQ,CAAC,CAACC,EAAOC,CAAK,IAAMF,EAAWC,EAAOC,CAAK,CAAC,CACxD",
+  "names": ["_a", "_b", "unregister", "block", "style"]
+}

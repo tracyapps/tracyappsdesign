@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "acf/tad-contact",
+  "title": "Contact",
+  "description": "Intro, quick contact options, and a contact form.",
+  "category": "tad",
+  "icon": "email",
+  "keywords": [
+    "contact",
+    "form",
+    "say hi"
+  ],
+  "textdomain": "tad",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "tad-contact.php"
+  },
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "jsx": false,
+    "customClassName": true
+  }
+}

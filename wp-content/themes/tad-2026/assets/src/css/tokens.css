@@ -1,0 +1,132 @@
+/* ==========================================================================
+   tad-2026 tokens — "aurora glass" direction
+   Source of truth: new-design-export (Expressive contract + aurora re-bind).
+   The site is dark-only. Edit values here; everything else reads from them.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Inter";
+  src: url("../../fonts/inter-latin-wght.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Recursive";
+  src: url("../../fonts/recursive-latin-full.woff2") format("woff2");
+  font-weight: 300 1000;
+  font-style: oblique 0deg 15deg;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+
+  /* ---- Brand (logo-derived flourishes only) ---- */
+  --brand-sun: #ffc400;
+  --brand-beam: #f6cd3f;
+  --brand-flare: #df1fe5;
+  --brand-violet: #703ee7;
+  --brand-ink: #262626;
+  --brand-grad: linear-gradient(135deg, var(--brand-sun) 0%, var(--brand-flare) 46%, var(--brand-violet) 74%, var(--brand-ink) 100%);
+
+  /* ---- Semantic colour (aurora) ---- */
+  --bg: oklch(0.15 0.045 292);
+  --surface: oklch(0.30 0.05 292 / 0.42);
+  --surface-solid: oklch(0.22 0.045 292);
+  --surface-warm: oklch(0.34 0.07 288 / 0.5);
+  --fg: oklch(0.97 0.015 300);
+  --fg-2: oklch(0.84 0.03 296);
+  --muted: oklch(0.75 0.045 296);
+  --border: oklch(0.55 0.07 292 / 0.45);
+  --border-soft: oklch(0.45 0.06 290 / 0.5);
+  --accent: oklch(0.74 0.17 300);
+  --accent-on: oklch(0.15 0.04 300);
+  --accent-hover: color-mix(in oklab, var(--accent), white 10%);
+  --aurora-blue: oklch(0.62 0.17 255);
+  --success: #16a34a;
+  --warn: #f59e0b;
+  --danger: oklch(0.72 0.19 25);
+  --focus: oklch(0.85 0.14 300);
+  --focus-ring: 0 0 0 4px oklch(0.74 0.17 300 / 0.45);
+
+  /* ---- Type ---- */
+  --font-display: "Recursive", Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: "SF Mono", ui-monospace, Menlo, monospace;
+  --display-variation: "CASL" 0.2, "MONO" 0.62, "slnt" 0;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2.25rem;
+  --text-3xl: 3.375rem;
+  --leading-body: 1.52;
+  --leading-tight: 1.06;
+
+  /* ---- Space ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --section-y: 3rem;
+  --section-y-tight: 1.5rem;
+  --section-y-roomy: 4.5rem;
+
+  /* ---- Shape / depth ---- */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+  --elev-raised: 0 22px 58px rgba(87, 49, 139, 0.13);
+  --card-shadow: 0 24px 60px -30px oklch(0.05 0 0 / 0.9);
+  --input-bg: oklch(0.22 0.04 292 / 0.6);
+  --chip-bg: oklch(0.24 0.03 292 / 0.85);
+
+  /* ---- Glass primitive ---- */
+  --glass-blur: 18px;
+  --glass-sat: 1.4;
+
+  /* ---- Motion ---- */
+  --motion-fast: 150ms;
+  --motion-base: 240ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+  /* ---- Layout ---- */
+  --container-max: 1180px;
+  --gutter: 1rem;
+
+  /* ---- Starter-theme aliases (keeps inherited starter CSS working) ---- */
+  --color-bg: var(--bg);
+  --color-surface: var(--surface-solid);
+  --color-text: var(--fg);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-link: var(--accent);
+  --color-accent: var(--accent);
+  --color-focus: var(--focus);
+}
+
+@media (min-width: 720px) {
+  :root {
+    --section-y: 4.25rem;
+    --section-y-tight: 2.25rem;
+    --section-y-roomy: 6.5rem;
+    --gutter: 1.5rem;
+  }
+}
+
+@media (min-width: 1040px) {
+  :root {
+    --section-y: 6rem;
+    --section-y-tight: 3rem;
+    --section-y-roomy: 8rem;
+    --gutter: 2.25rem;
+  }
+}

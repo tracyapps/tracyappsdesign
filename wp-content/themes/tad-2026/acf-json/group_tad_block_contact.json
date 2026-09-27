@@ -1,0 +1,270 @@
+{
+  "key": "group_tad_block_contact",
+  "title": "Block: Contact",
+  "fields": [
+    {
+      "key": "field_tad_ct_tab1",
+      "label": "Heading",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_tad_ct_eyebrow",
+      "label": "Eyebrow",
+      "name": "eyebrow",
+      "type": "text",
+      "instructions": "Small mono label above the heading (e.g. “selected work”)."
+    },
+    {
+      "key": "field_tad_ct_heading",
+      "label": "Heading",
+      "name": "heading",
+      "type": "text",
+      "instructions": "The section’s H2."
+    },
+    {
+      "key": "field_tad_ct_intro",
+      "label": "Intro",
+      "name": "intro",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "instructions": "Optional supporting sentence under the heading."
+    },
+    {
+      "key": "field_tad_ct_space",
+      "label": "Vertical spacing",
+      "name": "section_space",
+      "type": "select",
+      "choices": {
+        "default": "Default",
+        "tight": "Tight",
+        "roomy": "Roomy",
+        "none": "None"
+      },
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "value",
+      "default_value": "default",
+      "instructions": "Padding above and below this section."
+    },
+    {
+      "key": "field_tad_ct_tab2",
+      "label": "Side panel",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_tad_ct_ah",
+      "label": "Heading",
+      "name": "aside_heading",
+      "type": "text",
+      "default_value": "prefer to skip the form?"
+    },
+    {
+      "key": "field_tad_ct_at",
+      "label": "Text",
+      "name": "aside_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "We’re in Milwaukee’s Central time zone, and we answer."
+    },
+    {
+      "key": "field_tad_ct_al",
+      "label": "Button",
+      "name": "aside_link",
+      "type": "link",
+      "return_format": "array",
+      "instructions": "e.g. a scheduling link."
+    },
+    {
+      "key": "field_tad_ct_pt",
+      "label": "Phone label",
+      "name": "phone_text",
+      "type": "text",
+      "instructions": "e.g. “phone / text · 414-939-4040”"
+    },
+    {
+      "key": "field_tad_ct_pn",
+      "label": "Phone number",
+      "name": "phone_number",
+      "type": "text",
+      "instructions": "Digits used for the tel: link, e.g. +14149394040"
+    },
+    {
+      "key": "field_tad_ct_tab3",
+      "label": "Form",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_tad_ct_mode",
+      "label": "Form",
+      "name": "form_mode",
+      "type": "select",
+      "choices": {
+        "builtin": "Built-in form (emails you)",
+        "shortcode": "Form plugin shortcode"
+      },
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "value",
+      "default_value": "builtin",
+      "instructions": "Built-in sends to the address in Site Options › Contact form."
+    },
+    {
+      "key": "field_tad_ct_sc",
+      "label": "Shortcode",
+      "name": "shortcode",
+      "type": "text",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_tad_ct_mode",
+            "operator": "==",
+            "value": "shortcode"
+          }
+        ]
+      ],
+      "instructions": "e.g. [formidable id=2]"
+    },
+    {
+      "key": "field_tad_ct_showtopic",
+      "label": "Show “what do you need?” dropdown",
+      "name": "show_topic",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 1,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_tad_ct_mode",
+            "operator": "==",
+            "value": "builtin"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "field_tad_ct_tl",
+      "label": "Dropdown label",
+      "name": "topic_label",
+      "type": "text",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_tad_ct_mode",
+            "operator": "==",
+            "value": "builtin"
+          }
+        ]
+      ],
+      "default_value": "what do you need?"
+    },
+    {
+      "key": "field_tad_ct_topics",
+      "label": "Dropdown options",
+      "name": "topics",
+      "type": "repeater",
+      "sub_fields": [
+        {
+          "key": "field_tad_ct_topic_label",
+          "label": "Label",
+          "name": "label",
+          "type": "text"
+        }
+      ],
+      "layout": "table",
+      "button_label": "Add option",
+      "min": 0,
+      "max": 0,
+      "collapsed": "",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_tad_ct_mode",
+            "operator": "==",
+            "value": "builtin"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "field_tad_ct_ml",
+      "label": "Message label",
+      "name": "message_label",
+      "type": "text",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_tad_ct_mode",
+            "operator": "==",
+            "value": "builtin"
+          }
+        ]
+      ],
+      "default_value": "the details"
+    },
+    {
+      "key": "field_tad_ct_bl",
+      "label": "Button label",
+      "name": "button_label",
+      "type": "text",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_tad_ct_mode",
+            "operator": "==",
+            "value": "builtin"
+          }
+        ]
+      ],
+      "default_value": "send it over"
+    },
+    {
+      "key": "field_tad_ct_note",
+      "label": "Small note under button",
+      "name": "form_note",
+      "type": "text",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_tad_ct_mode",
+            "operator": "==",
+            "value": "builtin"
+          }
+        ]
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/tad-contact"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1790236000
+}

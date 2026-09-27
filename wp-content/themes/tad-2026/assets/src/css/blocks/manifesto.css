@@ -1,0 +1,24 @@
+.manifesto__inner {
+  padding: clamp(1.75rem, 5vw, 4rem);
+  box-shadow: var(--card-shadow);
+}
+
+.manifesto blockquote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-variation-settings: var(--display-variation);
+  font-weight: 500;
+  font-size: clamp(1.2rem, 2.9vw, 1.9rem);
+  line-height: 1.3;
+}
+
+.manifesto cite {
+  display: block;
+  margin-top: var(--space-6);
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}

@@ -1,0 +1,26 @@
+@import "./tokens.css";
+@import "./base.css";
+@import "./layout.css";
+@import "./components.css";
+@import "./blocks.css";
+
+/* Editor canvas: dark, but no fixed aurora — keeps the editor fast and readable */
+.editor-styles-wrapper {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+}
+
+.editor-styles-wrapper .wp-block {
+  max-width: none;
+}
+
+.editor-styles-wrapper .aurora-bg,
+.editor-styles-wrapper .spotlight {
+  display: none;
+}
+
+.editor-styles-wrapper .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}

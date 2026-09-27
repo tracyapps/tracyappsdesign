@@ -1,0 +1,597 @@
+/* ==========================================================================
+   Projects: Work Grid block, project archives (grid + list), single project.
+
+   Grid    = CSS grid, full-bleed on the home page; columns come from a container query
+             on the grid's wrapper. main.js (masonry.js) adds .is-masonry and gives every card a
+             row-span from its real height, so columns pack like masonry. Without JS
+             it is a plain grid. DOM order = reading order (no `dense` packing).
+   Images  = never cropped: every card keeps the screenshot's own aspect ratio and the
+             card sizes itself around it (list/detail rows are the one exception).
+   Cards   = each picks its own image position (top / side) and width (standard / wide
+             / feature) from its Project fields. Card internals scale with the card via
+             container query units (cqi).
+   Tilt    = the image "frame" is a separate layer that tilts a little more than the
+             card, with the picture sliding the other way inside it (tilt.js sets
+             --tx / --ty, -0.5..0.5). Off for reduced motion / paused motion / touch.
+   ========================================================================== */
+
+.project-grid,
+.project-list {
+  --gap: var(--space-5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Grid ---------- */
+
+/* Home page: the grid breaks out of .wrap and spans the viewport. The gutter grows a
+   little with the screen so wide screens don't feel edge-to-edge cramped. */
+.tad-work__grid {
+  padding-inline: clamp(var(--gutter), 2.5vw, 3.5rem);
+}
+
+/* Column count follows the space the grid ACTUALLY has (container query), not the
+   viewport, so the same grid is roomy full-bleed and still sensible inside a .wrap.
+   Cards land around 370-480px wide at every step. */
+.tad-work__grid,
+.project-archive,
+.project-related {
+  container: project-grid / inline-size;
+}
+
+.project-grid {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+}
+
+@container project-grid (min-width: 36rem) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Wide / feature cards, and every side-image card, take two columns */
+  .project-card--wide,
+  .project-card--feature,
+  .project-card--side {
+    grid-column: span 2;
+  }
+}
+
+/* archives / related: all cards are the same width, 3 across as before */
+@container project-grid (min-width: 60rem) {
+  .project-grid--uniform {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@container project-grid (min-width: 72rem) {
+  .project-grid:not(.project-grid--uniform) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@container project-grid (min-width: 104rem) {
+  .project-grid:not(.project-grid--uniform) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  /* the highlight gets three of the four columns */
+  .project-card--feature {
+    grid-column: span 3;
+  }
+}
+
+@container project-grid (min-width: 140rem) {
+  .project-grid:not(.project-grid--uniform) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@container project-grid (min-width: 190rem) {
+  .project-grid:not(.project-grid--uniform) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+/* Masonry (set by JS): tiny rows, each card spans as many as it needs */
+.project-grid.is-masonry {
+  grid-auto-rows: 2px;
+  row-gap: 0;
+}
+
+.project-grid__more {
+  margin-top: var(--space-8);
+  text-align: center;
+}
+
+/* ---------- Card ---------- */
+.project-card {
+  position: relative;
+  min-width: 0;
+  container-type: inline-size;
+}
+
+.project-card__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  transform: perspective(1000px) rotateX(calc(var(--ty, 0) * -2.4deg)) rotateY(calc(var(--tx, 0) * 2.4deg));
+  transition: transform 520ms var(--ease-standard), border-color var(--motion-base) var(--ease-standard);
+}
+
+.project-card.has-link:hover .project-card__inner,
+.project-card.has-link:focus-within .project-card__inner {
+  border-color: color-mix(in oklab, var(--accent), transparent 40%);
+}
+
+.project-card.is-tilting .project-card__inner {
+  transition-duration: 110ms, var(--motion-base);
+}
+
+/* Soft light that follows the pointer across the whole card */
+.project-card__glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--motion-base) var(--ease-standard);
+  background: radial-gradient(340px circle at var(--cell-x, 50%) var(--cell-y, 0%), color-mix(in oklab, var(--accent), transparent 88%), transparent 60%);
+}
+
+.project-card.is-tilting .project-card__glow {
+  opacity: 1;
+}
+
+/* --- Image: a separate "cut-out" layer --- */
+.project-card__media {
+  position: relative;
+  min-width: 0;
+}
+
+.project-card__frame {
+  --lift: 1;
+  --zoom: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface-solid);
+  transform: perspective(1000px) translate3d(calc(var(--tx, 0) * 8px), calc(var(--ty, 0) * 8px), 0) rotateX(calc(var(--ty, 0) * -8deg)) rotateY(calc(var(--tx, 0) * 8deg)) scale(var(--lift));
+  transition: transform 520ms var(--ease-standard), box-shadow 320ms var(--ease-standard);
+}
+
+.project-card.is-tilting .project-card__frame {
+  --lift: 1.025;
+  --zoom: 1.07;
+  box-shadow: 0 22px 38px -20px oklch(0.04 0.03 292 / 0.9);
+  transition-duration: 110ms, 320ms;
+}
+
+.project-card__img {
+  display: block;
+  height: 100%;
+}
+
+.project-card__img img,
+.project-card__img .art {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: translate3d(calc(var(--tx, 0) * -12px), calc(var(--ty, 0) * -12px), 0) scale(var(--zoom));
+  transition: transform 520ms var(--ease-standard);
+}
+
+.project-card.is-tilting .project-card__img img,
+.project-card.is-tilting .project-card__img .art {
+  transition-duration: 110ms;
+}
+
+.project-card__gloss {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle at calc(50% + var(--tx, 0) * 110%) calc(50% + var(--ty, 0) * 110%), oklch(1 0 0 / 0.2), transparent 58%);
+  transition: opacity 260ms var(--ease-standard);
+}
+
+.project-card.is-tilting .project-card__gloss {
+  opacity: 1;
+}
+
+/* --- Text --- */
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--space-2) var(--space-3) var(--space-3);
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+
+.project-card__title {
+  font-size: clamp(1.1rem, 6.4cqi, 1.75rem);
+  font-weight: 700;
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.project-card--feature .project-card__title {
+  font-size: clamp(1.4rem, 7.2cqi, 2.6rem);
+}
+
+.project-card__excerpt {
+  margin-top: var(--space-3);
+  color: var(--fg-2);
+  font-size: var(--text-sm);
+}
+
+.project-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px var(--space-4);
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.project-card__actions {
+  margin-top: var(--space-4);
+}
+
+/* Whole card is one click target: the title link stretches over it */
+.project-card__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.project-card__link:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.project-card__inner:has(.project-card__link:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* Things that sit ABOVE the stretched link and stay separately clickable */
+.project-card .chip--link,
+.project-card__visit {
+  position: relative;
+  z-index: 2;
+}
+
+.chip--link {
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--motion-fast), background-color var(--motion-fast);
+}
+
+.chip--link:hover,
+.chip--link[aria-current] {
+  border-color: var(--accent);
+  color: var(--fg);
+}
+
+.project-card__visit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  min-height: 24px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.project-card__visit {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.project-card__visit:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.icon-ext {
+  flex: none;
+  display: inline-block;
+  vertical-align: -1px;
+  margin-inline-start: 0.2em;
+}
+
+/* --- Image beside the text (needs room: the container, i.e. the card, is wide enough) ---
+   The screenshot is never cropped: it keeps its own shape, and the text column sits
+   beside it, vertically centred. The card is as tall as whichever is taller. */
+@container (min-width: 30rem) {
+  .project-card--side .project-card__inner {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .project-card--side .project-card__media {
+    flex: 0 0 60%;
+  }
+
+  .project-card--side .project-card__body {
+    flex: 1 1 0;
+    padding: var(--space-4) var(--space-4) var(--space-4) var(--space-3);
+  }
+
+  .project-card--side .project-card__title {
+    font-size: clamp(1.1rem, 4.4cqi, 1.9rem);
+  }
+}
+
+/* ---------- List / detail archive: image left (1), text right (1.618, golden ratio) ---------- */
+.project-list {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 720px) {
+  .project-card--row .project-card__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.618fr;
+    align-items: stretch;
+    gap: var(--space-5);
+  }
+
+  .project-card--row .project-card__frame {
+    height: 100%;
+  }
+
+  .project-card--row .project-card__img img,
+  .project-card--row .project-card__img .art {
+    height: 100%;
+    min-height: 11rem;
+    max-height: 24rem;
+    object-fit: cover;
+  }
+
+  .project-card--row .project-card__img .art {
+    aspect-ratio: auto !important; /* inline ratio is for the grid; rows crop to the text height */
+  }
+
+  .project-card--row .project-card__body {
+    justify-content: center;
+    padding: var(--space-4) var(--space-5) var(--space-4) 0;
+  }
+
+  .project-card--row .project-card__title {
+    font-size: clamp(1.4rem, 3.4cqi, 2.2rem);
+  }
+}
+
+/* ---------- Archive chrome ---------- */
+.project-archive {
+  padding-block: var(--space-8) var(--section-y);
+}
+
+.project-archive__head {
+  padding-block: var(--space-8) var(--space-6);
+}
+
+.project-archive__head .eyebrow a {
+  color: inherit;
+}
+
+.project-archive__tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.project-filter ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-view {
+  display: flex;
+  gap: 6px;
+}
+
+.project-archive .navigation.pagination {
+  margin-top: var(--space-12);
+}
+
+.project-archive .nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: center;
+}
+
+.project-archive .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-pill);
+  color: var(--fg-2);
+  text-decoration: none;
+}
+
+.project-archive .page-numbers.current,
+.project-archive a.page-numbers:hover {
+  border-color: var(--accent);
+  color: var(--fg);
+}
+
+/* ---------- Single project ---------- */
+.project-single__head {
+  padding-block: var(--space-12) var(--space-6);
+}
+
+.project-single__head .eyebrow a {
+  color: inherit;
+}
+
+.project-single__head .project-card__tags {
+  margin-top: var(--space-5);
+}
+
+.project-single__cta {
+  margin-top: var(--space-6);
+}
+
+.project-single__head .page-title {
+  margin-top: var(--space-3);
+}
+
+.project-single__head .page-tagline {
+  margin-top: var(--space-4);
+}
+
+/* The picture keeps its own size (no upscaling), up to the content width */
+.project-single__stage .project-card--ctx-single {
+  width: fit-content;
+  max-width: min(100%, 1100px);
+  container-type: normal;
+}
+
+.project-single__stage .project-card__img img {
+  width: auto;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.project-single__stage .project-card__img .art {
+  width: min(100vw - 2rem, 900px);
+}
+
+.project-single__stage .project-card__frame {
+  border-radius: var(--radius-lg);
+}
+
+.project-single__meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--space-5);
+  max-width: 1100px;
+  margin: var(--space-8) 0 0;
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border-soft);
+}
+
+.project-single__meta dt {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.project-single__meta dd {
+  margin: var(--space-1) 0 0;
+}
+
+.project-single__meta a {
+  color: var(--accent);
+}
+
+.project-single__content {
+  max-width: 46rem;
+  padding-top: var(--space-10, 2.5rem);
+}
+
+.project-pager {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: minmax(0, 1fr);
+  padding-bottom: var(--section-y-tight);
+}
+
+@media (min-width: 620px) {
+  .project-pager {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.project-pager__link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-5);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 600;
+  transition: border-color var(--motion-fast);
+}
+
+.project-pager__link:hover {
+  border-color: var(--accent);
+}
+
+.project-pager__link--next {
+  grid-column: 2;
+  text-align: end;
+}
+
+@media (max-width: 619px) {
+  .project-pager__link--next {
+    grid-column: 1;
+  }
+}
+
+.project-related {
+  padding-block: var(--space-8) var(--section-y);
+}
+
+.project-related__title {
+  margin-bottom: var(--space-6);
+  font-size: var(--text-2xl);
+}
+
+@media (forced-colors: active) {
+  .project-card__inner,
+  .project-card__frame {
+    border: 1px solid CanvasText;
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "key": "group_tad_block_hero",
+  "title": "Block: Hero",
+  "fields": [
+    {
+      "key": "field_tad_hero_tab1",
+      "label": "Content",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_tad_hero_badge",
+      "label": "Badge",
+      "name": "badge_text",
+      "type": "text",
+      "default_value": "available for studio work · 2026"
+    },
+    {
+      "key": "field_tad_hero_pulse",
+      "label": "Pulsing dot in badge",
+      "name": "badge_pulse",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 1,
+      "ui_on_text": "",
+      "ui_off_text": ""
+    },
+    {
+      "key": "field_tad_hero_tag",
+      "label": "Heading level",
+      "name": "heading_tag",
+      "type": "select",
+      "choices": {
+        "h1": "H1 (main page heading)",
+        "h2": "H2"
+      },
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "value",
+      "default_value": "h1",
+      "instructions": "Use H1 once per page. Use H2 if the page title is already an H1 elsewhere."
+    },
+    {
+      "key": "field_tad_hero_heading",
+      "label": "Heading",
+      "name": "heading",
+      "type": "text",
+      "default_value": "design + technology that {speaks human}.",
+      "instructions": "Wrap words in {curly braces} to give them the gradient highlight."
+    },
+    {
+      "key": "field_tad_hero_lead",
+      "label": "Lead paragraph",
+      "name": "lead",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": ""
+    },
+    {
+      "key": "field_tad_hero_tab2",
+      "label": "Buttons",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_tad_hero_primary",
+      "label": "Primary button",
+      "name": "primary_button",
+      "type": "link",
+      "return_format": "array"
+    },
+    {
+      "key": "field_tad_hero_secondary",
+      "label": "Secondary button",
+      "name": "secondary_button",
+      "type": "link",
+      "return_format": "array"
+    },
+    {
+      "key": "field_tad_hero_tab3",
+      "label": "Stats",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_tad_hero_stats",
+      "label": "Stats",
+      "name": "stats",
+      "type": "repeater",
+      "sub_fields": [
+        {
+          "key": "field_tad_hero_stat_value",
+          "label": "Value",
+          "name": "value",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          },
+          "instructions": "e.g. 25+"
+        },
+        {
+          "key": "field_tad_hero_stat_label",
+          "label": "Label",
+          "name": "label",
+          "type": "text",
+          "wrapper": {
+            "width": "65"
+          },
+          "instructions": "e.g. years building"
+        }
+      ],
+      "layout": "table",
+      "button_label": "Add stat",
+      "min": 0,
+      "max": 0,
+      "collapsed": ""
+    },
+    {
+      "key": "field_tad_hero_tab4",
+      "label": "Card cluster",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_tad_hero_show",
+      "label": "Show the card cluster",
+      "name": "show_cluster",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 1,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "instructions": "The floating cards + chips beside the hero text. Purely decorative (hidden from screen readers)."
+    },
+    {
+      "key": "field_tad_hero_flip",
+      "label": "Put cluster on the left",
+      "name": "flip_layout",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 0,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_tad_hero_show",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "field_tad_hero_cards",
+      "label": "Cards",
+      "name": "cards",
+      "type": "repeater",
+      "sub_fields": [
+        {
+          "key": "field_tad_hero_card_art",
+          "label": "Art",
+          "name": "art",
+          "type": "select",
+          "choices": {
+            "papr": "Paper (sun + flare)",
+            "exp": "Deep violet panel",
+            "coloma": "Golden hour",
+            "grid": "Dot grid",
+            "wave": "Violet-to-flare wave",
+            "ink": "Ink",
+            "game": "Stripes"
+          },
+          "allow_null": 0,
+          "multiple": 0,
+          "ui": 0,
+          "return_format": "value",
+          "wrapper": {
+            "width": "30"
+          },
+          "default_value": "papr"
+        },
+        {
+          "key": "field_tad_hero_card_img",
+          "label": "Image (replaces art)",
+          "name": "image",
+          "type": "image",
+          "return_format": "id",
+          "preview_size": "medium",
+          "library": "all",
+          "wrapper": {
+            "width": "30"
+          }
+        },
+        {
+          "key": "field_tad_hero_card_cap",
+          "label": "Caption",
+          "name": "caption",
+          "type": "text",
+          "wrapper": {
+            "width": "40"
+          }
+        },
+        {
+          "key": "field_tad_hero_card_tilt",
+          "label": "Tilt",
+          "name": "tilt",
+          "type": "number",
+          "default_value": -3,
+          "step": 1,
+          "wrapper": {
+            "width": "50"
+          },
+          "min": -20,
+          "max": 20,
+          "append": "°"
+        },
+        {
+          "key": "field_tad_hero_card_depth",
+          "label": "Pointer parallax depth",
+          "name": "depth",
+          "type": "number",
+          "default_value": 14,
+          "step": 1,
+          "wrapper": {
+            "width": "50"
+          },
+          "min": 0,
+          "max": 60,
+          "instructions": "0 = doesn’t move with the pointer."
+        }
+      ],
+      "layout": "block",
+      "button_label": "Add card",
+      "min": 0,
+      "max": 3,
+      "collapsed": "field_tad_hero_card_cap",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_tad_hero_show",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ],
+      "instructions": "Up to 3. Positions are fixed: first card top-left, second right, third bottom."
+    },
+    {
+      "key": "field_tad_hero_chips",
+      "label": "Floating chips",
+      "name": "chips",
+      "type": "repeater",
+      "sub_fields": [
+        {
+          "key": "field_tad_hero_chip_text",
+          "label": "Text",
+          "name": "text",
+          "type": "text",
+          "wrapper": {
+            "width": "60"
+          }
+        },
+        {
+          "key": "field_tad_hero_chip_depth",
+          "label": "Pointer parallax depth",
+          "name": "depth",
+          "type": "number",
+          "default_value": 24,
+          "step": 1,
+          "wrapper": {
+            "width": "40"
+          },
+          "min": 0,
+          "max": 60
+        }
+      ],
+      "layout": "table",
+      "button_label": "Add chip",
+      "min": 0,
+      "max": 3,
+      "collapsed": "",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_tad_hero_show",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/tad-hero"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1790236000
+}

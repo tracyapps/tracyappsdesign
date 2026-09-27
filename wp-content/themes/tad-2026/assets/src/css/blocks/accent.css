@@ -1,0 +1,190 @@
+/* ==========================================================================
+   Accent section — "the transition"
+   A full-bleed glass band wrapped around whatever blocks sit inside it.
+   Wavy edges = stacked, masked, animated glass panels (real backdrop-filter).
+
+   Every knob is a CSS variable. PHP sets them inline from the ACF settings
+   (Site Options defaults, optionally overridden per block), so you can also
+   live-tweak any of them in dev tools:
+
+     --acc-tint        panel colour (any colour)
+     --acc-a           per-layer opacity, 0–100
+     --acc-edge-a      brightness of the crest highlight line, 0–100 (0 = off)
+     --acc-edge-w      thickness of that line (length)
+     --acc-blur        backdrop blur (length)
+     --acc-sat         backdrop saturation (number, 1 = none)
+     --acc-bright      backdrop brightness (number, 1 = none)
+     --acc-h           transition height (length)
+     --acc-scale       height/wave scale on phones (number)
+     --acc-spacing     resting vertical offset between layers (length)
+     --acc-strength    scroll parallax travel (length, may be negative)
+     --acc-fade        % of the transition where layers blend into the body
+     --acc-bob         floating bob distance (length)
+   ========================================================================== */
+
+.tad-accent {
+  --acc-tint: #0a0518;
+  --acc-a: 24;
+  --acc-body-a: 60;
+  --acc-blur: 14px;
+  --acc-sat: 1.6;
+  --acc-bright: 1;
+  --acc-h: 220px;
+  --acc-scale: 1;
+  --acc-spacing: 22px;
+  --acc-strength: 70px;
+  --acc-fade: 55;
+  --acc-bob: 12px;
+  --acc-edge-a: 14;
+  --acc-edge-w: 2px;
+
+  position: relative;
+  /* Clip sideways only (shapes are wider than the viewport). `clip` — unlike
+     `hidden` or clip-path — does not create a backdrop root, so the glass still
+     sees the aurora behind it. */
+  overflow-x: clip;
+}
+
+@media (max-width: 719px) {
+  .tad-accent {
+    --acc-scale: var(--acc-mobile-scale, 0.65);
+  }
+}
+
+/* Body fill: one flat panel, faded in/out across the transition zones */
+.tad-accent__body {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: color-mix(in oklab, var(--acc-tint) calc(var(--acc-body-a) * 1%), transparent);
+  backdrop-filter: blur(var(--acc-blur)) saturate(var(--acc-sat)) brightness(var(--acc-bright));
+  -webkit-backdrop-filter: blur(var(--acc-blur)) saturate(var(--acc-sat)) brightness(var(--acc-bright));
+  --_top: calc(var(--acc-h) * var(--acc-scale));
+  --_bot: calc(var(--acc-h) * var(--acc-scale));
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 var(--_top), #000 calc(100% - var(--_bot)), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 var(--_top), #000 calc(100% - var(--_bot)), transparent 100%);
+}
+
+.tad-accent:not(.has-top) .tad-accent__body {
+  --_top: 0px;
+}
+
+.tad-accent:not(.has-bottom) .tad-accent__body {
+  --_bot: 0px;
+}
+
+.tad-accent__content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Wave edges */
+.tad-accent__edge {
+  position: relative;
+  z-index: 0;
+  height: calc(var(--acc-h) * var(--acc-scale));
+  pointer-events: none;
+}
+
+.tad-accent__edge--bottom {
+  transform: scaleY(-1);
+}
+
+.tad-accent__layer {
+  position: absolute;
+  inset: 0;
+  /* resting spacing + scroll parallax (--pp is written by main.js, -1..1) */
+  transform: translate3d(0, calc(var(--i, 0) * var(--acc-spacing) + var(--pp, 0) * var(--acc-strength) * var(--k, 0)), 0);
+  will-change: transform;
+}
+
+.tad-accent__shape {
+  --tile-w: calc(var(--tile, 1800px) * var(--acc-scale));
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: calc(100% + var(--tile-w));
+  background: color-mix(in oklab, var(--acc-tint) calc(var(--acc-a) * 1%), transparent);
+  backdrop-filter: blur(var(--acc-blur)) saturate(var(--acc-sat)) brightness(var(--acc-bright));
+  -webkit-backdrop-filter: blur(var(--acc-blur)) saturate(var(--acc-sat)) brightness(var(--acc-bright));
+
+  /* mask 1: this layer's wave tile · mask 2: fade toward the body (intersected) */
+  -webkit-mask-image: var(--mask), linear-gradient(to bottom, #000 0, #000 calc(100% - var(--acc-fade) * 1%), transparent 100%);
+  mask-image: var(--mask), linear-gradient(to bottom, #000 0, #000 calc(100% - var(--acc-fade) * 1%), transparent 100%);
+  -webkit-mask-size: var(--tile-w) 100%, 100% 100%;
+  mask-size: var(--tile-w) 100%, 100% 100%;
+  -webkit-mask-repeat: repeat-x, no-repeat;
+  mask-repeat: repeat-x, no-repeat;
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+
+  animation:
+    /* steps(): the drift is so slow (a few px/second) that moving in ~1.5px steps looks
+       identical, but the GPU re-blurs the glass ~8x/second instead of 60x. --drift-steps
+       and --bob-steps are set per layer in PHP. */
+    tad-acc-drift var(--dur, 160s) steps(var(--drift-steps, 1000), end) var(--drift-delay, 0s) infinite var(--drift-dir, normal),
+    tad-acc-bob var(--bob-dur, 26s) steps(var(--bob-steps, 24), end) var(--bob-delay, 0s) infinite alternate;
+}
+
+/* Crest highlight: the panel's mask minus a copy of itself shifted down = a thin lit rim */
+.tad-accent__shape::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(to bottom, oklch(1 0 0 / calc(var(--acc-edge-a) * 1%)), oklch(1 0 0 / 0));
+  -webkit-mask-image: var(--mask), var(--mask);
+  mask-image: var(--mask), var(--mask);
+  -webkit-mask-size: var(--tile-w) 100%, var(--tile-w) 100%;
+  mask-size: var(--tile-w) 100%, var(--tile-w) 100%;
+  -webkit-mask-repeat: repeat-x, repeat-x;
+  mask-repeat: repeat-x, repeat-x;
+  -webkit-mask-position: 0 0, 0 var(--acc-edge-w);
+  mask-position: 0 0, 0 var(--acc-edge-w);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+}
+
+@keyframes tad-acc-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(calc(var(--tile-w) * -1), 0, 0); }
+}
+
+@keyframes tad-acc-bob {
+  from { translate: 0 calc(var(--acc-bob) * -1); }
+  to { translate: 0 var(--acc-bob); }
+}
+
+/* Settings: animation switched off in the ACF settings */
+.tad-accent.is-still .tad-accent__shape {
+  animation: none;
+}
+
+/* Off-screen sections don't animate (main.js toggles this) */
+.tad-accent.is-offscreen .tad-accent__shape {
+  animation-play-state: paused;
+}
+
+/* Editor preview: static, so the editor stays light */
+.tad-accent.is-preview .tad-accent__shape {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tad-accent__shape {
+    animation: none;
+  }
+
+  .tad-accent__layer {
+    transform: translate3d(0, calc(var(--i, 0) * var(--acc-spacing)), 0);
+  }
+}
+
+/* Browsers without backdrop-filter: a touch more tint so the panels still read */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .tad-accent {
+    --acc-a: 34;
+  }
+}

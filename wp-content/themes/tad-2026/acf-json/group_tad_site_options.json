@@ -1,0 +1,326 @@
+{
+  "key": "group_tad_site_options",
+  "title": "Site Design (tad-2026)",
+  "fields": [
+    {
+      "key": "field_tad_so_tab_brand",
+      "label": "Brand & Header",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_tad_so_wm_light",
+      "label": "Wordmark — light line",
+      "name": "wordmark_light",
+      "type": "text",
+      "default_value": "tracy apps"
+    },
+    {
+      "key": "field_tad_so_wm_heavy",
+      "label": "Wordmark — bold line",
+      "name": "wordmark_heavy",
+      "type": "text",
+      "default_value": "design"
+    },
+    {
+      "key": "field_tad_so_wm_llc",
+      "label": "Wordmark — small tag",
+      "name": "wordmark_llc",
+      "type": "text",
+      "default_value": "LLC"
+    },
+    {
+      "key": "field_tad_so_header_cta",
+      "label": "Header button",
+      "name": "header_cta",
+      "type": "link",
+      "return_format": "array",
+      "instructions": "Optional button on the right of the header (e.g. “start a project”)."
+    },
+    {
+      "key": "field_tad_so_tab_footer",
+      "label": "Footer",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_tad_so_tagline",
+      "label": "Tagline",
+      "name": "footer_tagline",
+      "type": "textarea",
+      "rows": 2,
+      "new_lines": "",
+      "default_value": "Compelling, creative solutions for web, product, and games. Milwaukee, Wisconsin."
+    },
+    {
+      "key": "field_tad_so_else_title",
+      "label": "Elsewhere heading",
+      "name": "footer_elsewhere_title",
+      "type": "text",
+      "default_value": "elsewhere"
+    },
+    {
+      "key": "field_tad_so_else",
+      "label": "Elsewhere links",
+      "name": "footer_elsewhere",
+      "type": "repeater",
+      "sub_fields": [
+        {
+          "key": "field_tad_so_else_link",
+          "label": "Link",
+          "name": "link",
+          "type": "link",
+          "return_format": "array"
+        }
+      ],
+      "layout": "table",
+      "button_label": "Add link",
+      "min": 0,
+      "max": 0,
+      "collapsed": "",
+      "instructions": "Second footer column. The first column uses the “Footer Menu” under Appearance › Menus."
+    },
+    {
+      "key": "field_tad_so_explore_title",
+      "label": "Explore heading",
+      "name": "footer_explore_title",
+      "type": "text",
+      "default_value": "explore"
+    },
+    {
+      "key": "field_tad_so_note",
+      "label": "Fine print (right side)",
+      "name": "footer_note",
+      "type": "text",
+      "default_value": "built with long shadows and short meetings."
+    },
+    {
+      "key": "field_tad_so_tab_bg",
+      "label": "Background & Motion",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_tad_so_orbs",
+      "label": "Aurora orbs",
+      "name": "bg_orbs",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 1,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "instructions": "The blurred colour orbs fixed behind the whole site."
+    },
+    {
+      "key": "field_tad_so_grain",
+      "label": "Film grain",
+      "name": "bg_grain",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 1,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "instructions": "Subtle noise over the orbs."
+    },
+    {
+      "key": "field_tad_so_spot",
+      "label": "Cursor spotlight",
+      "name": "bg_spotlight",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 1,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "instructions": "A soft glow that follows the pointer (fine pointers only)."
+    },
+    {
+      "key": "field_tad_so_motion",
+      "label": "Pause-motion button",
+      "name": "motion_toggle_position",
+      "type": "select",
+      "choices": {
+        "footer": "Footer",
+        "header": "Header",
+        "both": "Header and footer",
+        "none": "Hidden (not recommended)"
+      },
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "value",
+      "default_value": "footer",
+      "instructions": "Lets visitors stop all decorative animation. Recommended for accessibility (WCAG 2.2.2)."
+    },
+    {
+      "key": "field_tad_so_tab_acc",
+      "label": "Glass Transition",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_tad_so_acc_msg",
+      "label": "About",
+      "name": "",
+      "type": "message",
+      "message": "Site-wide defaults for every <strong>Accent Section</strong> block (the wavy glass bands). A block can override them from its own settings.",
+      "new_lines": "wpautop",
+      "esc_html": 0
+    },
+    {
+      "key": "field_tad_so_acc_clone",
+      "label": "Glass transition settings",
+      "name": "accent_defaults",
+      "type": "clone",
+      "clone": [
+        "group_tad_accent_settings"
+      ],
+      "display": "group",
+      "layout": "block",
+      "prefix_label": 0,
+      "prefix_name": 0
+    },
+    {
+      "key": "field_tad_so_tab_contact",
+      "label": "Contact form",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_tad_so_recipient",
+      "label": "Send messages to",
+      "name": "contact_recipient",
+      "type": "email",
+      "instructions": "Leave empty to use the WordPress admin email."
+    },
+    {
+      "key": "field_tad_so_subject",
+      "label": "Subject prefix",
+      "name": "contact_subject_prefix",
+      "type": "text",
+      "default_value": "[tracyappsdesign.com]"
+    },
+    {
+      "key": "field_tad_so_ok_title",
+      "label": "Success title",
+      "name": "contact_success_title",
+      "type": "text",
+      "default_value": "thanks — that’s in the pile."
+    },
+    {
+      "key": "field_tad_so_ok_text",
+      "label": "Success message",
+      "name": "contact_success_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "Your message is on its way. You’ll hear back soon."
+    },
+    {
+      "key": "field_tad_opt_tab_projects",
+      "label": "Projects",
+      "type": "tab",
+      "placement": "top"
+    },
+    {
+      "key": "field_tad_opt_proj_detail",
+      "label": "Project detail pages & archives",
+      "name": "projects_detail",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 0,
+      "ui_on_text": "On",
+      "ui_off_text": "Off",
+      "instructions": "OFF: projects only appear as cards in the Work Grid (linking to the live site, if you set one). Project pages and tag/category archives don't exist (404). ON: every project gets its own page, plus /work/ and tag/category archives."
+    },
+    {
+      "key": "field_tad_opt_proj_layout",
+      "label": "Archive layout",
+      "name": "projects_archive_layout",
+      "type": "button_group",
+      "choices": {
+        "grid": "Masonry grid",
+        "list": "List / detail"
+      },
+      "default_value": "grid",
+      "layout": "horizontal",
+      "return_format": "value",
+      "instructions": "Applies to /work/ and the tag & category archives. Preview the other one anytime by adding ?view=list or ?view=grid to the address."
+    },
+    {
+      "key": "field_tad_opt_proj_switcher",
+      "label": "Let visitors switch layout",
+      "name": "projects_view_switcher",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 0,
+      "ui_on_text": "Show",
+      "ui_off_text": "Hide",
+      "instructions": "Shows a small \"grid / list\" switch above the archive."
+    },
+    {
+      "key": "field_tad_opt_proj_per_page",
+      "label": "Projects per archive page",
+      "name": "projects_per_page",
+      "type": "number",
+      "default_value": 12,
+      "min": 3,
+      "max": 60,
+      "step": 1
+    },
+    {
+      "key": "field_tad_opt_proj_title",
+      "label": "Archive heading",
+      "name": "projects_archive_title",
+      "type": "text",
+      "default_value": "work"
+    },
+    {
+      "key": "field_tad_opt_proj_intro",
+      "label": "Archive intro",
+      "name": "projects_archive_intro",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_tad_opt_proj_related",
+      "label": "Similar projects shown on a project page",
+      "name": "projects_related_count",
+      "type": "number",
+      "default_value": 3,
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "instructions": "0 hides the section."
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "tad-site-options"
+      }
+    ]
+  ],
+  "menu_order": 5,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Header, footer, background, and site-wide glass transition defaults.",
+  "show_in_rest": 0,
+  "modified": 1790236000
+}

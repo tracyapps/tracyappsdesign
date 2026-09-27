@@ -1,0 +1,93 @@
+{
+  "key": "group_tad_block_studio",
+  "title": "Block: Studio",
+  "fields": [
+    {
+      "key": "field_tad_st_eyebrow",
+      "label": "Eyebrow",
+      "name": "eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_tad_st_heading",
+      "label": "Heading",
+      "name": "heading",
+      "type": "text"
+    },
+    {
+      "key": "field_tad_st_body",
+      "label": "Body",
+      "name": "body",
+      "type": "wysiwyg",
+      "tabs": "all",
+      "toolbar": "basic",
+      "media_upload": 0
+    },
+    {
+      "key": "field_tad_st_values",
+      "label": "Values",
+      "name": "values",
+      "type": "repeater",
+      "sub_fields": [
+        {
+          "key": "field_tad_st_value_text",
+          "label": "Text",
+          "name": "text",
+          "type": "text"
+        }
+      ],
+      "layout": "table",
+      "button_label": "Add value",
+      "min": 0,
+      "max": 0,
+      "collapsed": ""
+    },
+    {
+      "key": "field_tad_st_numbered",
+      "label": "Number the values",
+      "name": "numbered",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 1,
+      "ui_on_text": "",
+      "ui_off_text": ""
+    },
+    {
+      "key": "field_tad_st_space",
+      "label": "Vertical spacing",
+      "name": "section_space",
+      "type": "select",
+      "choices": {
+        "default": "Default",
+        "tight": "Tight",
+        "roomy": "Roomy",
+        "none": "None"
+      },
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "value",
+      "default_value": "default",
+      "instructions": "Padding above and below this section."
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/tad-studio"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1790236000
+}

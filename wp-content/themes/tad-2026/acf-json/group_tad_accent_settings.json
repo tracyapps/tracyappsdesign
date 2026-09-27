@@ -1,0 +1,340 @@
+{
+  "key": "group_tad_accent_settings",
+  "title": "Clone source: Glass transition settings",
+  "fields": [
+    {
+      "key": "field_tad_acc_m1",
+      "label": "Glass",
+      "name": "",
+      "type": "message",
+      "message": "<strong>Glass</strong> — the look of the wavy panels and the flat section body.",
+      "new_lines": "wpautop",
+      "esc_html": 0
+    },
+    {
+      "key": "field_tad_acc_layers",
+      "label": "Layers",
+      "name": "layers",
+      "type": "number",
+      "default_value": 4,
+      "step": 1,
+      "min": 1,
+      "max": 6,
+      "instructions": "How many stacked wave panels per edge."
+    },
+    {
+      "key": "field_tad_acc_tint",
+      "label": "Tint colour",
+      "name": "tint",
+      "type": "color_picker",
+      "default_value": "#0a0518",
+      "enable_opacity": 0,
+      "return_format": "string",
+      "instructions": "Colour of the glass. Darker reads as shadow; lighter reads as frost."
+    },
+    {
+      "key": "field_tad_acc_opacity",
+      "label": "Layer opacity",
+      "name": "opacity",
+      "type": "range",
+      "default_value": 24,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "append": "%",
+      "instructions": "Opacity of each panel. Panels stack, so the deepest part of the transition is darker."
+    },
+    {
+      "key": "field_tad_acc_blur",
+      "label": "Backdrop blur",
+      "name": "blur",
+      "type": "range",
+      "default_value": 14,
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "append": "px",
+      "instructions": "How much the site background (orbs) is blurred behind the glass."
+    },
+    {
+      "key": "field_tad_acc_sat",
+      "label": "Backdrop saturation",
+      "name": "saturation",
+      "type": "range",
+      "default_value": 160,
+      "min": 50,
+      "max": 300,
+      "step": 5,
+      "append": "%",
+      "instructions": "100% = none. Higher makes the orbs glow through more vividly."
+    },
+    {
+      "key": "field_tad_acc_bright",
+      "label": "Backdrop brightness",
+      "name": "brightness",
+      "type": "range",
+      "default_value": 100,
+      "min": 50,
+      "max": 150,
+      "step": 5,
+      "append": "%",
+      "instructions": "Below 100% darkens what shows through."
+    },
+    {
+      "key": "field_tad_acc_edge",
+      "label": "Crest highlight",
+      "name": "edge",
+      "type": "range",
+      "default_value": 14,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "append": "%",
+      "instructions": "A thin lit rim along the top of each wave, like light catching glass. 0 = off."
+    },
+    {
+      "key": "field_tad_acc_edgew",
+      "label": "Crest highlight thickness",
+      "name": "edge_width",
+      "type": "number",
+      "default_value": 2,
+      "step": 1,
+      "min": 0,
+      "max": 12,
+      "append": "px",
+      "instructions": "Thickness of that rim."
+    },
+    {
+      "key": "field_tad_acc_m2",
+      "label": "Shape",
+      "name": "",
+      "type": "message",
+      "message": "<strong>Shape</strong> — the wave silhouettes. Waves are generated from these numbers.",
+      "new_lines": "wpautop",
+      "esc_html": 0
+    },
+    {
+      "key": "field_tad_acc_height",
+      "label": "Transition height",
+      "name": "height",
+      "type": "number",
+      "default_value": 220,
+      "step": 10,
+      "min": 60,
+      "max": 600,
+      "append": "px",
+      "instructions": "Height of each wavy edge (also the space it takes up on the page)."
+    },
+    {
+      "key": "field_tad_acc_mobile",
+      "label": "Height on phones",
+      "name": "mobile_scale",
+      "type": "range",
+      "default_value": 65,
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "append": "%",
+      "instructions": "Scales height and wavelength below 720px wide."
+    },
+    {
+      "key": "field_tad_acc_peak",
+      "label": "Wave height",
+      "name": "peak",
+      "type": "range",
+      "default_value": 70,
+      "min": 15,
+      "max": 95,
+      "step": 1,
+      "append": "%",
+      "instructions": "How much of the transition height the waves occupy."
+    },
+    {
+      "key": "field_tad_acc_length",
+      "label": "Wavelength",
+      "name": "length",
+      "type": "number",
+      "default_value": 1800,
+      "step": 50,
+      "min": 600,
+      "max": 4000,
+      "append": "px",
+      "instructions": "Width of one repeating wave tile. Longer = broader, calmer waves."
+    },
+    {
+      "key": "field_tad_acc_complexity",
+      "label": "Complexity",
+      "name": "complexity",
+      "type": "range",
+      "default_value": 3,
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "instructions": "1 = smooth single swell. 4 = choppier, more organic."
+    },
+    {
+      "key": "field_tad_acc_seed",
+      "label": "Seed",
+      "name": "seed",
+      "type": "number",
+      "default_value": 7,
+      "step": 1,
+      "min": 0,
+      "max": 9999,
+      "instructions": "Change to get a different set of wave shapes."
+    },
+    {
+      "key": "field_tad_acc_spacing",
+      "label": "Layer spacing",
+      "name": "spacing",
+      "type": "number",
+      "default_value": 22,
+      "step": 2,
+      "min": -100,
+      "max": 200,
+      "append": "px",
+      "instructions": "Resting vertical offset between panels. 0 = all wave tops aligned."
+    },
+    {
+      "key": "field_tad_acc_fade",
+      "label": "Blend into section",
+      "name": "fade",
+      "type": "range",
+      "default_value": 55,
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "append": "%",
+      "instructions": "How much of the transition’s lower part fades into the flat section body."
+    },
+    {
+      "key": "field_tad_acc_m3",
+      "label": "Motion",
+      "name": "",
+      "type": "message",
+      "message": "<strong>Motion</strong> — the slow float and the scroll response. Visitors can pause all motion with the site’s pause button, and reduced-motion settings turn it off.",
+      "new_lines": "wpautop",
+      "esc_html": 0
+    },
+    {
+      "key": "field_tad_acc_animate",
+      "label": "Animate waves",
+      "name": "animate",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 1,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "instructions": "Slow horizontal drift + gentle bobbing."
+    },
+    {
+      "key": "field_tad_acc_drift",
+      "label": "Drift duration",
+      "name": "drift_duration",
+      "type": "number",
+      "default_value": 160,
+      "step": 5,
+      "min": 20,
+      "max": 1200,
+      "append": "s",
+      "instructions": "Seconds for one wave tile to slide by. Bigger = slower."
+    },
+    {
+      "key": "field_tad_acc_variance",
+      "label": "Drift variation",
+      "name": "drift_variance",
+      "type": "range",
+      "default_value": 35,
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "append": "%",
+      "instructions": "How different each layer’s speed is."
+    },
+    {
+      "key": "field_tad_acc_bob",
+      "label": "Bob distance",
+      "name": "bob",
+      "type": "number",
+      "default_value": 12,
+      "step": 1,
+      "min": 0,
+      "max": 80,
+      "append": "px",
+      "instructions": "How far each panel floats up and down. 0 = none."
+    },
+    {
+      "key": "field_tad_acc_bobdur",
+      "label": "Bob duration",
+      "name": "bob_duration",
+      "type": "number",
+      "default_value": 26,
+      "step": 1,
+      "min": 6,
+      "max": 120,
+      "append": "s",
+      "instructions": "Seconds per up-and-down float."
+    },
+    {
+      "key": "field_tad_acc_rate",
+      "label": "Motion update rate",
+      "name": "motion_rate",
+      "type": "number",
+      "default_value": 5,
+      "step": 1,
+      "min": 1,
+      "max": 60,
+      "append": "per second",
+      "instructions": "How many times per second the waves move. The drift is so slow that 5 looks smooth but uses a fraction of the CPU/GPU (glass blur is re-computed on every update). 60 = fully smooth, highest power use."
+    },
+    {
+      "key": "field_tad_acc_pmode",
+      "label": "Scroll parallax",
+      "name": "parallax_mode",
+      "type": "select",
+      "choices": {
+        "none": "Off",
+        "spread": "Spread — tops start aligned, fan out as you scroll",
+        "collapse": "Collapse — start spread out, come together as you scroll",
+        "drift": "Drift — layers slide past each other at different speeds"
+      },
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "value",
+      "default_value": "spread",
+      "instructions": "How the wave layers react to scrolling."
+    },
+    {
+      "key": "field_tad_acc_pstrength",
+      "label": "Parallax travel",
+      "name": "parallax_strength",
+      "type": "number",
+      "default_value": 70,
+      "step": 10,
+      "min": -600,
+      "max": 600,
+      "append": "px",
+      "instructions": "How far the deepest layer moves. Negative reverses direction (and needs more transition height so nothing clips)."
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "tad_clone_source_only"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Reused by Site Options and the Accent Section block through a Clone field. Not shown on any screen.",
+  "show_in_rest": 0,
+  "modified": 1790236000
+}

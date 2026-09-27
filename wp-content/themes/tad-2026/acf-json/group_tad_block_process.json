@@ -1,0 +1,94 @@
+{
+  "key": "group_tad_block_process",
+  "title": "Block: Process",
+  "fields": [
+    {
+      "key": "field_tad_pr_eyebrow",
+      "label": "Eyebrow",
+      "name": "eyebrow",
+      "type": "text",
+      "instructions": "Small mono label above the heading (e.g. “selected work”)."
+    },
+    {
+      "key": "field_tad_pr_heading",
+      "label": "Heading",
+      "name": "heading",
+      "type": "text",
+      "instructions": "The section’s H2."
+    },
+    {
+      "key": "field_tad_pr_intro",
+      "label": "Intro",
+      "name": "intro",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "instructions": "Optional supporting sentence under the heading."
+    },
+    {
+      "key": "field_tad_pr_space",
+      "label": "Vertical spacing",
+      "name": "section_space",
+      "type": "select",
+      "choices": {
+        "default": "Default",
+        "tight": "Tight",
+        "roomy": "Roomy",
+        "none": "None"
+      },
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "value",
+      "default_value": "default",
+      "instructions": "Padding above and below this section."
+    },
+    {
+      "key": "field_tad_pr_steps",
+      "label": "Steps",
+      "name": "steps",
+      "type": "repeater",
+      "sub_fields": [
+        {
+          "key": "field_tad_pr_title",
+          "label": "Title",
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "key": "field_tad_pr_text",
+          "label": "Text",
+          "name": "text",
+          "type": "textarea",
+          "rows": 3,
+          "new_lines": ""
+        }
+      ],
+      "layout": "block",
+      "button_label": "Add step",
+      "min": 0,
+      "max": 0,
+      "collapsed": "field_tad_pr_title",
+      "instructions": "Numbered automatically."
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/tad-process"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1790236000
+}

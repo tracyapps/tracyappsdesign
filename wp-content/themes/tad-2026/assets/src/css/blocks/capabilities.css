@@ -1,0 +1,41 @@
+.caps {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 700px) {
+  .caps { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1040px) {
+  .caps--cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .caps--cols-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+.cap {
+  padding: var(--space-6);
+  box-shadow: var(--card-shadow);
+}
+
+.cap__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  background: color-mix(in oklab, var(--accent), transparent 82%);
+  color: var(--accent);
+  margin-bottom: var(--space-5);
+}
+
+.cap h3 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+.cap p {
+  color: var(--fg-2);
+  font-size: var(--text-sm);
+  margin-top: var(--space-3);
+}

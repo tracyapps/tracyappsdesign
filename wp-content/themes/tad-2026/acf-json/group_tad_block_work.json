@@ -1,0 +1,145 @@
+{
+  "key": "group_tad_block_work",
+  "title": "Block: Work Grid",
+  "fields": [
+    {
+      "key": "field_tad_work_eyebrow",
+      "label": "Eyebrow",
+      "name": "eyebrow",
+      "type": "text",
+      "instructions": "Small mono label above the heading (e.g. “selected work”)."
+    },
+    {
+      "key": "field_tad_work_heading",
+      "label": "Heading",
+      "name": "heading",
+      "type": "text",
+      "instructions": "The section’s H2."
+    },
+    {
+      "key": "field_tad_work_intro",
+      "label": "Intro",
+      "name": "intro",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "instructions": "Optional supporting sentence under the heading."
+    },
+    {
+      "key": "field_tad_work_space",
+      "label": "Vertical spacing",
+      "name": "section_space",
+      "type": "select",
+      "choices": {
+        "default": "Default",
+        "tight": "Tight",
+        "roomy": "Roomy",
+        "none": "None"
+      },
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "value",
+      "default_value": "default",
+      "instructions": "Padding above and below this section."
+    },
+    {
+      "key": "field_tad_work_order",
+      "label": "Order",
+      "name": "order",
+      "type": "select",
+      "choices": {
+        "random": "Random (new order on each page load)",
+        "newest": "Newest first",
+        "manual": "Manual (Order box on each project)"
+      },
+      "default_value": "random",
+      "return_format": "value",
+      "instructions": "Random is fun, but a page cache will freeze the order until the cache clears."
+    },
+    {
+      "key": "field_tad_work_count",
+      "label": "How many",
+      "name": "count",
+      "type": "number",
+      "default_value": 9,
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "instructions": "0 = show all published projects."
+    },
+    {
+      "key": "field_tad_work_categories",
+      "label": "Only these categories",
+      "name": "categories",
+      "type": "taxonomy",
+      "taxonomy": "project_category",
+      "field_type": "checkbox",
+      "add_term": 0,
+      "save_terms": 0,
+      "load_terms": 0,
+      "return_format": "id",
+      "instructions": "Leave empty for every category."
+    },
+    {
+      "key": "field_tad_work_picked",
+      "label": "Hand-pick projects (optional)",
+      "name": "picked",
+      "type": "relationship",
+      "post_type": [
+        "project"
+      ],
+      "filters": [
+        "search"
+      ],
+      "return_format": "id",
+      "min": "",
+      "max": "",
+      "instructions": "If you pick any, ONLY these show, in this order. Overrides the settings above."
+    },
+    {
+      "key": "field_tad_work_more",
+      "label": "Show \"see all work\" link",
+      "name": "show_archive_link",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 1,
+      "instructions": "Only appears while project detail pages & archives are enabled (Site Options › Projects)."
+    },
+    {
+      "key": "field_tad_work_more_label",
+      "label": "Link label",
+      "name": "archive_link_label",
+      "type": "text",
+      "default_value": "see all work",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_tad_work_more",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/tad-work-grid"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1790236000
+}

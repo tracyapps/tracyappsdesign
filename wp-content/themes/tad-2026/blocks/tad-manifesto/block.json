@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "acf/tad-manifesto",
+  "title": "Manifesto",
+  "description": "A single large pull quote in a glass panel.",
+  "category": "tad",
+  "icon": "format-quote",
+  "keywords": [
+    "quote",
+    "manifesto",
+    "statement"
+  ],
+  "textdomain": "tad",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "tad-manifesto.php"
+  },
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "jsx": false,
+    "customClassName": true
+  }
+}

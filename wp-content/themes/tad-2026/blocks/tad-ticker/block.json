@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "acf/tad-ticker",
+  "title": "Ticker",
+  "description": "A slow marquee of short keywords.",
+  "category": "tad",
+  "icon": "align-wide",
+  "keywords": [
+    "marquee",
+    "ticker",
+    "keywords"
+  ],
+  "textdomain": "tad",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "tad-ticker.php"
+  },
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "jsx": false,
+    "customClassName": true
+  }
+}

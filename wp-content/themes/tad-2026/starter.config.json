@@ -1,0 +1,21 @@
+{
+  "localUrl": "http://tracyappsdesign.local",
+  "features": {
+    "acf_options": true,
+    "acf_blocks": true,
+    "curated_editor": true,
+    "dark_mode": false,
+    "menus": true,
+    "widgets": false,
+    "comments": false,
+    "patterns": false,
+    "emoji": false,
+    "sticky_header": true,
+    "default_thumbnail": true
+  },
+  "postTypes": {
+    "people": false,
+    "work": false,
+    "events": false
+  }
+}

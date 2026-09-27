@@ -1,0 +1,89 @@
+{
+  "key": "group_tad_block_accent",
+  "title": "Block: Accent Section",
+  "fields": [
+    {
+      "key": "field_tad_ac_msg",
+      "label": "How it works",
+      "name": "",
+      "type": "message",
+      "message": "Add other blocks <em>inside</em> this one (Work Grid, Contact, …). Styling defaults live under <strong>Site Options › Glass Transition</strong>.",
+      "new_lines": "wpautop",
+      "esc_html": 0
+    },
+    {
+      "key": "field_tad_ac_top",
+      "label": "Top transition",
+      "name": "top_transition",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 1,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "instructions": "Wavy glass edge above the section."
+    },
+    {
+      "key": "field_tad_ac_bottom",
+      "label": "Bottom transition",
+      "name": "bottom_transition",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 1,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "instructions": "Wavy glass edge below. Turn off for a section that runs straight into the footer."
+    },
+    {
+      "key": "field_tad_ac_override",
+      "label": "Override site settings for this section",
+      "name": "override_settings",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 0,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "instructions": "Off = use Site Options › Glass Transition."
+    },
+    {
+      "key": "field_tad_ac_clone",
+      "label": "Glass transition settings",
+      "name": "accent_override",
+      "type": "clone",
+      "clone": [
+        "group_tad_accent_settings"
+      ],
+      "display": "group",
+      "layout": "block",
+      "prefix_label": 0,
+      "prefix_name": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_tad_ac_override",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/tad-accent-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1790236000
+}

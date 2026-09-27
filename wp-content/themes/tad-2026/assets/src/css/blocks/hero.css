@@ -1,0 +1,237 @@
+.tad-hero {
+  position: relative;
+  padding-block: clamp(3.5rem, 9vw, 6.75rem) var(--section-y-tight);
+}
+
+.tad-hero__grid {
+  display: grid;
+  gap: var(--space-12);
+}
+
+@media (min-width: 1000px) {
+  .tad-hero__grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+  }
+
+  .tad-hero--no-cluster .tad-hero__grid {
+    grid-template-columns: minmax(0, 52rem);
+  }
+
+  .tad-hero--flip .tad-hero__cluster {
+    order: -1;
+  }
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface-warm);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+.hero__pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  position: relative;
+}
+
+/* Ring animates transform + opacity only (compositor), not box-shadow (repaints every frame) */
+.hero__pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--success), transparent 40%);
+  animation: tad-pulse 2.4s infinite;
+}
+
+@keyframes tad-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  70%, 100% { transform: scale(2.6); opacity: 0; }
+}
+
+.tad-hero__title {
+  margin-top: var(--space-6);
+  font-size: clamp(1.7rem, 4.9vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.06;
+}
+
+.grad-text {
+  /* background-image (not the shorthand): build-time colour fallbacks would otherwise reset background-clip */
+  background-image: linear-gradient(120deg, color-mix(in oklab, var(--brand-sun), white 30%), var(--brand-flare) 46%, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Forced-colors / high contrast: gradient text would vanish */
+@media (forced-colors: active) {
+  .grad-text {
+    background: none;
+    color: LinkText;
+  }
+}
+
+.tad-hero__lead {
+  max-width: 48ch;
+  margin-top: var(--space-6);
+  font-size: var(--text-lg);
+  color: var(--fg-2);
+}
+
+.tad-hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.tad-hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+.hero__stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-variation-settings: var(--display-variation);
+  font-weight: 700;
+  font-size: var(--text-xl);
+}
+
+.hero__stat span {
+  font-size: var(--text-xs);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Collage cluster (decorative) */
+.cluster {
+  position: relative;
+  min-height: 440px;
+}
+
+@media (min-width: 1000px) {
+  .cluster {
+    min-height: 500px;
+  }
+}
+
+.cluster__card {
+  position: absolute;
+  width: 60%;
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--elev-raised);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+}
+
+.cluster__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background: linear-gradient(160deg, oklch(1 0 0 / 0.16), transparent 42%);
+  pointer-events: none;
+}
+
+.cluster__card figcaption {
+  position: relative;
+  z-index: 2;
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--fg-2);
+  border-top: 1px solid var(--border-soft);
+  background: var(--surface-solid);
+}
+
+.cluster__card--1 { top: 0; left: 0; z-index: 3; }
+.cluster__card--2 { top: 27%; right: 0; z-index: 2; width: 54%; }
+.cluster__card--3 { bottom: 0; left: 12%; z-index: 4; width: 56%; }
+
+.cluster__tape {
+  position: absolute;
+  width: 92px;
+  height: 26px;
+  border-radius: 3px;
+  z-index: 6;
+  background: linear-gradient(120deg, color-mix(in oklab, var(--brand-sun), white 24%), color-mix(in oklab, var(--brand-flare), white 14%));
+  opacity: 0.6;
+  top: -10px;
+  left: 34%;
+  transform: rotate(-16deg);
+}
+
+.cluster__chip {
+  position: absolute;
+  z-index: 6;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--fg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--elev-raised);
+}
+
+.cluster__chip--1 { top: 5%; right: 6%; }
+.cluster__chip--2 { bottom: 33%; left: 0; }
+.cluster__chip--3 { bottom: 2%; right: 10%; }
+
+/* Abstract "art" tiles — used by hero cards and work cards */
+.art {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 160px;
+  overflow: hidden;
+}
+
+.art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.3'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+.art img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.art--papr { background: radial-gradient(circle at 28% 24%, color-mix(in oklab, var(--brand-sun), white 30%) 0 18%, transparent 19%), radial-gradient(circle at 74% 70%, color-mix(in oklab, var(--brand-flare), white 40%) 0 22%, transparent 23%), linear-gradient(158deg, color-mix(in oklab, var(--brand-violet), white 6%), color-mix(in oklab, var(--brand-flare), black 30%)); }
+.art--exp { background: radial-gradient(circle at 72% 28%, color-mix(in oklab, var(--brand-violet), white 16%) 0 24%, transparent 25%), linear-gradient(160deg, color-mix(in oklab, var(--brand-violet), black 48%), oklch(0.12 0.03 290)); }
+.art--coloma { background: radial-gradient(circle at 74% 24%, color-mix(in oklab, var(--brand-sun), white 6%) 0 10%, transparent 11%), linear-gradient(180deg, color-mix(in oklab, var(--brand-beam), black 30%), color-mix(in oklab, var(--brand-flare), black 40%) 52%, color-mix(in oklab, var(--brand-violet), black 52%)); }
+.art--grid { background-color: oklch(0.13 0.03 290); background-image: radial-gradient(color-mix(in oklab, var(--brand-sun), white 6%) 1.6px, transparent 1.7px); background-size: 22px 22px; }
+.art--wave { background: linear-gradient(150deg, color-mix(in oklab, var(--brand-violet), black 34%), color-mix(in oklab, var(--brand-flare), black 30%)); }
+.art--ink { background: linear-gradient(160deg, oklch(0.14 0.03 290), color-mix(in oklab, var(--brand-violet), black 56%)); }
+.art--game { background: repeating-linear-gradient(115deg, color-mix(in oklab, var(--brand-violet), black 40%) 0 22px, color-mix(in oklab, var(--brand-flare), black 34%) 22px 44px); }

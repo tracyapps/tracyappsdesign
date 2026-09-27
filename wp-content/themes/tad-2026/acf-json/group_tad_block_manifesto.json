@@ -1,0 +1,58 @@
+{
+  "key": "group_tad_block_manifesto",
+  "title": "Block: Manifesto",
+  "fields": [
+    {
+      "key": "field_tad_mf_quote",
+      "label": "Quote",
+      "name": "quote",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": "",
+      "instructions": "Type the quote without quotation marks."
+    },
+    {
+      "key": "field_tad_mf_cite",
+      "label": "Attribution",
+      "name": "cite",
+      "type": "text"
+    },
+    {
+      "key": "field_tad_mf_space",
+      "label": "Vertical spacing",
+      "name": "section_space",
+      "type": "select",
+      "choices": {
+        "default": "Default",
+        "tight": "Tight",
+        "roomy": "Roomy",
+        "none": "None"
+      },
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "value",
+      "default_value": "default",
+      "instructions": "Padding above and below this section."
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/tad-manifesto"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1790236000
+}

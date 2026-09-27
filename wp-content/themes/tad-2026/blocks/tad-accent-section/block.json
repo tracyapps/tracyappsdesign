@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "acf/tad-accent-section",
+  "title": "Accent Section",
+  "description": "Full-width glass panel with wavy animated edges. Put other section blocks inside.",
+  "category": "tad",
+  "icon": "admin-appearance",
+  "keywords": [
+    "accent",
+    "transition",
+    "wave",
+    "glass",
+    "background"
+  ],
+  "textdomain": "tad",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "tad-accent-section.php"
+  },
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "jsx": true,
+    "customClassName": true
+  }
+}

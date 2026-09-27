@@ -1,0 +1,29 @@
+.steps {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+.step {
+  padding: var(--space-6);
+  box-shadow: var(--card-shadow);
+}
+
+.step__num {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.step h3 {
+  font-size: var(--text-base);
+  font-weight: 600;
+  margin-top: var(--space-3);
+}
+
+.step p {
+  color: var(--fg-2);
+  font-size: var(--text-sm);
+  margin-top: var(--space-2);
+}

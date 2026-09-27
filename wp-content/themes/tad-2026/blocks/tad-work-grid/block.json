@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "acf/tad-work-grid",
+  "title": "Work Grid",
+  "description": "Selected projects from the Projects post type, as a content-aware masonry grid.",
+  "category": "tad",
+  "icon": "screenoptions",
+  "keywords": [
+    "work",
+    "portfolio",
+    "projects",
+    "bento"
+  ],
+  "textdomain": "tad",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "tad-work-grid.php"
+  },
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "jsx": false,
+    "customClassName": true
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "key": "group_tad_project",
+  "title": "Project Details",
+  "fields": [
+    {
+      "key": "field_tad_proj_tab_card",
+      "label": "Card",
+      "type": "tab",
+      "placement": "top"
+    },
+    {
+      "key": "field_tad_proj_layout",
+      "label": "Image position",
+      "name": "card_layout",
+      "type": "button_group",
+      "choices": {
+        "top": "Image on top",
+        "side": "Image on the side"
+      },
+      "default_value": "top",
+      "layout": "horizontal",
+      "return_format": "value",
+      "instructions": "Work Grid only. \"Side\" cards are always at least two columns wide (on tablets and up)."
+    },
+    {
+      "key": "field_tad_proj_size",
+      "label": "Size",
+      "name": "card_size",
+      "type": "select",
+      "choices": {
+        "standard": "Standard (1 column)",
+        "wide": "Wide (2 columns)",
+        "feature": "Feature (2 columns, bigger type)"
+      },
+      "default_value": "standard",
+      "return_format": "value",
+      "instructions": "Work Grid only. Wide/Feature is the \"highlight\" option. On phones everything is one column. Archives use one uniform size."
+    },
+    {
+      "key": "field_tad_proj_art",
+      "label": "Placeholder art",
+      "name": "card_art",
+      "type": "select",
+      "choices": {
+        "papr": "Paper (sun + flare)",
+        "exp": "Deep violet panel",
+        "coloma": "Golden hour",
+        "grid": "Dot grid",
+        "wave": "Violet-to-flare wave",
+        "ink": "Ink",
+        "game": "Stripes"
+      },
+      "allow_null": 1,
+      "default_value": "",
+      "return_format": "value",
+      "instructions": "Only used when there is no Screenshot / artwork (featured image) yet."
+    },
+    {
+      "key": "field_tad_proj_art_ratio",
+      "label": "Placeholder shape",
+      "name": "card_art_ratio",
+      "type": "select",
+      "choices": {
+        "16/10": "16:10 landscape",
+        "4/3": "4:3",
+        "1/1": "Square",
+        "3/4": "3:4 portrait"
+      },
+      "default_value": "16/10",
+      "return_format": "value",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_tad_proj_art",
+            "operator": "!=empty"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "field_tad_proj_tab_link",
+      "label": "Link & details",
+      "type": "tab",
+      "placement": "top"
+    },
+    {
+      "key": "field_tad_proj_url",
+      "label": "Link to the live project",
+      "name": "project_url",
+      "type": "url",
+      "instructions": "Leave EMPTY for no link anywhere. When set, it opens in a new tab and is announced that way to screen readers."
+    },
+    {
+      "key": "field_tad_proj_link_label",
+      "label": "Link text",
+      "name": "project_link_label",
+      "type": "text",
+      "instructions": "Default: \"visit\" + the site's address, e.g. \"visit papr.world\".",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_tad_proj_url",
+            "operator": "!=empty"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "field_tad_proj_year",
+      "label": "Year",
+      "name": "project_year",
+      "type": "text",
+      "placeholder": "2026"
+    },
+    {
+      "key": "field_tad_proj_role",
+      "label": "My role",
+      "name": "project_role",
+      "type": "text",
+      "placeholder": "Design, development"
+    },
+    {
+      "key": "field_tad_proj_client",
+      "label": "Client",
+      "name": "project_client",
+      "type": "text"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "project"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "custom_fields"
+  ],
+  "active": true,
+  "description": "",
+  "show_in_rest": 0
+}
