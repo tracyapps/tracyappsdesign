@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TAD_VERSION', '2.0.0' );
+define( 'TAD_VERSION', '2.0.1' );
 define( 'TAD_PATH', trailingslashit( get_template_directory() ) );
 define( 'TAD_URI', trailingslashit( get_template_directory_uri() ) );
 

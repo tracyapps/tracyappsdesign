@@ -12,7 +12,7 @@ get_header();
 while ( have_posts() ) :
 	the_post();
 	?>
-	<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry layout' ); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class( tad_page_layout_classes() ); ?>>
 		<header class="page-header">
 			<?php tad_page_title(); ?>
 		</header>

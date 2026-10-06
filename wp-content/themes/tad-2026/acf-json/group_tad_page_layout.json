@@ -1,0 +1,61 @@
+{
+  "key": "group_tad_page_layout",
+  "title": "Page layout",
+  "fields": [
+    {
+      "key": "field_tad_page_width",
+      "label": "Content width",
+      "name": "tad_page_width",
+      "type": "select",
+      "instructions": "For short introductions and focused booking pages. Applies to the title and content.",
+      "choices": {
+        "default": "Standard \u2014 current site width",
+        "reading": "Reading \u2014 56rem",
+        "compact": "Compact \u2014 44rem"
+      },
+      "default_value": "default",
+      "return_format": "value",
+      "ui": 1,
+      "allow_null": 0,
+      "multiple": 0
+    },
+    {
+      "key": "field_tad_page_spacing",
+      "label": "Page spacing",
+      "name": "tad_page_spacing",
+      "type": "select",
+      "instructions": "Controls space above the title, between the title and content, and before the footer. Use block Dimensions for spacing within the content.",
+      "choices": {
+        "default": "Standard \u2014 current spacing",
+        "tight": "Compact",
+        "roomy": "Generous"
+      },
+      "default_value": "default",
+      "return_format": "value",
+      "ui": 1,
+      "allow_null": 0,
+      "multiple": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "page"
+      },
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "default"
+      }
+    ]
+  ],
+  "position": "side",
+  "menu_order": 0,
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true,
+  "show_in_rest": 0
+}

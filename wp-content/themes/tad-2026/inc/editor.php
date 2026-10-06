@@ -23,6 +23,11 @@ function tad_allowed_block_types( $allowed_blocks, $editor_context ) {
 	}
 
 	$blocks = array(
+		'core/group',
+		'core/columns',
+		'core/column',
+		'core/media-text',
+		'core/cover',
 		'core/paragraph',
 		'core/heading',
 		'core/list',
@@ -57,6 +62,23 @@ function tad_allowed_block_types( $allowed_blocks, $editor_context ) {
 		);
 	}
 
+	// Curate core blocks, while allowing registered plugin blocks (including ACF).
+	foreach ( WP_Block_Type_Registry::get_instance()->get_all_registered() as $name => $type ) {
+		if ( 0 !== strpos( $name, 'core/' ) ) {
+			$blocks[] = $name;
+		}
+	}
+
+	$blocks = array_values( array_unique( $blocks ) );
+
+	// Preserve restrictions supplied by another plugin or editor context.
+	if ( false === $allowed_blocks ) {
+		return false;
+	}
+	if ( is_array( $allowed_blocks ) ) {
+		return array_values( array_intersect( $allowed_blocks, $blocks ) );
+	}
+
 	return $blocks;
 }
 add_filter( 'allowed_block_types_all', 'tad_allowed_block_types', 10, 2 );
@@ -85,3 +107,16 @@ function tad_unregister_block_styles() {
 	);
 }
 add_action( 'enqueue_block_editor_assets', 'tad_unregister_block_styles' );
+
+/** Useful content treatments, shared by editor and frontend CSS. */
+function tad_register_group_styles() {
+	register_block_style( 'core/group', array(
+		'name'  => 'tad-panel',
+		'label' => __( 'Inset panel', 'tad' ),
+	) );
+	register_block_style( 'core/group', array(
+		'name'  => 'tad-reading',
+		'label' => __( 'Reading width', 'tad' ),
+	) );
+}
+add_action( 'init', 'tad_register_group_styles' );

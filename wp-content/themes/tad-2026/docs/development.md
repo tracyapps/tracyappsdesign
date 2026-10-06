@@ -124,7 +124,7 @@ Add more CPT definitions there, then expose them through `starter.config.json` a
 
 ## Editor Curation
 
-The theme disables remote patterns and removes core pattern support when the `patterns` feature is false. The allowed block list in `inc/editor.php` intentionally stays small.
+The theme disables remote patterns and removes core pattern support when the `patterns` feature is false. The core block list in `inc/editor.php` stays curated, including Group (and its Row/Stack variations), Columns, Media & Text, and Cover. Registered plugin blocks are admitted automatically. Earlier filters returning a restricted array or `false` are respected. Accent Section inherits this editor policy instead of maintaining a second child-block list.
 
 This does not disable the block editor. It keeps the useful editing canvas while hiding the clutter that usually confuses non-technical clients.
 
@@ -170,3 +170,28 @@ The starter includes:
 - conservative color token defaults
 
 Project-specific blocks should preserve heading order, button/link semantics, keyboard access, and sufficient contrast.
+
+## Inside pages and spacing
+
+On pages using the default template, the **Page layout** ACF sidebar contains:
+
+- **Content width:** Standard (existing site width), Reading (56rem), or Compact (44rem).
+- **Page spacing:** Standard (existing rhythm), Compact, or Generous. This controls the title area and space before the footer.
+
+Existing pages keep their current appearance until a choice is saved. ACF local JSON provides the new fields; sync `Page layout` under ACF if the site asks for a sync.
+
+In the block sidebar, use **Dimensions** for padding and margins on supported blocks. Presets include None through XL, and custom values are enabled. Group blocks also provide **Inset panel** (rounded surface with responsive padding) and **Reading width** styles. Saved padding/margins override the panel defaults. Meet With Me blocks can be wrapped in a Group for spacing because the plugin does not currently declare its own spacing supports.
+
+Accent Section supports padding and top/bottom margins. Its wavy edges remain separate; use its existing glass transition settings to change wave height. The ACF editor supplies native support attributes on its own wrapper, while frontend rendering merges those attributes with the glass variables.
+
+For a small discovery-call page, try Reading width + Generous page spacing, place the introduction in a Reading width Group, and wrap the booking form in an Inset panel Group with MD or LG padding. These are editor choices, not changes to existing page content.
+
+## Focused editor verification
+
+With the LocalWP database socket configured:
+
+```bash
+wp eval-file wp-content/themes/tad-2026/tests/editor-integration.php
+```
+
+This runs against WordPress and ACF, checking plugin/layout availability, upstream restrictions, native spacing output, Group styles, and saved page choices. It creates and removes one isolated draft fixture. It does not contact booking providers.

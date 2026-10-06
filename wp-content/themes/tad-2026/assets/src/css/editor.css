@@ -24,3 +24,8 @@
   opacity: 1 !important;
   transform: none !important;
 }
+
+.editor-styles-wrapper .wp-block.is-style-tad-reading {
+  max-width: 48rem;
+  margin-inline: auto;
+}

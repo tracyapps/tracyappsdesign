@@ -72,7 +72,7 @@ function tad_gradient_text( $text ) {
  * Attributes for a block's outer element. Wraps get_block_wrapper_attributes()
  * so it also works in the editor preview and in the test harness.
  */
-function tad_block_attrs( $block, $classes = '', $extra = array() ) {
+function tad_block_attrs( $block, $classes = '', $extra = array(), $is_preview = false ) {
 	$args = array_merge( array( 'class' => $classes ), $extra );
 
 	// Explicit id from the Anchor field, so it never depends on core adding it.
@@ -80,13 +80,16 @@ function tad_block_attrs( $block, $classes = '', $extra = array() ) {
 		$args['id'] = sanitize_html_class( $block['anchor'] );
 	}
 
-	if ( function_exists( 'get_block_wrapper_attributes' ) ) {
+	// ACF supplies the editor's support wrapper; only add it on the frontend.
+	if ( ! $is_preview && function_exists( 'get_block_wrapper_attributes' ) ) {
 		return get_block_wrapper_attributes( $args );
 	}
 
-	$id = ! empty( $block['anchor'] ) ? ' id="' . esc_attr( $block['anchor'] ) . '"' : '';
-
-	return trim( $id . ' class="' . esc_attr( $classes ) . '"' );
+	$attributes = array();
+	foreach ( $args as $name => $value ) {
+		$attributes[] = sanitize_key( $name ) . '="' . esc_attr( $value ) . '"';
+	}
+	return implode( ' ', $attributes );
 }
 
 /** Section-level attributes: base class, spacing modifier, plus extras. */

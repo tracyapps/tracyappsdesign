@@ -102,6 +102,44 @@
   color: var(--accent);
 }
 
+/* Optional inside-page treatments; unconfigured pages keep their existing layout. */
+.entry--width-reading {
+  max-width: 56rem;
+}
+
+.entry--width-compact {
+  max-width: 44rem;
+}
+
+.entry--space-tight .page-header {
+  padding-block: var(--space-8) var(--space-4);
+}
+
+.entry--space-tight .entry-content {
+  padding-block-end: var(--section-y-tight);
+}
+
+.entry--space-roomy .page-header {
+  padding-block: var(--section-y) var(--space-12);
+}
+
+.entry--space-roomy .entry-content {
+  padding-block-end: var(--section-y-roomy);
+}
+
+/* Low specificity lets saved block Dimensions override these defaults. */
+:where(.wp-block-group.is-style-tad-panel) {
+  padding: clamp(1rem, 4vw, 2.5rem);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  background: var(--surface);
+}
+
+:where(.wp-block-group.is-style-tad-reading) {
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
 /* Scroll reveal (enabled by the .js class, disabled for reduced motion) */
 .js .reveal {
   opacity: 0;

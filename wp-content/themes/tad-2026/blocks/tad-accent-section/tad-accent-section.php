@@ -23,23 +23,9 @@ $extra = array(
 	'data-acc-mode' => $s['parallax_mode'],
 );
 
-$allowed  = array(
-	'acf/tad-hero',
-	'acf/tad-ticker',
-	'acf/tad-work-grid',
-	'acf/tad-capabilities',
-	'acf/tad-manifesto',
-	'acf/tad-process',
-	'acf/tad-studio',
-	'acf/tad-contact',
-	'core/paragraph',
-	'core/heading',
-	'core/buttons',
-	'core/image',
-);
 $template = array( array( 'acf/tad-work-grid' ) );
 ?>
-<div <?php echo tad_block_attrs( $block, $classes, $extra ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+<div <?php echo tad_block_attrs( $block, $classes, $extra, ! empty( $is_preview ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<div class="tad-accent__body" aria-hidden="true"></div>
 
 	<?php if ( $top ) { echo tad_accent_edge( 'top', $s ); } // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
@@ -47,7 +33,6 @@ $template = array( array( 'acf/tad-work-grid' ) );
 	<div class="tad-accent__content">
 		<?php if ( ! empty( $is_preview ) ) : ?>
 			<InnerBlocks
-				allowedBlocks="<?php echo esc_attr( wp_json_encode( $allowed ) ); ?>"
 				template="<?php echo esc_attr( wp_json_encode( $template ) ); ?>"
 			/>
 		<?php else : ?>

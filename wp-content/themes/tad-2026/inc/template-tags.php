@@ -107,3 +107,17 @@ function tad_motion_toggle() {
 		esc_attr__( 'resume motion', 'tad' )
 	);
 }
+
+/** Validated, optional controls for the standard inside-page template. */
+function tad_page_layout_classes() {
+	$classes = array( 'entry', 'layout' );
+	$width   = tad_field( 'tad_page_width', 'default' );
+	$space   = tad_field( 'tad_page_spacing', 'default' );
+	if ( in_array( $width, array( 'reading', 'compact' ), true ) ) {
+		$classes[] = 'entry--width-' . $width;
+	}
+	if ( in_array( $space, array( 'tight', 'roomy' ), true ) ) {
+		$classes[] = 'entry--space-' . $space;
+	}
+	return implode( ' ', $classes );
+}
